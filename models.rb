@@ -40,7 +40,7 @@ class Capsule
   
   def self.due_capsules
   	# get all the capsules whose dueDate is less than the current DateTime
-  	Capsule.all :dueDate.lt => DateTime.now :sent == false
+  #	Capsule.all :dueDate.lt => DateTime.now :sent == false
   	# and whose sent flag is not true
   end
   
