@@ -11,12 +11,12 @@ class Capsule
 
   property :id,         Serial    
   
-  property :dueDate, DateTime  
-  property :email, String
+  property :dueDate, 	DateTime 
+  property :email, 		String
   
   property :path,       String    
   #property :body,       Text      
-  #property :created_at, DateTime
+  property :created_at, DateTime
   
   
   def path_string(filename)
