@@ -1,6 +1,7 @@
 require 'dm-core'
 require 'dm-migrations'
 require 'aws/s3'
+require 'email_sender'
 
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
@@ -29,6 +30,10 @@ class Capsule
   	 AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
   	 bucket = AWS::S3::Bucket.find 'hindsight-itp'
   	 bucket[self.path].url
+  end
+  
+  def send!
+  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://memento.heroku.com/capsules/#{self.id}")
   end
   
 end
