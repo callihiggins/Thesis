@@ -18,7 +18,31 @@ class Capsule
   property :path,       String    
   #property :body,       Text      
   property :created_at, DateTime
+  property :sent,		Boolean, :default => false
   
+  
+  #TODO:
+  #-> add sent property as a boolean that defaults to false - yes
+  #-> implement Capsule.due_capsules method 
+  #-> implement Capsule.send_due_capsules!
+  #-> create a Rakefile based on Greg's github cron example
+  #-> in the Rakefile task call Capsule.send_due_capsules!
+  #-> add the cron addon to your app on heroku
+  
+  def self.send_due_capsules!
+  	# get all due_capsules
+  	# for each due_capsule
+  	# tell the capsule to send
+  	# set the sent property to true
+  	# and save the capsule 
+  end
+  
+  
+  def self.due_capsules
+  	# get all the capsules whose dueDate is less than the current DateTime
+  	Capsule.all :dueDate.lt => DateTime.now :sent == false
+  	# and whose sent flag is not true
+  end
   
   def path_string(filename)
   #"foo.jpg" "foo.tiff"

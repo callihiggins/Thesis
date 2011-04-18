@@ -3,7 +3,7 @@ require 'pony'
 class EmailSender
   def self.send(params)
      Pony.mail :to => params[:address],
-            :from => 'greg.borenstein@gmail.com',
+            :from => 'callihiggins@gmail.com',
             :subject => params[:subject],
             :body => params[:body], 
             :via => :smtp,

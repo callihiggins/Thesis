@@ -11,7 +11,7 @@ set :views, File.dirname(__FILE__) + '/views'
 # randomly generate a DateTime for dueDate based on a range
 
 get '/' do
-  "<h1>Welcome to Hindsight</h1>"
+  "<h1>Welcome to memento</h1>"
 end
 
 get "/capsules/new" do
