@@ -3,7 +3,7 @@ require 'sinatra'
 require 'aws/s3'
 require 'models'
 require "base64"
-require 'rmagick'
+require 'RMagick'
 
 set :views, File.dirname(__FILE__) + '/views'
 
