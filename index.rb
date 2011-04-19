@@ -36,7 +36,7 @@ post '/capsules' do
 	# generate a random time
 	t = Time.now
 	currentyear = t.year
-	year = currentyear + rand(6)
+	year = 2010
 	month = rand(12)
 	day = rand(28)
 	
