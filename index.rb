@@ -2,13 +2,10 @@ require 'rubygems'
 require 'sinatra'
 require 'aws/s3'
 require 'models'
+require "base64"
+require 'rmagick'
 
 set :views, File.dirname(__FILE__) + '/views'
-
-
-#TODO:
-
-# randomly generate a DateTime for dueDate based on a range
 
 get '/' do
   "<h1>Welcome to memento</h1>"
@@ -26,28 +23,51 @@ end
 
 post '/capsules' do
   
-   if params[:file]
+  #def iphone_upload
+  #	@data = request.POST[:imageData].unpack("m")[0]
+  #		fileout = "/var/www/test.jpg"
+  #	 File.open(fileout, 'w') {|f| f.write(@data) }
+  #	end
   
+  puts "************FILE UPLOAD*********************"
+  puts
+  
+  #puts params[:file].unpack("m")[0].class #params.inspect
+   
+  #puts Base64.decode64(params[:file]).class 
+    
+  puts
+  puts "************/FILE UPLOAD*********************"
+
+	params[:file] = params[:file].unpack("m")[0]
+
+	
+   if params[:file]
+  	image = Magick::Image.from_blob(params[:file]).first
   	# read the user input from the form (input tag with name="email") from params[:email]
+  #	puts image.inspect
   	
-    filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
+  	
+    #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
     file = params[:file][:tempfile]
     
 	# generate a random time
 	t = Time.now
 	currentyear = t.year
 	year = 2010
-	month = rand(12)
+	month = rand(11)
 	day = rand(28)
 	
 	c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
-  	c.path = c.path_string(filename)
-  	# set c.created_at to the current time
+  	c.path = c.path_string
   	c.save
-   
+  	
+  #	puts "http://memento.heroku.com/capusles/#{c.id}"
+  	
+  	   
     AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
     
-    AWS::S3::S3Object.store(c.path, open(file), "hindsight-itp", :access => :public_read)
+    AWS::S3::S3Object.store(c.path, image.to_blob, "hindsight-itp", :access => :public_read)
 	
 
   	"Thanks"

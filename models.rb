@@ -51,9 +51,10 @@ class Capsule
   	# and whose sent flag is not true
   end
   
-  def path_string(filename)
+  def path_string
   #"foo.jpg" "foo.tiff"
-  	extension = filename.split(".").last
+  	extension="jpg"
+  	#extension = filename.split(".").last
   	"capsule_#{self.id}.#{extension}"
   end
   
