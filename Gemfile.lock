@@ -33,6 +33,7 @@ GEM
     pony (1.1)
       mail (> 2.0)
     rack (1.2.2)
+    rmagick (2.13.1)
     sinatra (1.2.1)
       rack (~> 1.1)
       tilt (< 2.0, >= 1.2.2)
@@ -51,4 +52,5 @@ DEPENDENCIES
   dm-postgres-adapter
   do_postgres
   pony
+  rmagick
   sinatra
