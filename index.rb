@@ -32,7 +32,7 @@ post '/capsules' do
 	  	image_file = Magick::Image.from_blob(params[:file].unpack("m")[0]).first.to_blob
 	end
   	# read the user input from the form (input tag with name="email") from params[:email]
-  #	puts image.inspect
+  	puts image.inspect
   	
   	
     #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
