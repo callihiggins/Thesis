@@ -39,18 +39,21 @@ post '/capsules' do
   puts
   puts "************/FILE UPLOAD*********************"
 
-	params[:file] = params[:file].unpack("m")[0]
+	
 
 	
    if params[:file]
-  	image = Magick::Image.from_blob(params[:file]).first
-  	# read the user input from the form (input tag with name="email") from params[:email]
+  
+  	  	# read the user input from the form (input tag with name="email") from params[:email]
   #	puts image.inspect
   	
-  	
-    #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
-    file = params[:file][:tempfile]
-    
+    if params[:file][:tempfile] # this only happens through the browser
+		image_file = params[:file][:tempfile]
+ 	 else    
+		params[:file] = params[:file].unpack("m")[0]
+ 	 	image = Magick::Image.from_blob(params[:file]).first
+  		image_file = image.to_blob
+
 	# generate a random time
 	t = Time.now
 	currentyear = t.year
@@ -67,7 +70,7 @@ post '/capsules' do
   	   
     AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
     
-    AWS::S3::S3Object.store(c.path, image.to_blob, "hindsight-itp", :access => :public_read)
+    AWS::S3::S3Object.store(c.path, image_file, "hindsight-itp", :access => :public_read)
 	
 
   	"Thanks"
