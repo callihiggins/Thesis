@@ -12,74 +12,68 @@ get '/' do
 end
 
 get "/capsules/new" do
-	erb :new_capsule
+erb :new_capsule
 end
 
 get "/capsules/:id" do
-	# show the image plus some info about it
-	@capsule = Capsule.get params[:id]
-	erb :capsule
+# show the image plus some info about it
+@capsule = Capsule.get params[:id]
+erb :capsule
 end
 
 post '/capsules' do
   
   #def iphone_upload
-  #	@data = request.POST[:imageData].unpack("m")[0]
-  #		fileout = "/var/www/test.jpg"
-  #	 File.open(fileout, 'w') {|f| f.write(@data) }
-  #	end
+  # @data = request.POST[:imageData].unpack("m")[0]
+  # fileout = "/var/www/test.jpg"
+  # File.open(fileout, 'w') {|f| f.write(@data) }
+  # end
   
   puts "************FILE UPLOAD*********************"
   puts
   
   #puts params[:file].unpack("m")[0].class #params.inspect
    
-  #puts Base64.decode64(params[:file]).class 
+  #puts Base64.decode64(params[:file]).class
     
   puts
   puts "************/FILE UPLOAD*********************"
 
-	
+params[:file] = params[:file].unpack("m")[0]
 
-	
+
    if params[:file]
+   image = Magick::Image.from_blob(params[:file]).first
+   # read the user input from the form (input tag with name="email") from params[:email]
+  # puts image.inspect
   
-  	  	# read the user input from the form (input tag with name="email") from params[:email]
-  #	puts image.inspect
-  	
-    if params[:file][:tempfile] # this only happens through the browser
-		image_file = params[:file][:tempfile]
- 	 else    
-		params[:file] = params[:file].unpack("m")[0]
- 	 	image = Magick::Image.from_blob(params[:file]).first
-  		image_file = image.to_blob
+  
+    #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
+    file = params[:file][:tempfile]
+    
+# generate a random time
+t = Time.now
+currentyear = t.year
+year = 2010
+month = rand(11)
+day = rand(28)
 
-	# generate a random time
-	t = Time.now
-	currentyear = t.year
-	year = 2010
-	month = rand(11)
-	day = rand(28)
-	
-	c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
-  	c.path = c.path_string
-  	c.save
-  	
-  #	puts "http://memento.heroku.com/capusles/#{c.id}"
-  	
-  	   
+c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
+   c.path = c.path_string
+   c.save
+  
+  # puts "http://memento.heroku.com/capusles/#{c.id}"
+  
+  
     AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
     
-    AWS::S3::S3Object.store(c.path, image_file, "hindsight-itp", :access => :public_read)
-	
+    AWS::S3::S3Object.store(c.path, image.to_blob, "hindsight-itp", :access => :public_read)
 
-  	"Thanks"
+
+   "Thanks"
   else
     "You have to choose a file"
   end
 
   
 end
-
-
-  
