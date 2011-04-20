@@ -31,9 +31,9 @@ class Capsule
   
   def self.send_due_capsules!
   	# get all due_capsules
-  		@due_capsules = self.due_capsules
+  		due_capsules = self.due_capsules
   	# for each due_capsule
-  	  		@due_capsules.each do |due_capsule| 
+  	  		due_capsules.each do |due_capsule| 
   	# tell the capsule to send
   			due_capsule.send!
   	# set the sent property to true
@@ -47,8 +47,20 @@ class Capsule
   
   def self.due_capsules
   	# get all the capsules whose dueDate is less than the current DateTime
-	Capsule.all(:dueDate.lt=> Time.now) &  Capsule.all(:sent => false)
+	Capsule.all(:dueDate.lt=> Time.now, :sent => false)
   	# and whose sent flag is not true
+  end
+  
+  def formatted_created_at
+  	self.created_at.strftime(self.time_format_string)
+  end
+  
+  def formatted_dueDate
+   	self.dueDate.strftime(self.time_format_string)
+  end
+  
+  def time_format_string
+  	"something goes here http://www.ruby-doc.org/core/classes/Time.html#M000392"
   end
   
   def path_string
