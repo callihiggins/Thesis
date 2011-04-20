@@ -29,7 +29,7 @@ post '/capsules' do
 	if params[:file][:tempfile] # this only happens through the browser
 		image_file = params[:file][:tempfile]
 	else 
-	  	image_file = Magick::Image.from_blob(params[:file].unpack("m")[0]).first.to_blob
+	  	image_file = Magick::Image.from_blob(params[:file].unpack("m")[0]).first
 	end
   	# read the user input from the form (input tag with name="email") from params[:email]
   	puts image.inspect
