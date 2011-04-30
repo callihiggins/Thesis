@@ -50,7 +50,7 @@ params[:file] = params[:file].unpack("m")[0]
   
     #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
    # file = params[:file][:tempfile]
-    
+    image.sync_profiles
 # generate a random time
 t = Time.now
 currentyear = t.year
