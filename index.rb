@@ -21,21 +21,7 @@ get "/capsules/:id" do
 erb :capsule
 end
 
-post '/capsules' do
-  
-  #def iphone_upload
-  # @data = request.POST[:imageData].unpack("m")[0]
-  # fileout = "/var/www/test.jpg"
-  # File.open(fileout, 'w') {|f| f.write(@data) }
-  # end
-  
-  puts "************FILE UPLOAD*********************"
-  puts
-  
-  #puts params[:file].unpack("m")[0].class #params.inspect
-   
-  #puts Base64.decode64(params[:file]).class
-    
+post '/capsules' do    
   puts
   puts "************/FILE UPLOAD*********************"
 
@@ -44,7 +30,7 @@ params[:file] = params[:file].unpack("m")[0]
 
    if params[:file]
    image = Magick::Image.from_blob(params[:file]).first
-   image = image.auto_orient 
+   img.rotate!(90) if img.orientation.to_s == "RightTopOrientation" 
   	
   	# generate a random time
 	t = Time.now
