@@ -44,22 +44,18 @@ params[:file] = params[:file].unpack("m")[0]
 
    if params[:file]
    image = Magick::Image.from_blob(params[:file]).first
-   # read the user input from the form (input tag with name="email") from params[:email]
-  # puts image.inspect
-  
-  
-    #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
-   # file = params[:file][:tempfile]
-  	image.auto_orient! # generate a random time
+   image = image.auto_orient 
+  	
+  	# generate a random time
 	t = Time.now
 	currentyear = t.year
 	year = 2010
 	month = rand(11)
 	day = rand(28)
 
-c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
-   c.path = c.path_string
-   c.save
+	c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
+    c.path = c.path_string
+    c.save
   
   # puts "http://memento.heroku.com/capusles/#{c.id}"
   
