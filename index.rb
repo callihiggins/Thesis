@@ -30,7 +30,7 @@ params[:file] = params[:file].unpack("m")[0]
 
    if params[:file]
    image = Magick::Image.from_blob(params[:file]).first
-   img.rotate!(90) if img.orientation.to_s == "RightTopOrientation" 
+   #img.rotate!(90) if img.orientation.to_s == "RightTopOrientation" 
   	
   	# generate a random time
 	t = Time.now
