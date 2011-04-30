@@ -49,7 +49,7 @@ params[:file] = params[:file].unpack("m")[0]
   
   
     #filename = params[:file][:filename] # CHANGEME: generate one based on the Capsule id
-    file = params[:file][:tempfile]
+   # file = params[:file][:tempfile]
     
 # generate a random time
 t = Time.now
