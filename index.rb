@@ -25,11 +25,11 @@ post '/capsules' do
   puts
   puts "************/FILE UPLOAD*********************"
 
-params[:file] = params[:file].unpack("m")[0]
-
+   #params[:file] = params[:file].unpack("m")[0]
 
    if params[:file]
-   image = Magick::Image.from_blob(params[:file]).first
+   blob = Base64.decode64(params[:file])
+   image = Magick::Image.from_blob(blob)[0]
    #img.rotate!(90) if img.orientation.to_s == "RightTopOrientation" 
   	
   	# generate a random time
