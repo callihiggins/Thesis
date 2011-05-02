@@ -21,27 +21,41 @@ get "/capsules/:id" do
 erb :capsule
 end
 
-post '/capsules' do    
+post '/capsules' do
+  
+  #def iphone_upload
+  # @data = request.POST[:imageData].unpack("m")[0]
+  # fileout = "/var/www/test.jpg"
+  # File.open(fileout, 'w') {|f| f.write(@data) }
+  # end
+  
+  puts "************FILE UPLOAD*********************"
+  puts
+  
+  #puts params[:file].unpack("m")[0].class #params.inspect
+   
+  #puts Base64.decode64(params[:file]).class
+    
   puts
   puts "************/FILE UPLOAD*********************"
 
-   #params[:file] = params[:file].unpack("m")[0]
+params[:file] = params[:file].unpack("m")[0]
+
 
    if params[:file]
-   blob = Base64.decode64(params[:file])
-   image = Magick::Image.from_blob(blob)[0]
-   #img.rotate!(90) if img.orientation.to_s == "RightTopOrientation" 
-  	
-  	# generate a random time
-	t = Time.now
-	currentyear = t.year
-	year = 2010
-	month = rand(11)
-	day = rand(28)
+   image = Magick::Image.from_blob(params[:file]).first
 
-	c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
-    c.path = c.path_string
-    c.save
+    image.sync_profiles
+# generate a random time
+t = Time.now
+currentyear = t.year
+year = 2010
+month = rand(11)
+day = rand(28)
+
+c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
+   c.path = c.path_string
+   c.save
   
   # puts "http://memento.heroku.com/capusles/#{c.id}"
   
