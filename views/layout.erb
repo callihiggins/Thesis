@@ -3,14 +3,50 @@
 <title>memento</title>
 
 <style>
-body{
- background-color: #ecae54;
+
+@font-face {
+
+  font-family: "Archer Book";
+
+  src: url("http://callihiggins.com/Archer/Archer-Book-Pro.otf") format("opentype");
+
+  }
+
+container {
+border-style: none;
+position: absolute;
+width: 100%;
+text-align: center;
+top: 200px;
 }
+
+#logocontainer {
+position: fixed;
+width: 200px;
+left: 30px;
+top: 20px;
+
+
+}
+
+body{
+font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
+
+font-size: 18px;;
+
+ background-color: #FFFFFF;
+
+}
+
+
 </style>
 
 </head>
 <body>
-<h1>memento</h1>
+
+
+<div id="logocontainer"><img src="http://memento.heroku.com/images/memento_title.png" width="300"></div>
+
 
 <%= yield %>
 

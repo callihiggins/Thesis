@@ -8,7 +8,22 @@ require 'RMagick'
 set :views, File.dirname(__FILE__) + '/views'
 
 get '/' do
-  "<h1>Welcome to memento</h1>"
+
+"
+<style>
+body {
+background-color:333333;
+background-position:center; 
+background-image:url('http://memento.heroku.com/images/letter.png');
+background-repeat:
+no-repeat;
+background-attachment:
+fixed
+}
+</style>
+<body>
+
+</body>"
 end
 
 get "/capsules/new" do
