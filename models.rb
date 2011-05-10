@@ -52,13 +52,10 @@ class Capsule
   end
   
   def formatted_created_at
-  	self.created_at.strftime(self.time_format_string)
+  	self.created_at.strftime("%m/%d/%Y")
   end
   
- 
-  def time_format_string
-  	self.strftime("%m/%d/%Y")
-  end
+
   
   def path_string
   #"foo.jpg" "foo.tiff"
