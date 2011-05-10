@@ -10,6 +10,7 @@ set :views, File.dirname(__FILE__) + '/views'
 get '/' do
 
 "
+<title>memento</title>
 <style>
 body {
 background-color:333333;
