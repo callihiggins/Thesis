@@ -60,7 +60,7 @@ class Capsule
   end
   
   def time_format_string
-  	self.time.strftime(%m/%d/%Y)
+  	self.time.strftime("%m/%d/%Y")
   end
   
   def path_string
