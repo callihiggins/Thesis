@@ -60,7 +60,7 @@ class Capsule
   end
   
   def time_format_string
-  	"something goes here http://www.ruby-doc.org/core/classes/Time.html#M000392"
+  	self.time.strftime(%m/%d/%Y)
   end
   
   def path_string
