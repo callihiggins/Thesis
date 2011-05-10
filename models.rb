@@ -55,10 +55,7 @@ class Capsule
   	self.created_at.strftime(self.time_format_string)
   end
   
-  def formatted_dueDate
-   	self.dueDate.strftime(self.time_format_string)
-  end
-  
+ 
   def time_format_string
   	self.strftime("%m/%d/%Y")
   end
