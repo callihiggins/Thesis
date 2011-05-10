@@ -52,7 +52,7 @@ class Capsule
   end
   
   def formatted_created_at
-  	self.created_at.strftime("%m/%d/%Y")
+  	self.created_at.strftime("%B %d, /%Y at %I:%M%p")
   end
   
 
