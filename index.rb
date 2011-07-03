@@ -64,14 +64,13 @@ params[:file] = params[:file].unpack("m")[0]
    image.auto_orient!
     #image.sync_profiles
 # generate a random time
-t = Time.now
-t = t.local
+t = Time.now("+03:00")
 currentyear = t.year
 year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
-c = Capsule.create(:created_at => Time.now(), :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
+c = Capsule.create(:created_at => t, :dueDate => DateTime.new(year, month, day, 12), :email => params[:email])
    c.path = c.path_string
    c.save
   
