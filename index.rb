@@ -62,9 +62,8 @@ params[:file] = params[:file].unpack("m")[0]
    if params[:file]
    image = Magick::Image.from_blob(params[:file]).first
    image.auto_orient!
-    #image.sync_profiles
 # generate a random time
-t = Time.now("+03:00")
+t = Time.now
 currentyear = t.year
 year = currentyear + rand(6)
 month = rand(11)
