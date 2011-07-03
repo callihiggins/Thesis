@@ -65,7 +65,7 @@ params[:file] = params[:file].unpack("m")[0]
 # generate a random time
 t = Time.now
 currentyear = t.year
-year = 2010
+year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
