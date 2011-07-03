@@ -64,8 +64,7 @@ params[:file] = params[:file].unpack("m")[0]
    image.auto_orient!
     #image.sync_profiles
 # generate a random time
-Time.zone = "Eastern Time (US & Canada)"
-t = Time.now
+t = Time.getlocal
 currentyear = t.year
 year = currentyear + rand(6)
 month = rand(11)
