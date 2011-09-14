@@ -61,7 +61,9 @@ puts "File:"
 puts params[:file].inspect
 
    if params[:file]
-   image = Magick::Image.from_blob(params[:file]).first
+   image = Magick::Image.read(params[:file][:tempfile].path)[0]
+
+   #image = Magick::Image.from_blob(params[:file][:tempfile].read).first
    image.auto_orient!
 # generate a random time
 t = Time.now
