@@ -55,7 +55,7 @@ post '/capsules' do
   puts
   puts "************/FILE UPLOAD*********************"
 
-params[:file] = params[:file].unpack("m")[0]
+#params[:file] = params[:file].unpack("m")[0]
 
 
 
