@@ -60,7 +60,7 @@ post '/capsules' do
 
 
    if params[:file]
-   image = Magick::Image.file
+   image = Magick::Image.from_blob(params[:file]).first
    image.auto_orient!
 # generate a random time
 t = Time.now
