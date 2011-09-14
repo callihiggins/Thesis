@@ -57,7 +57,8 @@ post '/capsules' do
 
 #params[:file] = params[:file].unpack("m")[0]
 
-
+puts "File:"
+puts params[:file].inspect
 
    if params[:file]
    image = Magick::Image.from_blob(params[:file]).first
