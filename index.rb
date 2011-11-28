@@ -59,6 +59,7 @@ post '/capsules' do
 
 puts "File:"
 puts params[:file].inspect
+puts params[:email]
 
    if params[:file]
    image = Magick::Image.read(params[:file][:tempfile].path)[0]
