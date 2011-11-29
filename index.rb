@@ -59,6 +59,9 @@ post '/capsules' do
 
 #params[:file] = params[:file].unpack("m")[0]
 
+puts "Params:"
+puts params.inspect
+
 puts "File:"
 puts params[:file]
 puts "Email:"
