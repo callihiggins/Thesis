@@ -74,9 +74,15 @@ year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
+e = params[:date]
+dueDate = e.string_to_date
+
+puts "FOrmatted Date:"
+puts dueDate
+
 #DateTime.new(year, month, day, 12),
 
-c = Capsule.create(:created_at => t, :dueDate => params[:date],  :email => params[:email])
+c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:email])
    c.path = c.path_string
    c.save
   
