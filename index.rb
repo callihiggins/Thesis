@@ -65,10 +65,14 @@ puts params[:file]
 puts "Email:"
 puts params[:email]
 
-   if params[:file]
+   begin
    image = Magick::Image.read(params[:file][:tempfile].path)[0]
 
-   #image = Magick::Image.from_blob(params[:file][:tempfile].read).first
+	#if image.size > 500000
+	#	return 400, "photo too big"
+	#end	
+
+   ##image = Magick::Image.from_blob(params[:file][:tempfile].read).first
    image.auto_orient!
 # generate a random time
 t = Time.now
@@ -100,10 +104,9 @@ c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:ema
     AWS::S3::S3Object.store(c.path, image.to_blob, "hindsight-itp", :access => :public_read)
 
 
-   "Thanks"
-  else
-    "You have to choose a file"
+  rescue Exception => e
+  	puts e
+  	500
   end
-
   
 end
