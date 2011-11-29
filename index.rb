@@ -4,7 +4,7 @@ require 'aws/s3'
 require 'models'
 require "base64"
 require 'RMagick'
-require 'Time'
+require 'time'
 
 set :views, File.dirname(__FILE__) + '/views'
 
