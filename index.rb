@@ -46,7 +46,6 @@ post '/capsules' do
   # end
   
   puts "************FILE UPLOAD*********************"
-  puts
   
   #puts params[:file].unpack("m")[0].class #params.inspect
    
@@ -54,7 +53,6 @@ post '/capsules' do
     
     puts "cats are monkeys"
     
-  puts
   puts "************/FILE UPLOAD*********************"
 
 #params[:file] = params[:file].unpack("m")[0]
