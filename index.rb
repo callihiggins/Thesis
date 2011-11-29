@@ -4,7 +4,6 @@ require 'aws/s3'
 require 'models'
 require "base64"
 require 'RMagick'
-require 'time'
 
 set :views, File.dirname(__FILE__) + '/views'
 
@@ -53,15 +52,17 @@ post '/capsules' do
    
   #puts Base64.decode64(params[:file]).class
     
+    puts "cats are monkeys"
+    
   puts
   puts "************/FILE UPLOAD*********************"
 
 #params[:file] = params[:file].unpack("m")[0]
 
 puts "File:"
-puts params[:file].inspect
+puts params[:file]
 puts "Email:"
-puts params[:email].inspect
+puts params[:email]
 
    if params[:file]
    image = Magick::Image.read(params[:file][:tempfile].path)[0]
@@ -79,7 +80,7 @@ day = rand(28)
 #e = params[:date]
 #dueDate = e.string_to_date
 
-dueDate = Time.parse params[:date]
+dueDate = params[:date]
 
 puts "Formatted Date:"
 puts dueDate
