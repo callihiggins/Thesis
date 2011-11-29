@@ -4,6 +4,7 @@ require 'aws/s3'
 require 'models'
 require "base64"
 require 'RMagick'
+require 'Time'
 
 set :views, File.dirname(__FILE__) + '/views'
 
@@ -78,7 +79,7 @@ day = rand(28)
 #e = params[:date]
 #dueDate = e.string_to_date
 
-dueDate = DateTime.parse params[:date]
+dueDate = Time.parse params[:date]
 
 puts "Formatted Date:"
 puts dueDate
