@@ -56,7 +56,7 @@ class Capsule
   end
   
   def string_to_date
- 	 strptime(self, fmt=' %a %B %d %Y %H:%M:%S %z', sg=ITALY)
+ 	 strptime(self, fmt=' %a %B %d %Y %H:%M:%S %z')
  end
   
 

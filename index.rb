@@ -74,10 +74,13 @@ year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
-e = params[:date]
-dueDate = e.string_to_date
 
-puts "FOrmatted Date:"
+#e = params[:date]
+#dueDate = e.string_to_date
+
+dueDate = DateTime.parse params[:date]
+
+puts "Formatted Date:"
 puts dueDate
 
 #DateTime.new(year, month, day, 12),
