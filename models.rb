@@ -14,11 +14,12 @@ class Capsule
   
   property :dueDate, 	DateTime 
   property :email, 		String
-  
+  property :caption,	Text 
   property :path,       String    
   #property :body,       Text      
   property :created_at, DateTime
   property :sent,		Boolean, :default => false
+
   
   
   #TODO:
