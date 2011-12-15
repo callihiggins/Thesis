@@ -14,7 +14,7 @@ class Capsule
   
   property :dueDate, 	DateTime 
   property :email, 		String
-  property :caption,	Text 
+  property :caption,	Text, :lazy => false
   property :path,       String    
   #property :body,       Text      
   property :created_at, DateTime
