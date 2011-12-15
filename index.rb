@@ -64,6 +64,8 @@ puts "File:"
 puts params[:file]
 puts "Email:"
 puts params[:email]
+puts "Caption:"
+puts params[:caption]
 
    begin
    image = Magick::Image.read(params[:file][:tempfile].path)[0]
@@ -88,6 +90,7 @@ day = rand(28)
 dueDate = params[:date]
 puts "Formatted Date:"
 puts dueDate
+
 
 #DateTime.new(year, month, day, 12),
 
