@@ -31,15 +31,22 @@ get "/capsules/new" do
 erb :new_capsule
 end
 
-get "/capsules/:id" do
+get "/capsules/:image_token" do
 # show the image plus some info about it
-@capsule = Capsule.get params[:id]
+@capsule = Capsule.get params[:image_token]
 erb :capsule
 end
 
-post '/email' do
-puts "got the email!"
+post '/users/new' do
+user_token = params[:email].generate_token
+u = User.create(:email => params[:email], :user_token => user_token)
+u.save
+@user.send_confirmation!
 puts params[:email]
+end
+
+get "confirm/:user_token" do
+
 end
 
 
@@ -95,6 +102,7 @@ puts dueDate
 
 c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:email], :caption =>params[:caption])
    c.path = c.path_string
+   c.image_token = c.generate_token
    c.save
 
   

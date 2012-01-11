@@ -1,35 +1,53 @@
 require 'dm-core'
 require 'dm-migrations'
+require 'dm-associations'
 require 'aws/s3'
 require 'email_sender'
+require 'digest/md5'
 
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
+    
+class User
+  include DataMapper::Resource
+
+  property :id,         Serial   
+  property :email,		String
+  property :user_token,		String
+  property :confirmed, 	Boolean, :default => false
+    
+  has n, :capsules
+  
+  def generate_token
+  	Digest::MD5.hexdigest(self)
+  end
+  
+  def send_confirmation!
+  	# instead of self.email: user.email
+  
+  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "http://memento.heroku.com/confirm/#{self.user_token}")
+  end
+
+    
+  
+end
     
 class Capsule
 
   include DataMapper::Resource
 
   property :id,         Serial    
-  
+  property :image_token,		String
   property :dueDate, 	DateTime 
-  property :email, 		String
+  property :email, 		String # go away. on the user now
   property :caption,	Text, :lazy => false
   property :path,       String    
-  #property :body,       Text      
   property :created_at, DateTime
   property :sent,		Boolean, :default => false
 
-  
-  
-  #TODO:
-  #-> add sent property as a boolean that defaults to false - yes
-  #-> implement Capsule.due_capsules method 
-  #-> implement Capsule.send_due_capsules!
-  #-> create a Rakefile based on Greg's github cron example
-  #-> in the Rakefile task call Capsule.send_due_capsules!
-  #-> add the cron addon to your app on heroku
-  
+  belongs_to :user
+
+
   def self.send_due_capsules!
   	# get all due_capsules
   		due_capsules = self.due_capsules
@@ -44,7 +62,11 @@ class Capsule
   			due_capsule.save
   		end  
   	end
-  
+   
+   def generate_token
+  	self.image_token.Digest::MD5.hexdigest(self.id)
+  end
+
   
   def self.due_capsules
   	# get all the capsules whose dueDate is less than the current DateTime
@@ -76,7 +98,9 @@ class Capsule
   end
   
   def send!
-  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://memento.heroku.com/capsules/#{self.id}")
+  	# instead of self.email: user.email
+  
+  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://memento.heroku.com/capsules/#{self.image_token}")
   end
   
 end
