@@ -1,6 +1,5 @@
 require 'dm-core'
 require 'dm-migrations'
-require 'dm-associations'
 require 'aws/s3'
 require 'email_sender'
 require 'digest/md5'
