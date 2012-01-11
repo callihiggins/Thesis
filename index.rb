@@ -38,7 +38,7 @@ erb :capsule
 end
 
 post '/users/new' do
-user_token = params[:email].generate_token
+user_token = params[:email].generate_user_token
 u = User.create(:email => params[:email], :user_token => user_token)
 u.save
 @user.send_confirmation!

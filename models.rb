@@ -18,7 +18,7 @@ class User
     
   has n, :capsules
   
-  def generate_token
+  def generate_user_token
   	Digest::MD5.hexdigest(self)
   end
   
@@ -62,7 +62,7 @@ class Capsule
   		end  
   	end
    
-   def generate_token
+   def generate_image_token
   	sDigest::MD5.hexdigest(self.id.to_s)
   end
 
