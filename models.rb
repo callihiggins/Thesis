@@ -63,7 +63,7 @@ class Capsule
   	end
    
    def generate_image_token
-  	sDigest::MD5.hexdigest(self.id.to_s)
+  	Digest::MD5.hexdigest(self.id.to_s)
   end
 
   
