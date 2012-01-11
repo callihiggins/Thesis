@@ -47,7 +47,7 @@ puts params[:email]
 end
 
 get "/users/:user_token" do
-@user = User.get params[:user_token]
+@user = User.first :user_token => params[:user_token]
 erb :user
 end
 
