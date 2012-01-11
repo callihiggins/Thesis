@@ -19,7 +19,7 @@ class User
   has n, :capsules
   
   def generate_user_token
-  	Digest::MD5.hexdigest(self)
+  	Digest::MD5.hexdigest(self.email)
   end
   
   def send_confirmation!
