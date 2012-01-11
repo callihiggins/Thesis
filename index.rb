@@ -47,7 +47,8 @@ puts params[:email]
 end
 
 get "users/:user_token" do
-puts "hi"
+@user = User.get params[:user_token]
+erb :user
 end
 
 
