@@ -15,7 +15,7 @@ class User
   property :user_token,	String
   property :confirmed, 	Boolean, :default => false
     
-  has n, :capsules
+ # has n, :capsules
   
   def generate_token
   	Digest::MD5.hexdigest(self)
@@ -36,7 +36,7 @@ class Capsule
   include DataMapper::Resource
 
   property :id,         Serial    
-  property :image_token,String
+ # property :image_token,String
   property :dueDate, 	DateTime 
   property :email, 		String # go away. on the user now
   property :caption,	Text, :lazy => false
