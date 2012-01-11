@@ -46,8 +46,8 @@ u.send_confirmation!
 puts params[:email]
 end
 
-get "users/:user_token" do
-@user = User.get(params[:user_token])
+get "/users/:user_token" do
+@user = User.get params[:user_token]
 erb :user
 end
 
