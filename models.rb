@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'dm-core'
 require 'dm-migrations'
 require 'aws/s3'
@@ -15,7 +16,7 @@ class User
   property :user_token,	String
   property :confirmed, 	Boolean, :default => false
     
- # has n, :capsules
+  has n, :capsules
   
   def generate_token
   	Digest::MD5.hexdigest(self)
@@ -36,15 +37,14 @@ class Capsule
   include DataMapper::Resource
 
   property :id,         Serial    
- # property :image_token,String
+  property :image_token,String
   property :dueDate, 	DateTime 
-  property :email, 		String # go away. on the user now
   property :caption,	Text, :lazy => false
   property :path,       String    
   property :created_at, DateTime
-  property :sent,		Boolean, :default => false
-
-  #belongs_to :user
+  property :sent,		Boolean, :default => false	
+	
+  belongs_to :user
 
 
   def self.send_due_capsules!
@@ -63,7 +63,7 @@ class Capsule
   	end
    
    def generate_token
-  	self.image_token.Digest::MD5.hexdigest(self.id)
+  	sDigest::MD5.hexdigest(self.id.to_s)
   end
 
   
