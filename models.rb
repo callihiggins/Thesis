@@ -12,7 +12,7 @@ class User
 
   property :id,         Serial   
   property :email,		String
-  property :user_token,		String
+  property :user_token,	String
   property :confirmed, 	Boolean, :default => false
     
   has n, :capsules
@@ -36,7 +36,7 @@ class Capsule
   include DataMapper::Resource
 
   property :id,         Serial    
-  property :image_token,		String
+  property :image_token,String
   property :dueDate, 	DateTime 
   property :email, 		String # go away. on the user now
   property :caption,	Text, :lazy => false
@@ -44,7 +44,7 @@ class Capsule
   property :created_at, DateTime
   property :sent,		Boolean, :default => false
 
-  belongs_to :user
+  #belongs_to :user
 
 
   def self.send_due_capsules!
@@ -87,7 +87,7 @@ class Capsule
   #"foo.jpg" "foo.tiff"
   	extension="jpg"
   	#extension = filename.split(".").last
-  	"capsule_#{self.id}.#{extension}"
+  	"capsule_#{self.image_token}.#{extension}"
   end
   
   def image_url
