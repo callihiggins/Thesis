@@ -39,6 +39,7 @@ end
 
 post '/users/new' do
 u = User.create(:email => params[:email])
+u.save
 u.user_token = u.generate_user_token
 u.save
 @user.send_confirmation!
