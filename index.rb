@@ -46,8 +46,8 @@ u.send_confirmation!
 puts params[:email]
 end
 
-get "confirm/:user_token" do
-
+get "users/:user_token" do
+puts "hi"
 end
 
 
