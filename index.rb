@@ -39,6 +39,7 @@ end
 
 post '/email' do
 puts "got the email!"
+puts params[:email]
 end
 
 
