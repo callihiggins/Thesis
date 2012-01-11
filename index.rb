@@ -37,6 +37,11 @@ get "/capsules/:id" do
 erb :capsule
 end
 
+post '/email' do
+puts "got the email!"
+end
+
+
 post '/capsules' do
   
   #def iphone_upload
@@ -46,18 +51,7 @@ post '/capsules' do
   # end
   
   puts "************FILE UPLOAD*********************"
-  
-  #puts params[:file].unpack("m")[0].class #params.inspect
-   
-  #puts Base64.decode64(params[:file]).class
-    
-    puts "cats are monkeys"
-    
-  puts "************/FILE UPLOAD*********************"
-
-#params[:file] = params[:file].unpack("m")[0]
-
-puts "Params:"
+  puts "Params:"
 puts params
 
 puts "File:"
@@ -66,6 +60,12 @@ puts "Email:"
 puts params[:email]
 puts "Caption:"
 puts params[:caption]
+     
+  puts "************/FILE UPLOAD*********************"
+
+#params[:file] = params[:file].unpack("m")[0]
+
+
 
    begin
    image = Magick::Image.read(params[:file][:tempfile].path)[0]
@@ -84,21 +84,18 @@ month = rand(11)
 day = rand(28)
 
 
-#e = params[:date]
-#dueDate = e.string_to_date
 
 dueDate = params[:date]
 puts "Formatted Date:"
 puts dueDate
 
 
-#DateTime.new(year, month, day, 12),
+
 
 c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:email], :caption =>params[:caption])
    c.path = c.path_string
    c.save
-  
-  # puts "http://memento.heroku.com/capusles/#{c.id}"
+
   
   
     AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
