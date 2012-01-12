@@ -48,8 +48,8 @@ end
 
 get "/users/:user_token" do
 @user = User.first :user_token => params[:user_token]
-user.confirmed = true
-user.save
+@user.confirmed = true
+@user.save
 erb :user
 end
 
