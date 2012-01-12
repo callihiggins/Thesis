@@ -1,1 +1,1 @@
-<container><h1> the email address <%= @user.email %> is confirmed! </container>
+<container><h1> the email address <%= @user.email %> is <%= @user.confirmed ? "confirmed!" : "unconfirmed" %>! </container>
