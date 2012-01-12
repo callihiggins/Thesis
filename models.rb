@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 require 'dm-migrations'
+# require 'dm-validations'
 require 'aws/s3'
 require 'email_sender'
 require 'digest/md5'
@@ -18,8 +19,10 @@ class User
     
   has n, :capsules
   
+#   validates_uniqueness_of :email
+  
   def generate_user_token
-  	Digest::MD5.hexdigest(self.email)
+  	Digest::MD5.hexdigest((Time.now + random(10000)).to_s)
   end
   
   def send_confirmation!
