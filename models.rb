@@ -102,7 +102,7 @@ class Capsule
   def send!
   	# instead of self.email: user.email
   
-  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://memento.heroku.com/capsules/#{self.image_token}")
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://memento.heroku.com/capsules/#{self.image_token}")
   end
   
 end
