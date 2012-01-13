@@ -55,8 +55,8 @@ if @user.nil?
 	u.user_token = u.generate_user_token
 	u.save
 	u.send_confirmation!
-else
-	@user.send_confirmation!
+#else
+	#@user.send_confirmation!
 end
 
 get "/users/:user_token" do
