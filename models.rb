@@ -28,7 +28,7 @@ class User
   def send_confirmation!
   	# instead of self.email: user.email
   
-  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "http://memento.heroku.com/users/#{self.user_token}")
+  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "http://memento-app.com/users/#{self.user_token}")
   end
 
     
