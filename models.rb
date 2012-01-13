@@ -22,7 +22,7 @@ class User
 #   validates_uniqueness_of :email
   
   def generate_user_token
-  	Digest::MD5.hexdigest((Time.now + random(10000)).to_s)
+  	Digest::MD5.hexdigest((Time.now.to_s + random(10000).to_s))
   end
   
   def send_confirmation!
