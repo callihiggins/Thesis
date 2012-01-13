@@ -49,17 +49,15 @@ end
 
 post '/users/new' do
 @user = User.first :email => params[:email]
-	if @user == nil do
-		u = User.create(:email => params[:email])
-		u.save
-		u.user_token = u.generate_user_token
-		u.save
-		u.send_confirmation!
-		puts params[:email]
-	end
-	else
+if @user.nil? 
+	u = User.create(:email => params[:email])
+	u.save
+	u.user_token = u.generate_user_token
+	u.save
+	u.send_confirmation!
+	puts params[:email]
+else
 	@user.send_confirmation!
-	end
 end
 
 get "/users/:user_token" do
