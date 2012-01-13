@@ -46,17 +46,17 @@ get "/users/check" do
 	end
 end
 
-post '/users/new' do
-@user = User.first :email => params[:email]
-#if @user.nil? 
-#	u = User.create(:email => params[:email])
-#	u.save
-#	u.user_token = u.generate_user_token
-#	u.save
-#	u.send_confirmation!
-#	puts params[:email]
-#else
-#	@user.send_confirmation!
+post "/users/new" do
+email = params[:email]
+@user = User.first :email => email
+if @user.nil? 
+	u = User.create(:email => email)
+	u.save
+	u.user_token = u.generate_user_token
+	u.save
+	u.send_confirmation!
+else
+	@user.send_confirmation!
 end
 
 get "/users/:user_token" do
