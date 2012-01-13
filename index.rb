@@ -48,15 +48,15 @@ end
 
 post "/users/new" do
 email = params[:email]
-@user = User.first :email => email
-	if @user.nil? 
+u = User.first :email => email
+	if u.nil? 
 		u = User.create(:email => email)
 		u.save
 		u.user_token = u.generate_user_token
 		u.save
 		u.send_confirmation!
 	else
-		@user.send_confirmation!
+		u.send_confirmation!
 	end
 end
 

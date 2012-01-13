@@ -25,9 +25,7 @@ class User
   	Digest::MD5.hexdigest((Time.now.to_s + rand(10000).to_s))
   end
   
-  def send_confirmation!
-  	# instead of self.email: user.email
-  
+  def send_confirmation!  
   	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "http://memento-app.com/users/#{self.user_token}")
   end
 
@@ -99,9 +97,7 @@ class Capsule
   	 bucket[self.path].url
   end
   
-  def send!
-  	# instead of self.email: user.email
-  
+  def send!  
   	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://memento.heroku.com/capsules/#{self.image_token}")
   end
   
