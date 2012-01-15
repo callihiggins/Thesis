@@ -29,6 +29,7 @@ end
 
 get "/capsules/new" do
 erb :new_capsule
+
 end
 
 #get "/capsules/:image_token" do
