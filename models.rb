@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 require 'dm-migrations'
+require 'dm-aggregate'
 # require 'dm-validations'
 require 'aws/s3'
 require 'email_sender'
@@ -41,12 +42,11 @@ class Capsule
   property :image_token,String
   property :dueDate, 	DateTime 
   property :caption,	Text, :lazy => false
-  property :path,       String    
+  property :path,       String 
   property :created_at, DateTime
   property :sent,		Boolean, :default => false	
 	
   belongs_to :user
-
 
   def self.send_due_capsules!
   	# get all due_capsules

@@ -1,6 +1,10 @@
 require 'models'
-require 'digest/md5'
 
-digest = Digest::MD5.hexdigest("Hello World\n")
-  puts digest
-  
+Capsule.all.each do |c|
+	puts "Creating user for #{c.email}"
+
+	u = User.create! :email => c.email, :confirmed => true
+	c.user = u
+	c.save!
+
+end

@@ -33,7 +33,7 @@ end
 
 get "/capsules/:image_token" do
 # show the image plus some info about it
-@capsule = Capsule.get params[:image_token]
+@capsule = Capsule.first params[:image_token]
 erb :capsule
 end
 
