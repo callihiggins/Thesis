@@ -44,15 +44,15 @@ get "/capsules/:id" do
 erb :capsule
 end
 
-get "/users/check" do
+post "/users/check" do
 	puts params[:email]
 	user = User.last :email => params[:email]
-	if user.confrimed
+	if user.confrimed == true
 	"exists"
 	end
 end
 
-post "/users/new" do
+post '/users/new' do
 email = params[:email]
 u = User.first :email => email
 	if u.nil? 
