@@ -48,8 +48,6 @@ get "/users/check" do
 	@user = User.last :email => params[:email]
 	if @user.confrimed == true
 	puts exists
-		else
-	puts notfound
 	end
 end
 
