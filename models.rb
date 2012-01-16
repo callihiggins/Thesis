@@ -13,10 +13,11 @@ class User
   include DataMapper::Resource
 
   property :id,         Serial   
-  property :email,		String
   property :user_token,	String
   property :confirmed, 	Boolean, :default => false
-    
+  property :email, String, :unique => true,
+    :format   => :email_address,
+         
   has n, :capsules
   
 #   validates_uniqueness_of :email
