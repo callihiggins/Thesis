@@ -47,7 +47,7 @@ end
 get "/users/check" do
 	@user = User.last :email => params[:email]
 	if @user.confrimed == true
-	puts exists
+	"exists"
 	end
 end
 
