@@ -47,8 +47,10 @@ end
 get "/users/check" do
 	@user = User.first :email => params[:email]
 	if @user.confrimed == true
+	puts 'user found'
 		"exists"
 	else
+	puts 'user not found'
 		"notfound"
 	end
 end
