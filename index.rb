@@ -47,9 +47,15 @@ end
 post '/users/check' do
 	puts params[:email]
 	user = User.last :email => params[:email]
-	if user.confirmed == true
-	puts 'exists'
+	if user.nil? 
+	puts 'no user'
+	"no user"
+	elsif user.confirmed
+	puts 'confirmed'
 	"exists"
+	else
+	puts 'error'
+	"error"
 	end
 end
 
