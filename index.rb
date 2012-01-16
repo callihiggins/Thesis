@@ -32,11 +32,11 @@ erb :new_capsule
 
 end
 
-#get "/capsules/:image_token" do
+get "/capsules/:image_token" do
 # show the image plus some info about it
-#@capsule = Capsule.first :image_token => params[:image_token]
-#erb :capsule
-#end
+@capsule = Capsule.first :image_token => params[:image_token]
+erb :capsule
+end
 
 get "/capsules/:id" do
 # show the image plus some info about it
