@@ -45,13 +45,11 @@ erb :capsule
 end
 
 get "/users/check" do
-	@user = User.first :email => params[:email]
+	@user = User.last :email => params[:email]
 	if @user.confrimed == true
-	puts 'user found'
-		"exists"
-	else
-	puts 'user not found'
-		"notfound"
+	puts exists
+		else
+	puts notfound
 	end
 end
 
