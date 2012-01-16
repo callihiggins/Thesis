@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'dm-core'
 require 'dm-migrations'
-require 'dm-aggregate'
 # require 'dm-validations'
 require 'aws/s3'
 require 'email_sender'
