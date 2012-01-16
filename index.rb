@@ -44,7 +44,7 @@ get "/capsules/:id" do
 erb :capsule
 end
 
-post "/users/check" do
+post '/users/check' do
 	puts params[:email]
 	user = User.last :email => params[:email]
 	if user.confrimed == true
