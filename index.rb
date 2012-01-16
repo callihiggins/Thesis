@@ -48,9 +48,6 @@ get "/users/check" do
 	@user = User.first :email => params[:email]
 	if @user.confrimed = true
 		"exists"
-	else
-		"notfound"
-	end
 end
 
 post "/users/new" do
