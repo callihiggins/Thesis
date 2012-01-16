@@ -45,8 +45,8 @@ erb :capsule
 end
 
 get "/users/check" do
-	@user = User.last :email => params[:email]
-	if @user.confrimed == true
+	user = User.last :email => params[:email]
+	if user.confrimed == true
 	"exists"
 	end
 end
