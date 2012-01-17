@@ -1,7 +1,7 @@
 source :rubygems
 
 gem "sinatra"
-gem "dm-core", "~> 1.2.0"
+gem "dm-core"
 gem 'dm-migrations'
 gem 'dm-validations'
 gem 'pony'
