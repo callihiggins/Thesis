@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'dm-core'
 require 'dm-migrations'
-# require 'dm-validations'
+require 'dm-validations'
 require 'aws/s3'
 require 'email_sender'
 require 'digest/md5'
@@ -13,15 +13,16 @@ class User
   include DataMapper::Resource
 
   property :id,         Serial   
+  property :email,		String
   property :user_token,	String
   property :confirmed, 	Boolean, :default => false
-  property :email, String, :unique => true,
-    :format   => :email_address,
-         
+    
   has n, :capsules
   
-#   validates_uniqueness_of :email
-  
+  validates_uniqueness_of :email
+  #, :on => :save, :message => 'must be unique'
+  validates_format_of :email, :as => :email_address
+ 
   def generate_user_token
   	Digest::MD5.hexdigest((Time.now.to_s + rand(10000).to_s))
   end
