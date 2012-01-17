@@ -49,6 +49,7 @@ DEPENDENCIES
   aws-s3
   dm-core
   dm-migrations
+  dm-validations
   dm-postgres-adapter
   do_postgres
   pony
