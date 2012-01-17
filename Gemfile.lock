@@ -2,7 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     activesupport (3.0.6)
-    addressable (2.2.4)
+    addressable (2.2.6)
     aws-s3 (0.6.2)
       builder
       mime-types
