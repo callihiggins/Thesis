@@ -54,7 +54,7 @@ post '/users/check' do
 	puts 'confirmed'
 	"exists"
 	else
-	puts 'error'
+	puts "error"
 	"error"
 	end
 end
@@ -66,8 +66,11 @@ u = User.first :email => email
 		u = User.create(:email => email)
 		u.save
 		u.user_token = u.generate_user_token
-		u.save
+		u.save 
 		u.send_confirmation!
+		u.errors.each do |e|
+ 	     puts "e"
+    	 end
 	else
 		u.send_confirmation!
 	end

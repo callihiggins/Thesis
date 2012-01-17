@@ -20,7 +20,6 @@ class User
   has n, :capsules
   
   validates_uniqueness_of :email
-  #, :on => :save, :message => 'must be unique'
   validates_format_of :email, :as => :email_address
  
   def generate_user_token
