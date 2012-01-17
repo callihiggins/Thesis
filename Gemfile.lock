@@ -12,6 +12,8 @@ GEM
       addressable (~> 2.2.6)
     dm-core (1.1.0)
       addressable (~> 2.2.6)
+       dm-core (1.2.0)
+      addressable (~> 2.2.6)
     dm-do-adapter (1.1.0)
       data_objects (~> 0.10.2)
       dm-core (~> 1.1.0)
