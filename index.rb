@@ -66,11 +66,12 @@ u = User.first :email => email
 		u = User.create(:email => email)
 		u.save
 		u.user_token = u.generate_user_token
-		u.save 
+		if u.save 
 		u.send_confirmation!
-		u.errors.each do |e|
- 	     puts "e"
-    	 end
+		 else u.errors.each do |e|
+ 	     e
+    	end
+    	end
 	else
 		u.send_confirmation!
 	end
