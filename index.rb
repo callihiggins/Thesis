@@ -142,7 +142,7 @@ puts dueDate
 c = Capsule.create(:created_at => t, :dueDate => dueDate,  :caption =>params[:caption])
    c.path = c.path_string
    c.user = user
-   c.image_token = c.generate_token
+   c.image_token = c.generate_image_token
    c.save
 
   
