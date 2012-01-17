@@ -68,9 +68,9 @@ u = User.first :email => email
 		u.user_token = u.generate_user_token
 		if u.save 
 			u.send_confirmation!
-		 else u.errors.each do |e|
-		 	puts e
-		 	e
+		 else u.errors.for(:email).each do |e|
+		 	puts e.message
+		 	e.message
     		end
     	end
 	else
