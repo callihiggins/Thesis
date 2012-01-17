@@ -127,17 +127,21 @@ year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
+user = User.first(:email=>params[:email])
+
+
 
 
 dueDate = params[:date]
 puts "Formatted Date:"
 puts dueDate
 
-
+#how does user email get included
 
 
 c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:email], :caption =>params[:caption])
    c.path = c.path_string
+   c.user = user
    c.image_token = c.generate_token
    c.save
 
