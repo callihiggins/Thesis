@@ -69,7 +69,7 @@ u = User.first :email => email
 		if u.save 
 			u.send_confirmation!
 		 else u.errors.each do |e|
-		 	 e.message	
+		 	 puts e.to_s	
     	end
     	end
 	else
