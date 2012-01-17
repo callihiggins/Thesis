@@ -63,14 +63,14 @@ post '/users/new' do
 email = params[:email]
 u = User.first :email => email
 	if u.nil? 
-		u = User.create(:email => email)
+		u = User.new(:email => email)
 		u.save
 		u.user_token = u.generate_user_token
 		if u.save 
 			u.send_confirmation!
-		 else u.errors.each do |e|
-		 	 puts e[1]
-		 	 e[1]	
+		 else u.errors.collect do |e|
+			e[1]        
+			end.join(",")	
     	end
     	end
 	else
