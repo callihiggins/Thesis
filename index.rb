@@ -69,7 +69,7 @@ u = User.first :email => email
 		if u.save 
 			u.send_confirmation!
 		 else my_error_string = u.errors.collect do |e| 
-			 e[1] 
+			 e[0] 
 		 end.join(",")	
 		my_error_string
 		end
