@@ -68,10 +68,10 @@ u = User.first :email => email
 		u.user_token = u.generate_user_token
 		if u.save 
 			u.send_confirmation!
-		 else u.errors.collect do |e|
-			e[1]        
-			end.join(",")	
-    	end
+		 else my_error_string = u.errors.collect do |e| 
+		 e[1] 
+		 end.join(",")	
+	end
 	else
 		u.send_confirmation!
 	end
