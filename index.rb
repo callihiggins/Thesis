@@ -69,11 +69,10 @@ u = User.first :email => email
 		if u.save 
 			u.send_confirmation!
 		 else my_error_string = u.errors.collect do |e| 
-		 e[1] 
+			 e[1] 
 		 end.join(",")	
-		 status 400
-		 body my_error_string
-	end
+		my_error_string
+		end
 	else
 		u.send_confirmation!
 	end
