@@ -139,9 +139,8 @@ puts dueDate
 #how does user email get included
 
 
-c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:email], :caption =>params[:caption])
+c = Capsule.create(:created_at => t, :dueDate => dueDate,  :email => params[:email], :caption =>params[:caption], :user=user)
    c.path = c.path_string
-   c.user = user
    c.image_token = c.generate_token
    c.save
 
