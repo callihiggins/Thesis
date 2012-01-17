@@ -69,8 +69,8 @@ u = User.first :email => email
 		if u.save 
 			u.send_confirmation!
 		 else u.errors.each do |e|
-		 	puts e.message
- 	     	e.message
+		 	puts e
+		 	e
     		end
     	end
 	else
@@ -107,10 +107,6 @@ puts params[:caption]
      
   puts "************/FILE UPLOAD*********************"
 
-#params[:file] = params[:file].unpack("m")[0]
-
-
-
    begin
    image = Magick::Image.read(params[:file][:tempfile].path)[0]
 
@@ -139,7 +135,7 @@ puts dueDate
 #how does user email get included
 
 
-c = Capsule.create(:created_at => t, :dueDate => dueDate,  :caption =>params[:caption])
+	c = Capsule.create(:created_at => t, :dueDate => dueDate,  :caption =>params[:caption])
    c.path = c.path_string
    c.user = user
    c.image_token = c.generate_image_token
