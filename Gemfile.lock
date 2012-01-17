@@ -18,7 +18,6 @@ GEM
     dm-migrations (1.1.0)
       dm-core (~> 1.1.0)
     dm-validations (1.2.0)
-      dm-core (~> 1.2.0)
     dm-postgres-adapter (1.1.0)
       dm-do-adapter (~> 1.1.0)
       do_postgres (~> 0.10.2)
