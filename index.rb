@@ -71,6 +71,8 @@ u = User.first :email => email
 		 else my_error_string = u.errors.collect do |e| 
 		 e[1] 
 		 end.join(",")	
+		 status 400
+		 body my_error_string
 	end
 	else
 		u.send_confirmation!
