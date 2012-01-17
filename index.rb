@@ -70,7 +70,6 @@ u = User.first :email => email
 			u.send_confirmation!
 		 else u.errors.each do |e|
 		 	puts e
-		 	"e"
     		end
     	end
 	else
