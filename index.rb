@@ -71,7 +71,6 @@ u = User.first :email => email
 		 else u.errors.collect do |e|
 			e[1]        
 			end.join(",")	
-    		end
     	end
 	else
 		u.send_confirmation!
