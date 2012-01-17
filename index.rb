@@ -54,7 +54,7 @@ post '/users/check' do
 	puts 'confirmed'
 	"exists"
 	else
-	puts 'error'
+	puts "error"
 	"error"
 	end
 end
