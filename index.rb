@@ -46,7 +46,7 @@ end
 
 post '/users/check' do
 puts params[:email]
-user = User.last :email => params[:email]
+user = User.first :email => params[:email]
 password = params[:password]
 puts password
 new_password = Digest::MD5.hexdigest(password)
