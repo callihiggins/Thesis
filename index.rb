@@ -85,8 +85,37 @@ u = User.first :email => email
 	elsif u.confirmed == true
 		"You already have an account"
 	else 
-		send_confirmation!
+		u.send_confirmation!
 		"Please check your email for a confirmation link"
+	end
+end
+
+post '/users/reset' do
+email = params[:email]
+puts email
+u = User.first :email => email
+	if u.nil? 
+		"User doesn't exist"
+		else 
+		u.send_reset!
+ 	end
+end
+
+get "/users/reset/:user_token" do
+@user = User.first :user_token => params[:user_token]
+erb :reset
+end
+
+post "/users/reset/confirm" do
+password = params[:password]
+new_password = Digest::MD5.hexdigest(password) 
+@user.update(:password=> new_password)
+	if @user.save
+	erb :password_confirmed
+	else my_error_string = u.errors.collect do |e| 
+			 e[0] 
+		 	end.join(",")	
+		my_error_string
 	end
 end
 

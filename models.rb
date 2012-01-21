@@ -30,6 +30,10 @@ class User
   def send_confirmation!  
   	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "http://memento-app.com/users/#{self.user_token}")
   end
+  
+  def send_reset!  
+  	EmailSender.send(:address => self.email, :subject => "Reset password from memento", :body => "http://memento-app.com/users/reset/#{self.user_token}")
+  end
 
     
   
