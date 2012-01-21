@@ -106,7 +106,7 @@ get "/users/reset/:user_token" do
 erb :reset
 end
 
-post "/users/reset/confirm" do
+post "/users/reset_confirm" do
 password = params[:password]
 new_password = Digest::MD5.hexdigest(password) 
 @user.update(:password=> new_password)
