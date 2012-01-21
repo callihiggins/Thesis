@@ -74,7 +74,6 @@ new_password = Digest::MD5.hexdigest(password)
 u = User.first :email => email
 	if u.nil? 
 		u = User.new(:email => email, :password => new_password)
-		u.save
 		u.user_token = u.generate_user_token
 		if u.save 
 			u.send_confirmation!
@@ -83,10 +82,9 @@ u = User.first :email => email
 		 	end.join(",")	
 		my_error_string
 		end
-		elsif u.confrimed == true
+	elsif u.confrimed == true
 		"You already have an account"
-		end
-		else 
+	else 
 		send_confirmation!
 	end
 end
