@@ -45,25 +45,34 @@ erb :capsule
 end
 
 post '/users/check' do
-	puts params[:email]
-	user = User.last :email => params[:email]
+puts params[:email]
+user = User.last :email => params[:email]
+password = params[:password]
+new_password = Digest::MD5.hexdigest(password)
+
 	if user.nil? 
-	puts 'no user'
-	"no user"
-	elsif user.confirmed
-	puts 'confirmed'
-	"exists"
-	else
-	puts "error"
-	"error"
+	"You need to create an account"
+	elsif user.confirmed && user.password == new_password
+	"Logging in"
+	elsif user.password != password
+	"Incorrect password"
+	elsif user.confirmed == false
+	"You need to register your email" 
+	else my_error_string = user.errors.collect do |e| 
+			 e[0] 
+		 end.join(",")	
+		my_error_string
 	end
 end
 
 post '/users/new' do
 email = params[:email]
+password = params[:password]
+new_password = Digest::MD5.hexdigest(password)
+
 u = User.first :email => email
 	if u.nil? 
-		u = User.new(:email => email)
+		u = User.new(:email => email, :password => new_password)
 		u.save
 		u.user_token = u.generate_user_token
 		if u.save 
@@ -139,7 +148,7 @@ puts dueDate
    c.user = user
    c.image_token = c.generate_image_token
    c.path = c.path_string
-   c.save
+   c.save!
 
   
   

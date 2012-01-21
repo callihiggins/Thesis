@@ -15,6 +15,7 @@ class User
   property :id,         Serial   
   property :email,		String
   property :user_token,	String
+  property :email, 		String
   property :confirmed, 	Boolean, :default => false
     
   has n, :capsules
