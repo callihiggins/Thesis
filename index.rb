@@ -82,7 +82,7 @@ u = User.first :email => email
 		 	end.join(",")	
 		my_error_string
 		end
-	elsif u.confrimed == true
+	elsif u.confirmed == true
 		"You already have an account"
 	else 
 		send_confirmation!
