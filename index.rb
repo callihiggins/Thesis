@@ -54,7 +54,7 @@ new_password = Digest::MD5.hexdigest(password)
 	"You need to create an account"
 	elsif user.confirmed && user.password == new_password
 	"Logging in"
-	elsif user.password != password
+	elsif user.password != new_password
 	"Incorrect password"
 	elsif user.confirmed == false
 	"You need to register your email" 
