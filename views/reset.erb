@@ -2,7 +2,7 @@
 
 <h1>Enter new password</h1>
 
-<form action="/users/reset_confirm/<%@user.user_token%>" enctype="multipart/form-data" method="post">
+<form action="/users/reset_confirm/<%= @user.user_token%>" enctype="multipart/form-data" method="post">
 New Password: <input type="password" name="password" /><br>
 <input type="submit" value="Submit" />
 </form>
