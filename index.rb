@@ -69,8 +69,8 @@ end
 post '/users/new' do
 email = params[:email]
 password = params[:password]
+puts password
 new_password = Digest::MD5.hexdigest(password)
-
 u = User.first :email => email
 	if u.nil? 
 		u = User.new(:email => email, :password => new_password)
@@ -80,11 +80,14 @@ u = User.first :email => email
 			u.send_confirmation!
 		 else my_error_string = u.errors.collect do |e| 
 			 e[0] 
-		 end.join(",")	
+		 	end.join(",")	
 		my_error_string
 		end
-	else
-		u.send_confirmation!
+		elsif u.confrimed == true
+		"You already have an account"
+		end
+		else 
+		send_confirmation!
 	end
 end
 
