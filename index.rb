@@ -77,7 +77,6 @@ u = User.first :email => email
 		u.user_token = u.generate_user_token
 		if u.save 
 			u.send_confirmation!
-			"Please check your email for a confirmation link"
 		 else my_error_string = u.errors.collect do |e| 
 			 e[0] 
 		 	end.join(",")	
