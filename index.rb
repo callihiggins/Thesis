@@ -49,7 +49,7 @@ puts params[:email]
 user = User.last :email => params[:email]
 password = params[:password]
 new_password = Digest::MD5.hexdigest(password)
-
+puts new_password
 	if user.nil? 
 	"You need to create an account"
 	elsif user.confirmed && user.password == new_password
