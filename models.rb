@@ -28,11 +28,17 @@ class User
   end
   
   def send_confirmation!  
-  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "http://memento-app.com/users/#{self.user_token}")
+  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "Thanks for signing up for memento! 
+  	
+  	Before you can start taking photos, we need need you to confirm that this is the right email address to send your photos back to you. Can you click this link for us? 
+  	
+  	http://memento-app.com/users/#{self.user_token}")
   end
   
   def send_reset!  
-  	EmailSender.send(:address => self.email, :subject => "Reset password from memento", :body => "http://memento-app.com/users/reset/#{self.user_token}")
+  	EmailSender.send(:address => self.email, :subject => "Reset password from memento", :body => "Looks like you need a new password! Follow the link below to make a new one.
+  	
+  	http://memento-app.com/users/reset/#{self.user_token}")
   end
 
     
