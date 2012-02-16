@@ -72,7 +72,7 @@ class Capsule
   	# get all the tagged users for each capsules
   				due_capsule.taggings.users.each do |user|
   	# tell the capsule to send
-  				EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#					{due_capsule.image_token}")
+  				EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#					{self.image_token}")
   				end
   		end  
   	end
