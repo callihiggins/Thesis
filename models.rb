@@ -73,7 +73,7 @@ class Capsule
   				image_path = due_capsule.image_token
   				due_capsule.taggings.users.each do |user|
   	# tell the capsule to send
-  				EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
+  				EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
   				end
   		end  
   	end
