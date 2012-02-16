@@ -15,11 +15,13 @@ class User
   property :id,         Serial   
   property :email,		String
   property :user_token,	String
-  property :password, 		String
+  property :password, 	String
   property :confirmed, 	Boolean, :default => false
     
   has n, :capsules
-  
+  has n, :taggings
+  has n, :tagged_capsules, 'Capsule', :through => :taggings, :via => :capsule
+   
   validates_uniqueness_of :email
   validates_format_of :email, :as => :email_address
  
@@ -56,9 +58,26 @@ class Capsule
   property :path,       String 
   property :created_at, DateTime
   property :sent,		Boolean, :default => false	
+  property :sent,		Boolean, :default => false	
 	
   belongs_to :user
+  has n, :taggings
+  has n, :tagged_users, 'User', :through => :taggings, :via => :user  
+ 
+ 	def self.send_due_capsules_to_tagged_users!
+  	# get all due_capsules
+  		due_capsules = self.due_capsules
+  	# for each due_capsule
+  	  		due_capsules.each do |due_capsule| 
+  	# get all the tagged users for each capsules
+  				due_capsule.taggings.users.each do |user|
+  	# tell the capsule to send
+  				EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#					{due_capsule.image_token}")
+  				end
+  		end  
+  	end
 
+ 
   def self.send_due_capsules!
   	# get all due_capsules
   		due_capsules = self.due_capsules
@@ -73,7 +92,8 @@ class Capsule
   			due_capsule.save
   		end  
   	end
-   
+  	
+     
    def generate_image_token
   	Digest::MD5.hexdigest(self.id.to_s + Time.now.to_s + rand(10000).to_s)
   end
@@ -93,7 +113,6 @@ class Capsule
  	 strptime(self, fmt=' %a %B %d %Y %H:%M:%S %z')
   end
   
-
   
   def path_string
   #"foo.jpg" "foo.tiff"
@@ -112,4 +131,17 @@ class Capsule
   	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#{self.image_token}")
   end
   
+  def send!  
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#{self.image_token}")
+  end
+  
 end
+
+class Tagging
+
+  include DataMapper::Resource
+  
+  belongs_to :capsule, :key => true
+  belongs_to :user, :key => true
+  
+ end
