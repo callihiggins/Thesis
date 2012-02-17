@@ -166,6 +166,10 @@ month = rand(11)
 day = rand(28)
 
 user = User.first(:email=>params[:email])
+tags = param[:tags]}
+tagged_users = tags.split(",").each {|t| t.strip!}
+
+
 
 
 
@@ -181,7 +185,20 @@ puts dueDate
    c.user = user
    c.image_token = c.generate_image_token
    c.path = c.path_string
-   c.save!
+   
+   tagged_users.each do |tagged_user|
+  user = User.first(:email => tagged_user)
+  		if user.nil?
+	  #send them email to make account, include capsule info
+ 		 else
+ 	  	c.taggings.new(:user => user)
+ 	  #send cofirmation link
+ 	  	c.save!
+		end  
+		
+		c.send_tag_requests! 
+   
+ 	  c.save!
 
   
   

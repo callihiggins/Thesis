@@ -42,6 +42,8 @@ http://memento-app.com/users/#{self.user_token}")
   	
 http://memento-app.com/users/reset/#{self.user_token}")
   end
+  
+
 
     
   
@@ -67,25 +69,24 @@ class Capsule
  	def self.send_due_capsules_to_tagged_users!
   	# get all due_capsules, even if they've been sent to their owners
   		due_capsules = self.due_capsules_for_tagged_users
-  		puts "due_capsules #{due_capsules.length}"
+#   		puts "due_capsules #{due_capsules.length}"
   	# for each due_capsule
   	  		due_capsules.each do |due_capsule| 
   	# get the image path
   	
-  					puts "users: #{due_capsule.tagged_users.length} for [#{due_capsule.id}]"
+#   					puts "users: #{due_capsule.tagged_users.length} for [#{due_capsule.id}]"
   	  				image_path = due_capsule.image_token
   	  				  	#go through each one and send it to the user
-  					due_capsule.taggings.users.each do |user|
-  					puts "sending to #{user.email}"
+  					due_capsule.tagged_users.each do |user|
+#   					puts "sending to #{user.email}"
   						# tell the capsule to send
   						EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
   						# set the tag flag to true
   					end
   			due_capsule.taggings.each do |tag|
-  				tag.sent = true
-  				tag.save
-  				end
-  			end  
+  				tag.update(:sent=> true)
+  			end
+  		end  
   	end
 
  
@@ -125,6 +126,15 @@ class Capsule
 	unsent_caps
    end
   
+    def send_tag_request!  
+    owner = self.user.email
+  	 users = self.tagged_users
+  	 users.each do |user|
+  		EmailSender.send(:address => self.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner "."
+	  end
+  end
+  
+  
   def formatted_created_at
   	self.created_at.strftime("%B %d, %Y at %I:%M%p")
   end
@@ -161,8 +171,9 @@ end
 class Tagging
 
   include DataMapper::Resource
-  
+  property :id,         Serial    
   property :sent,		Boolean, :default => false	
+  
   belongs_to :capsule, :key => true
   belongs_to :user, :key => true
   
