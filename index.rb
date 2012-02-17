@@ -165,9 +165,9 @@ year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
-user = User.first(:email=>params[:email])
-tags = param[:tags]}
-tagged_users = tags.split(",").each {|t| t.strip!}
+#user = User.first(:email=> params[:email])
+#tags = param[:tags]}
+#tagged_users = tags.split(",").each {|t| t.strip!}
 
 
 
