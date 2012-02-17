@@ -2,6 +2,10 @@
 
 <h1>Hi! <%= @tag.user.email %> wants to tag you in a memento, but before you can start to receive memento's, we need you to make an account</h1>
 
-
+<form action="/tag/new_user/<%= @tag.token%>" enctype="multipart/form-data" method="post">
+Email: <input type="email" name="email" /><br>
+Choose a Password: <input type="password" name="password" /><br>
+<input type="submit" value="Submit" />
+</form>
 
 </container>
