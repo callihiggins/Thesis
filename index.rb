@@ -215,7 +215,6 @@ dueDate = params[:date]
 puts "Formatted Date:"
 puts dueDate
 
-#how does user email get included
 
 
 	c = Capsule.create(:created_at => t, :dueDate => dueDate,  :caption =>params[:caption])
@@ -240,10 +239,9 @@ puts dueDate
  		c.taggings.update(:tag_token => tag_token)
  	  #send cofirmation link
  	  c.send_tag_requests!
- #	  	c.save!
-	#	end  
-	#	
-	#	c.send_tag_requests! 
+ 	  	c.save!
+		end  
+ 
    
  	  c.save!
 
