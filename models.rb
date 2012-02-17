@@ -136,7 +136,7 @@ class Capsule
   		
   		http://memento-app.com/capsules/tags/#{tag.token}
   		  		
-  		)
+  		")
 	  end
   end
   
