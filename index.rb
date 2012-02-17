@@ -66,7 +66,7 @@ password = params[:password]
 email = params[:email]
 new_password = Digest::MD5.hexdigest(password)
 u = User.first(:email => email)
-u.update(:password => new_password, :confirmed => true, :user_token = u.generate_user_token)
+u.update(:password => new_password, :confirmed => true, :user_token => u.generate_user_token)
 token_tag = params[:token]
 @tag = Tagging.first(:token=>token_tag)
 @tag.confirmed = true
