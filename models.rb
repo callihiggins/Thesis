@@ -130,7 +130,7 @@ class Capsule
     owner = self.user.email
   	 users = self.tagged_users
   	 users.each do |user|
-  		EmailSender.send(:address => self.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner "."
+  		EmailSender.send(:address => self.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner ".")
 	  end
   end
   
