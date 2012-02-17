@@ -186,17 +186,17 @@ puts dueDate
    c.image_token = c.generate_image_token
    c.path = c.path_string
    
-   tagged_users.each do |tagged_user|
-  user = User.first(:email => tagged_user)
-  		if user.nil?
+   #tagged_users.each do |tagged_user|
+ 	#	 user = User.first(:email => tagged_user)
+  	#	if user.nil?
 	  #send them email to make account, include capsule info
- 		 else
- 	  	c.taggings.new(:user => user)
+ 	#	 else
+ 	#  	c.taggings.new(:user => user)
  	  #send cofirmation link
- 	  	c.save!
-		end  
-		
-		c.send_tag_requests! 
+ #	  	c.save!
+	#	end  
+	#	
+	#	c.send_tag_requests! 
    
  	  c.save!
 
