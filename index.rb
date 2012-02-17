@@ -187,11 +187,14 @@ puts dueDate
    c.path = c.path_string
    
    #tagged_users.each do |tagged_user|
+   		
  	#	 user = User.first(:email => tagged_user)
   	#	if user.nil?
 	  #send them email to make account, include capsule info
  	#	 else
  	#  	c.taggings.new(:user => user)
+ 	#	tag_token = tagged_user.generate_tag_token
+ 	#	c.taggings.update(:tag_token => tag_token)
  	  #send cofirmation link
  #	  	c.save!
 	#	end  

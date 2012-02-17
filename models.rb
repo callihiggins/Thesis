@@ -128,9 +128,15 @@ class Capsule
   
     def send_tag_request!  
     owner = self.user.email
-  	 users = self.tagged_users
-  	 users.each do |user|
-  		EmailSender.send(:address => user.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".")
+  	 tags = self.taggings
+  	 tags.each do |tag|
+  		EmailSender.send(:address => tag.user.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
+  		
+  		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
+  		
+  		http://memento-app.com/capsules/tags/#{tag.tag_token}
+  		  		
+  		)
 	  end
   end
   
@@ -171,10 +177,16 @@ end
 class Tagging
 
   include DataMapper::Resource
-  property :id,         Serial    
+  property :id,         Serial  
+  property :token, 		String  
   property :sent,		Boolean, :default => false	
   
   belongs_to :capsule, :key => true
   belongs_to :user, :key => true
+  
+  def generate_tag_token
+  	Digest::MD5.hexdigest((Time.now.to_s + rand(10000).to_s))
+  end
+
   
  end
