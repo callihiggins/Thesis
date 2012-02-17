@@ -65,17 +65,20 @@ class Capsule
   has n, :tagged_users, 'User', :through => :taggings, :via => :user  
  
  	def self.send_due_capsules_to_tagged_users!
-  	# get all due_capsules
-  		due_capsules = self.due_capsules
+  	# get all due_capsules, even if they've been sent to their owners
+  		due_capsules = self.due_capsules_for_tagged_users
   	# for each due_capsule
   	  		due_capsules.each do |due_capsule| 
-  	# get all the tagged users for each capsules
-  				image_path = due_capsule.image_token
-  				due_capsule.taggings.users.each do |user|
-  	# tell the capsule to send
-  				EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
-  				end
-  		end  
+  	# get the image path
+  	  				image_path = due_capsule.image_token
+  	  				  	#go through each one and send it to the user
+  					due_capsule.taggings.users.each do |user|
+  					# tell the capsule to send
+  					EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
+  					# set the tag flag to true
+  					due_capsule.taggings.sent = true
+  					end
+  			end  
   	end
 
  
@@ -105,6 +108,15 @@ class Capsule
 	Capsule.all(:dueDate.lt=> Time.now, :sent => false)
   	# and whose sent flag is not true
   end
+  
+  def self.due_capsules_for_tagged_users
+  	# get all the capsules whose dueDate is less than the current DateTime
+	caps = Capsule.all(:dueDate.lt=> Time.now)   	# and whose sent flag is not true
+	unsent_caps = caps.find_all { |capsule|
+		capsule.taggings.all(:sent => false).size > 0
+	}
+	unsent_caps
+   end
   
   def formatted_created_at
   	self.created_at.strftime("%B %d, %Y at %I:%M%p")
@@ -143,6 +155,7 @@ class Tagging
 
   include DataMapper::Resource
   
+  property :sent,		Boolean, :default => false	
   belongs_to :capsule, :key => true
   belongs_to :user, :key => true
   
