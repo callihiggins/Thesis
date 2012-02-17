@@ -47,7 +47,7 @@ end
 get "/tag/:token" do
 # show the image plus some info about it
 token_tag = params[:token]
-@tag = Tagging.first(:tag=>token_tag)
+@tag = Tagging.first(:token=>token_tag)
 @tag.confirmed = true
 @tag.save
 erb :tag
