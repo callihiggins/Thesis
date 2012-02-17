@@ -53,6 +53,33 @@ token_tag = params[:token]
 erb :tag
 end
 
+get "/tag/new_user/:token" do
+# show the image plus some info about it
+token_tag = params[:token]
+@tag = Tagging.first(:token=>token_tag)
+@email = @tag.user.email
+erb :new_user_tag
+end
+
+post "/tag/new_user/:token"
+password = params[:password]
+email = params[:email]
+new_password = Digest::MD5.hexdigest(password)
+u = User.first(:email => email)
+u.update(:password => new_password, :confirmed => true, :user_token = u.generate_user_token)
+token_tag = params[:token]
+@tag = Tagging.first(:token=>token_tag)
+@tag.confirmed = true
+@tag.save
+if u.save 
+erb :new_user_tag_confirmed
+		 else my_error_string = u.errors.collect do |e| 
+			 e[0] 
+		 	end.join(",")	
+		my_error_string
+		end
+end
+
 post '/users/check' do
 puts params[:email]
 user = User.first :email => params[:email]
@@ -199,7 +226,7 @@ puts dueDate
    		
  	#	 user = User.first(:email => tagged_user)
   	#	if user.nil?
-	  #send them email to make account, include capsule info
+	  #make them an account but send them an email to pick a password and confirm it
  	#	 else
  	#  	c.taggings.new(:user => user)
  	#	tag_token = tagged_user.generate_tag_token
