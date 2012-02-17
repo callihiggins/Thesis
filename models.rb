@@ -134,7 +134,7 @@ class Capsule
   		
   		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
   		
-  		http://memento-app.com/capsules/tags/#{tag.tag_token}
+  		http://memento-app.com/capsules/tags/#{tag.token}
   		  		
   		)
 	  end
