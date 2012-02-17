@@ -71,13 +71,14 @@ token_tag = params[:token]
 @tag = Tagging.first(:token=>token_tag)
 @tag.confirmed = true
 @tag.save
-if u.save 
 erb :new_user_tag_confirmed
-		 else my_error_string = u.errors.collect do |e| 
-			 e[0] 
-		 	end.join(",")	
-		my_error_string
-		end
+	#if u.save 
+	#	erb :new_user_tag_confirmed
+	#else my_error_string = u.errors.collect do |e| 
+	#		 e[0] 
+	#	 	end.join(",")	
+	#	my_error_string
+	#end
 end
 
 post '/users/check' do
