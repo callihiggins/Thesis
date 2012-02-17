@@ -177,7 +177,7 @@ end
 class Tagging
 
   include DataMapper::Resource
-  property :id,         Serial  
+ # property :id,         Serial  
   property :token, 		String  
   property :confirmed, 	Boolean, :default => false
   property :sent,		Boolean, :default => false	
