@@ -121,7 +121,7 @@ class Capsule
   	# get all the capsules whose dueDate is less than the current DateTime
 	caps = Capsule.all(:dueDate.lt=> Time.now)   	# and whose sent flag is not true
 	unsent_caps = caps.find_all { |capsule|
-		capsule.taggings.all(:sent => false).size > 0
+		capsule.taggings.all(:sent => false, :confirmed =>true).size > 0
 	}
 	unsent_caps
    end
