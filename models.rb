@@ -43,6 +43,7 @@ http://memento-app.com/users/#{self.user_token}")
 http://memento-app.com/users/reset/#{self.user_token}")
   end
   
+ 
 
 
     
@@ -134,10 +135,21 @@ class Capsule
   		
   		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
   		
-  		http://memento-app.com/capsules/tags/#{tag.token}
+  		http://memento-app.com/tag/#{tag.token}
   		  		
   		")
 	  end
+  end
+  
+   def send_new_user_tag_request!
+    owner = self.user.email
+	EmailSender.send(:address => tag.user.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
+  		
+  		Before you can start to use memento, you need to make an account. Please visit the link below to set up an account so you can receive " + owner + "'s memento
+  		
+  		http://memento-app.com/tag/new_user/#{tag.token}
+  		  		
+  		")
   end
   
   

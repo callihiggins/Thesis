@@ -202,9 +202,9 @@ year = currentyear + rand(6)
 month = rand(11)
 day = rand(28)
 
-#user = User.first(:email=> params[:email])
-#tags = param[:tags]}
-#tagged_users = tags.split(",").each {|t| t.strip!}
+user = User.first(:email=> params[:email])
+tags = param[:tags]
+tagged_users = tags.split(",").each {|t| t.strip!}
 
 
 
@@ -223,16 +223,23 @@ puts dueDate
    c.image_token = c.generate_image_token
    c.path = c.path_string
    
-   #tagged_users.each do |tagged_user|
+   tagged_users.each do |tagged_user|
    		
- 	#	 user = User.first(:email => tagged_user)
-  	#	if user.nil?
+ 		 user = User.first(:email => tagged_user)
+  		if user.nil?
 	  #make them an account but send them an email to pick a password and confirm it
- 	#	 else
- 	#  	c.taggings.new(:user => user)
- 	#	tag_token = tagged_user.generate_tag_token
- 	#	c.taggings.update(:tag_token => tag_token)
+	  user = User.create(:email=> tagged_user.email)
+	  c.taggings.new(:user => user)
+	  tag_token = tagged_user.generate_tag_token
+ 	  c.taggings.update(:tag_token => tag_token)
+	  tagged_user.send_new_user_tag_request!
+
+ 		 else
+ 	  	c.taggings.new(:user => user)
+ 		tag_token = tagged_user.generate_tag_token
+ 		c.taggings.update(:tag_token => tag_token)
  	  #send cofirmation link
+ 	  c.send_tag_requests!
  #	  	c.save!
 	#	end  
 	#	
