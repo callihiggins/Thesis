@@ -46,7 +46,7 @@ end
 
 get "/tag/:token" do
 # show the image plus some info about it
-token_tag = Capsule.get params[:token]
+token_tag = params[:token]
 @tag = Tagging.first(:tag=>token_tag)
 @tag.confirmed = true
 @tag.save
