@@ -126,7 +126,7 @@ class Capsule
 	unsent_caps
    end
   
-    def send_tag_request!  
+    def send_tag_requests!  
     owner = self.user.email
   	 tags = self.taggings
   	 tags.each do |tag|
@@ -179,6 +179,7 @@ class Tagging
   include DataMapper::Resource
   property :id,         Serial  
   property :token, 		String  
+  property :confirmed, 	Boolean, :default => false
   property :sent,		Boolean, :default => false	
   
   belongs_to :capsule, :key => true
