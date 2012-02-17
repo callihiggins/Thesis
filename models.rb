@@ -72,7 +72,7 @@ class Capsule
   	  		due_capsules.each do |due_capsule| 
   	# get the image path
   	
-  					puts "users: #{due_capsule.tagged_users.each} for [#{due_capsule.id}]"
+  					puts "users: #{due_capsule.tagged_users.length} for [#{due_capsule.id}]"
   	  				image_path = due_capsule.image_token
   	  				  	#go through each one and send it to the user
   					due_capsule.taggings.users.each do |user|
