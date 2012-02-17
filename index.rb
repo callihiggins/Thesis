@@ -61,7 +61,7 @@ token_tag = params[:token]
 erb :new_user_tag
 end
 
-post "/tag/new_user/:token"
+post "/tag/new_user/:token" do
 password = params[:password]
 email = params[:email]
 new_password = Digest::MD5.hexdigest(password)
@@ -72,13 +72,13 @@ token_tag = params[:token]
 @tag.confirmed = true
 @tag.save
 erb :new_user_tag_confirmed
-	#if u.save 
-	#	erb :new_user_tag_confirmed
-	#else my_error_string = u.errors.collect do |e| 
-	#		 e[0] 
-	#	 	end.join(",")	
-	#	my_error_string
-	#end
+	if u.save 
+		erb :new_user_tag_confirmed
+	else my_error_string = u.errors.collect do |e| 
+			 e[0] 
+		 	end.join(",")	
+		my_error_string
+	end
 end
 
 post '/users/check' do
