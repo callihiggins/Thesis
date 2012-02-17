@@ -126,7 +126,7 @@ class Capsule
 	unsent_caps
    end
   
-    def send_tag_request!  
+    def self.send_tag_request!  
     owner = self.user.email
   	 users = self.tagged_users
   	 users.each do |user|
