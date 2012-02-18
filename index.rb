@@ -230,15 +230,15 @@ if tags
   		if user.nil?
 	  #make them an account but send them an email to pick a password and confirm it
 	  user = User.create(:email=> tagged_user)
-	  c.taggings.new(:user => user)
+	  tag = c.taggings.new(:user => user)
 	  tag_token = tagged_user.generate_tag_token
- 	  c.taggings.update(:tag_token => tag_token)
+ 	  tag.update(:tag_token => tag_token)
 	  c.send_new_user_tag_request!
 	  c.save!
  		 else
  	  	tag = c.taggings.new(:user => user)
  		tag_token = tag.generate_tag_token
- 		c.taggings.update(:tag_token => tag_token)
+ 		tag.update(:tag_token => tag_token)
  	  #send cofirmation link
  	 
  	  	c.save!
