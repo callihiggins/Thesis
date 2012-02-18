@@ -135,7 +135,6 @@ class Capsule
   		http://memento-app.com/tag/#{self.taggings.last.token}
   		  		
   		")
-	  end
   end
   
    def send_new_user_tag_request!

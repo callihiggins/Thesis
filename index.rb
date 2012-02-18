@@ -247,7 +247,6 @@ if tags
  	  	c.send_tag_request!
 		end  
 	end
-	
 end
 
  
