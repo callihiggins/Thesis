@@ -64,15 +64,16 @@ post "/tag/new_user/:token" do
 password = params[:password]
 email = params[:email]
 new_password = Digest::MD5.hexdigest(password)
+puts new_password
 u = User.first(:email => email)
 u.update(:password => new_password, :confirmed => true, :user_token => u.generate_user_token)
 u.save
-#u.send_welcome_email!
 token_tag = params[:token]
 @tag = Tagging.first(:token=>token_tag)
 @tag.confirmed = true
 @tag.save
 	if u.save 
+     	u.send_welcome_email!
 		erb :new_user_tag_confirmed
 	else my_error_string = u.errors.collect do |e| 
 			 e[0] 
