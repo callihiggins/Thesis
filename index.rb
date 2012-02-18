@@ -224,10 +224,10 @@ puts dueDate
    
    tagged_users.each do |tagged_user|
    		
- 		 user = User.first(:email => tagged_user.email)
+ 		 user = User.first(:email => tagged_user)
   		if user.nil?
 	  #make them an account but send them an email to pick a password and confirm it
-	  user = User.create(:email=> tagged_user.email)
+	  user = User.create(:email=> tagged_user)
 	  c.taggings.new(:user => user)
 	  tag_token = tagged_user.generate_tag_token
  	  c.taggings.update(:tag_token => tag_token)
