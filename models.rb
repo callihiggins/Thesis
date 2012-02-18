@@ -78,14 +78,13 @@ class Capsule
 #   					puts "users: #{due_capsule.tagged_users.length} for [#{due_capsule.id}]"
   	  				image_path = due_capsule.image_token
   	  				  	#go through each one and send it to the user
-  					due_capsule.tagged_users.each do |user|
+  					due_capsule.taggings.each do |tag|
 #   					puts "sending to #{user.email}"
   						# tell the capsule to send
-  						EmailSender.send(:address => user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
   						# set the tag flag to true
-  					end
-  			due_capsule.taggings.each do |tag|
-  				tag.update(:sent=> true)
+  						tag.sent = true
+  					  	end
   			end
   		end  
   	end
@@ -127,15 +126,13 @@ class Capsule
 	unsent_caps
    end
   
-    def send_tag_requests!  
+    def send_tag_request!  
     owner = self.user.email
-  	 tags = self.taggings
-  	 tags.each do |tag|
-  		EmailSender.send(:address => tag.user.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
+  	EmailSender.send(:address => self.tagged_users.last.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
   		
   		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
   		
-  		http://memento-app.com/tag/#{tag.token}
+  		http://memento-app.com/tag/#{self.taggings.last.token}
   		  		
   		")
 	  end
