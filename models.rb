@@ -143,7 +143,7 @@ class Capsule
   
    def send_new_user_tag_request!
     owner = self.user.email
-	EmailSender.send(:address => self.tagged_user.last.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
+	EmailSender.send(:address => self.tagged_users.last.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
   		
   		Before you can start to use memento, you need to make an account. Please visit the link below to set up an account so you can receive " + owner + "'s memento
   		
