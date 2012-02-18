@@ -126,28 +126,8 @@ class Capsule
 	unsent_caps
    end
   
-    def send_tag_request!  
-    owner = self.user.email
-  	EmailSender.send(:address => self.tagged_users.last.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
-  		
-  		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
-  		
-  		http://memento-app.com/tag/#{self.taggings.last.token}
-  		  		
-  		")
-  end
-  
-   def send_new_user_tag_request!
-    owner = self.user.email
-	EmailSender.send(:address => self.tagged_users.last.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
-  		
-  		Before you can start to use memento, you need to make an account. Please visit the link below to set up an account so you can receive " + owner + "'s memento
-  		
-  		http://memento-app.com/tag/new_user/#{self.taggings.last.token}
-  		  		
-  		")
-  end
-  
+     
+     
   
   def formatted_created_at
   	self.created_at.strftime("%B %d, %Y at %I:%M%p")
@@ -196,6 +176,30 @@ class Tagging
   def generate_tag_token
   	Digest::MD5.hexdigest((Time.now.to_s + rand(10000).to_s))
   end
+  
+  def send_new_user_tag_request!
+    owner = self.capsule.user.email
+	EmailSender.send(:address => self.user.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
+  		
+  		Before you can start to use memento, you need to make an account. Please visit the link below to set up an account so you can receive " + owner + "'s memento
+  		
+  		http://memento-app.com/tag/new_user/#{self.token}
+  		  		
+  		")
+  end
+  
+   def send_tag_request!  
+    owner = self.user.email
+  	EmailSender.send(:address => self.tagged_users.last.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
+  		
+  		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
+  		
+  		http://memento-app.com/tag/#{self.taggings.last.token}
+  		  		
+  		")
+  end
+
+
 
   
  end

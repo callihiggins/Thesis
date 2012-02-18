@@ -222,6 +222,7 @@ puts dueDate
    c.save!
    
    tags = params[:tags]
+   puts tags
 
 	if tags
 	   tags = tags.delete(' ')
@@ -236,7 +237,7 @@ puts dueDate
 			  tag.save
 	 		  tag.update(:token => tag_token)
 			  c.save!
-	 	 	  c.send_new_user_tag_request! 
+	 	 	  tag.send_new_user_tag_request! 
  			 else
  	 	 	tag = c.taggings.new(:user => user)
  			tag_token = tag.generate_tag_token
@@ -244,7 +245,7 @@ puts dueDate
  			tag.update(:token => tag_token)
  		  #send cofirmation link
  		  	c.save!
- 		  	c.send_tag_request!
+ 		  	tag.send_tag_request!
 			end  
 		end
 	end
