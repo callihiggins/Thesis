@@ -241,6 +241,7 @@ puts dueDate
  	  c.send_tag_requests!
  	  	c.save!
 		end  
+	end
  
    
  	  c.save!
@@ -255,6 +256,6 @@ puts dueDate
   rescue Exception => e
   	puts e
   	500
-  end
+  	end
   
 end
