@@ -236,14 +236,15 @@ if tags
 	  c.send_new_user_tag_request!
 	  c.save!
  		 else
- 	  	c.taggings.new(:user => user)
- 		tag_token = tagged_user.generate_tag_token
+ 	  	tag = c.taggings.new(:user => user)
+ 		tag_token = tag.generate_tag_token
  		c.taggings.update(:tag_token => tag_token)
  	  #send cofirmation link
- 	  c.send_tag_requests!
+ 	 
  	  	c.save!
 		end  
 	end
+	 c.send_tag_requests!
 end
 
  
