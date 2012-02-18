@@ -190,11 +190,11 @@ class Tagging
   
    def send_tag_request!  
     owner = self.user.email
-  	EmailSender.send(:address => self.tagged_users.last.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
+  	EmailSender.send(:address => self.user.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
   		
   		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
   		
-  		http://memento-app.com/tag/#{self.taggings.last.token}
+  		http://memento-app.com/tag/#{self.token}
   		  		
   		")
   end
