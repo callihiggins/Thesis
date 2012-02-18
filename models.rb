@@ -84,6 +84,7 @@ class Capsule
   						EmailSender.send(:address => tag.user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
   						# set the tag flag to true
   						tag.sent = true
+  						tag.save
   					end
   			end
   	end
