@@ -63,9 +63,10 @@ end
 post '/tag/new_user/:token' do
 password = params[:password]
 email = params[:email]
+puts email
 new_password = Digest::MD5.hexdigest(password)
-puts new_password
 u = User.first(:email => email)
+puts u
 u.update(:password => new_password, :confirmed => true, :user_token => u.generate_user_token)
 u.save
 token_tag = params[:token]
