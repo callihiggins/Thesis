@@ -224,7 +224,31 @@ puts dueDate
    
    tags = params[:tags]
 
+if tags
+   tagged_users = tags.split(",").each 
+   tagged_users.each do |tagged_user|
+   	user = User.first(:email => tagged_user)
+  		if user.nil?
+	  #make them an account but send them an email to pick a password and confirm it
+	  user = User.create(:email=> tagged_user)
+	  c.taggings.new(:user => user)
+	  tag_token = tagged_user.generate_tag_token
+ 	  c.taggings.update(:tag_token => tag_token)
+	  tagged_user.send_new_user_tag_request!
+	  c.save!
+ 		 else
+ 	  	c.taggings.new(:user => user)
+ 		tag_token = tagged_user.generate_tag_token
+ 		c.taggings.update(:tag_token => tag_token)
+ 	  #send cofirmation link
+ 	  c.send_tag_requests!
+ 	  	c.save!
+		end  
+	end
+end
 
+ 
+   
  
 
   
