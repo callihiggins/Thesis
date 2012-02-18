@@ -224,6 +224,7 @@ puts dueDate
    tags = params[:tags]
 
 if tags
+   tags = tags.delete(' ')
    tagged_users = tags.split(",").each 
    tagged_users.each do |tagged_user|
    	user = User.first(:email => tagged_user)
