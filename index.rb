@@ -220,12 +220,12 @@ puts dueDate
    c.user = user
    c.image_token = c.generate_image_token
    c.path = c.path_string
-   
+   c.save!
    tags = params[:tags]
-if !tags.nil? tagged_users = tags.split(",").each 
+
+unless tags.nil? tagged_users = tags.split(",").each 
    tagged_users.each do |tagged_user|
-   		
- 		 user = User.first(:email => tagged_user)
+   	user = User.first(:email => tagged_user)
   		if user.nil?
 	  #make them an account but send them an email to pick a password and confirm it
 	  user = User.create(:email=> tagged_user)
@@ -233,7 +233,7 @@ if !tags.nil? tagged_users = tags.split(",").each
 	  tag_token = tagged_user.generate_tag_token
  	  c.taggings.update(:tag_token => tag_token)
 	  tagged_user.send_new_user_tag_request!
-
+	  c.save!
  		 else
  	  	c.taggings.new(:user => user)
  		tag_token = tagged_user.generate_tag_token
@@ -246,7 +246,7 @@ if !tags.nil? tagged_users = tags.split(",").each
 	end
  
    
- 	  c.save!
+ 
 
   
   
