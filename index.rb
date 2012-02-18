@@ -203,8 +203,8 @@ month = rand(11)
 day = rand(28)
 
 user = User.first(:email=> params[:email])
-tags = param[:tags]
-tagged_users = tags.split(",").each {|t| t.strip!}
+tags = params[:tags]
+tagged_users = tags.split(",").each 
 
 
 
@@ -224,7 +224,7 @@ puts dueDate
    
    tagged_users.each do |tagged_user|
    		
- 		 user = User.first(:email => tagged_user)
+ 		 user = User.first(:email => tagged_user.email)
   		if user.nil?
 	  #make them an account but send them an email to pick a password and confirm it
 	  user = User.create(:email=> tagged_user.email)
