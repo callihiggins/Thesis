@@ -57,7 +57,6 @@ get "/tag/new_user/:token" do
 # show the image plus some info about it
 token_tag = params[:token]
 @tag = Tagging.first(:token=>token_tag)
-@email = @tag.user.email
 erb :new_user_tag
 end
 
