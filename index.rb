@@ -233,7 +233,7 @@ if tags
 	  c.taggings.new(:user => user)
 	  tag_token = tagged_user.generate_tag_token
  	  c.taggings.update(:tag_token => tag_token)
-	  tagged_user.send_new_user_tag_request!
+	  c.send_new_user_tag_request!
 	  c.save!
  		 else
  	  	c.taggings.new(:user => user)
