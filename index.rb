@@ -203,8 +203,7 @@ month = rand(11)
 day = rand(28)
 
 user = User.first(:email=> params[:email])
-tags = params[:tags]
-if !tags.nil? tagged_users = tags.split(",").each 
+
 
 
 
@@ -222,6 +221,8 @@ puts dueDate
    c.image_token = c.generate_image_token
    c.path = c.path_string
    
+   tags = params[:tags]
+if !tags.nil? tagged_users = tags.split(",").each 
    tagged_users.each do |tagged_user|
    		
  		 user = User.first(:email => tagged_user)
@@ -241,6 +242,7 @@ puts dueDate
  	  c.send_tag_requests!
  	  	c.save!
 		end  
+	end
 	end
  
    
