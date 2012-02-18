@@ -43,6 +43,11 @@ http://memento-app.com/users/#{self.user_token}")
 http://memento-app.com/users/reset/#{self.user_token}")
   end
   
+  def send_welcome_email! 
+  	EmailSender.send(:address => self.email, :subject => "Welcome to memento", :body => "Thanks for joining memento!" 
+  	
+  	  end
+  
  
 
 
