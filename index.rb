@@ -223,7 +223,8 @@ puts dueDate
    c.save!
    tags = params[:tags]
 
-unless tags.nil? tagged_users = tags.split(",").each 
+if tags
+   tagged_users = tags.split(",").each 
    tagged_users.each do |tagged_user|
    	user = User.first(:email => tagged_user)
   		if user.nil?
@@ -242,8 +243,8 @@ unless tags.nil? tagged_users = tags.split(",").each
  	  c.send_tag_requests!
  	  	c.save!
 		end  
-	end
-	end
+end
+
  
    
  
