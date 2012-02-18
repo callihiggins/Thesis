@@ -204,7 +204,7 @@ day = rand(28)
 
 user = User.first(:email=> params[:email])
 tags = params[:tags]
-unless tags.nil? tagged_users = tags.split(",").each 
+if !tags.nil? tagged_users = tags.split(",").each 
 
 
 
