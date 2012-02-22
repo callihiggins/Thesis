@@ -60,7 +60,7 @@ token_tag = params[:token]
 erb :new_user_tag
 end
 
-post '/tag/new_user/:token' do
+post '/tag/newuser/:token' do
 password = params[:password]
 email = params[:email]
 puts email
