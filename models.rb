@@ -195,7 +195,7 @@ class Tagging
   end
   
    def send_tag_request!  
-    owner = self.user.email
+    owner = self.capsule.user.email
   	EmailSender.send(:address => self.user.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
   		
   		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
