@@ -1,6 +1,6 @@
 <container>
 
-<h1>Hi! <%= @tag.capsule.user.email %> wants to tag you in a memento, but before you can start to receive mementos, we need you to make an account</h1>
+<h1>Hi!  wants to tag you in a memento, but before you can start to receive mementos, we need you to make an account</h1>
 
 <form action="/tag/newuser/<%= @tag.token%>" enctype="multipart/form-data" method="post">
 Email: <input type="email" name="email" value=<%= @tag.user.email%>><br>
@@ -9,3 +9,4 @@ Choose a Password: <input type="password" name="password" /><br>
 </form>
 
 </container>
+
