@@ -68,7 +68,7 @@ top: 20px;
   color: black;
   background: rgba(255,255,255,.2);
   border: 2px solid #000;
-  font: 22px "Archer", Helvetica;
+  font: 22px "Archer Book", Helvetica;
   padding: 0;
   margin: 75px 50px 50px 50px;
   -webkit-border-radius: 8px;
@@ -81,6 +81,20 @@ top: 20px;
     padding: 10px 10px 10px 10px;
     margin-bottom: 10px;
 }
+
+#content ul li select {
+    color: #777;
+    background: #fff;
+    border: 0;
+    font: normal 19px "Archer", Helvetica;
+    padding: 5px;
+    display: inline;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    width: 100%;
+    -webkit-appearance: textarea;
+}
+
 
 
 #header ul li a {
