@@ -16,8 +16,8 @@ margin: 0;	/* Amount of negative space around the outside of the body */ padding
 
 
 #header h1  {
-background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 1px solid #666; 
-text-color: #ffff; 
+background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 1px dotted #666; 
+color: #ffffff; 
 display: block; 
 font-size: 22px; 
 font-weight: bold; 
@@ -27,11 +27,20 @@ text-decoration: none;
 }
 
 #content h2  {
-background-color: #ccc; 
-border-bottom: 1px solid #666; 
+border-bottom: 1px dotted #666; 
 color: #222; 
 display: block; 
 font-size: 20px; 
+font-weight: bold; 
+padding: 10px 0; 
+text-align: center; 
+text-decoration: none;
+}
+
+#content h3  {
+ color: #222; 
+display: block; 
+font-size: 18px; 
 font-weight: bold; 
 padding: 10px 0; 
 text-align: center; 
