@@ -73,7 +73,7 @@ top: 20px;
 }
 
 #content ul { 
-  background-image: -webkit-radial-gradient(from(#ffffff), to(#ccffff));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));
   border: 2px dotted #000;
   font: 18px "Archer Book", Helvetica;
   color: white;
