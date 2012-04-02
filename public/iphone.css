@@ -16,7 +16,7 @@ margin: 0;	/* Amount of negative space around the outside of the body */ padding
 
 
 #header h1  {
-background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 8px dotted #666; 
+background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 5px dotted #ffff; 
 color: #ffffff; 
 display: block; 
 font-size: 22px; 
