@@ -7,7 +7,7 @@
   }
 
 body { 
-background-color: #FFFFFF; /* Background color */ 
+background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ccffff))
 color: #222;	/* Foreground color used for text */ 
 font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
 font-size: 14px; 
@@ -16,10 +16,10 @@ margin: 0;	/* Amount of negative space around the outside of the body */ padding
 
 
 #header h1  {
-background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 5px dotted #ffff; 
+background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 5px dotted #ccffff; 
 color: #ffffff; 
 display: block; 
-font-size: 22px; 
+font-size: 24px; 
 font-weight: bold; 
 padding: 10px 0; 
 text-align: center; 
