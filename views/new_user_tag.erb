@@ -7,7 +7,7 @@
 	<h1>Welcome to memento</h1>
 </div>
 <div id="content">
-<h2><%= @tag.capsule.user.email%> wants to tag you in a memento, but before you can start to receive mementos, we need you to make an account</h2>
+<h4><%= @tag.capsule.user.email%> wants to tag you in a memento, but before you can start to receive mementos, we need you to make an account</h4>
 <h3>  
 <form action="/tag/newuser/<%= @tag.token%>" enctype="multipart/form-data" method="post">
 <ul>
