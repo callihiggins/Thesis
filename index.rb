@@ -87,9 +87,7 @@ post '/users/check' do
 puts params[:email]
 user = User.first :email => params[:email]
 password = params[:password]
-puts password
 new_password = Digest::MD5.hexdigest(password)
-puts new_password
 	if user.nil? 
 	"You need to create an account"
 	elsif user.confirmed && user.password == new_password
