@@ -14,12 +14,8 @@ font-size: 14px;
 margin: 0;	/* Amount of negative space around the outside of the body */ padding: 0;	/* Amount of negative space around the inside of the body */
 }
 
-#header h1 {
- margin: 0;
-padding: 0;
-} 
 
-#header h1 a {
+#header h1  {
 background-color: #ccc; 
 border-bottom: 1px solid #666; 
 color: #222; 
