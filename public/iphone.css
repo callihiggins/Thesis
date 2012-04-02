@@ -41,7 +41,6 @@ text-decoration: none;
 display: block; 
 font-size: 18px; 
 font-weight: bold; 
-padding: 10px 0; 
 text-align: center; 
 text-decoration: none;
 }
@@ -74,7 +73,7 @@ top: 20px;
 }
 
 #content ul { 
-  background-image: -webkit-radial-gradient(from(#ffffff), to(#ccffff))
+  background-image: -webkit-radial-gradient(from(#ffffff), to(#ccffff));
   border: 2px dotted #000;
   font: 18px "Archer Book", Helvetica;
   color: white;
