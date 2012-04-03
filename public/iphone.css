@@ -101,9 +101,7 @@ top: 20px;
 }
 
 #header ul li input[type="text"],
-#header ul li input[type="password"{
-text-align: left;
-},
+#header ul li input[type="password"],
 #header ul li input[type="email"],
 #header ul li textarea,
 #header input[type='submit'] {
