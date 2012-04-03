@@ -85,7 +85,7 @@ top: 20px;
 text-align: center;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));
   border: 2px dotted #000;
-  width: 70%;
+  width: 75%;
   margin-left:auto;
 margin-right:auto;
   font: 18px "Archer Book", Helvetica;
@@ -102,7 +102,21 @@ margin-right:auto;
     margin-bottom: 10px;
 }
 
-#content ul li select {
+#header input[type='submit'] {
+    -webkit-border-radius: 4px;
+    text-align: center;
+    margin-left: auto;   
+    margin-right: auto;   
+    width: 8em;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .2)), to(rgba(255,255,255,.5)));
+    border: 2px solid #fffff;
+    display: block;
+    font: normal 20px "Archer Book", Helvetica;
+    padding: 10px;
+}
+
+
+#header ul li select {
     color: #777;
     background: #fff;
     border: 0;
@@ -115,18 +129,6 @@ margin-right:auto;
     -webkit-appearance: textarea;
 }
 
-#content input[type='submit'] {
-    -webkit-border-radius: 4px;
-    text-align: center;
-    margin-left: auto;   
-    margin-right: auto;   
-    width: 8em;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .2)), to(rgba(255,255,255,.5)));
-    border: 2px solid #fffff;
-    display: block;
-    font: normal 20px "Archer Book", Helvetica;
-    padding: 10px;
-}
 
 
 
