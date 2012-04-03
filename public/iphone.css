@@ -102,6 +102,9 @@ margin-right:auto;
     margin-bottom: 10px;
 }
 
+#header ul li input[type="text"],
+#header ul li input[type="email"],
+#header ul li textarea,
 #header input[type='submit'] {
     -webkit-border-radius: 4px;
     text-align: center;

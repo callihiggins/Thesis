@@ -9,7 +9,7 @@
 	<h1>Enter a new password</h1>
 <form action="/users/reset_confirm/<%= @user.user_token%>" enctype="multipart/form-data" method="post">
 <ul>
-	<li>Password: <input type="password" name="password" placeholder="Enter new password"/></li>
+	<li><input type="password" name="password" placeholder="New password"/></li>
 	<li><input type="submit" value="Submit" /></li>
 </ul>
 </form>
