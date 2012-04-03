@@ -101,9 +101,7 @@ top: 20px;
 }
 
 #header ul li input[type="text"],
-#header ul li input[type="password"{
-text-align: left;
-},
+
 #header ul li input[type="email"],
 #header ul li textarea,
 #header input[type='submit'] {
@@ -119,6 +117,9 @@ text-align: left;
   /*  padding: 10px;*/
 }
 
+#header ul li input[type="password"{
+text-align: left;
+}
 
 #header ul li select {
     color: black;
@@ -153,4 +154,3 @@ padding: 10px;
 }
 
 
-s
