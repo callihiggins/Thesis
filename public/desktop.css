@@ -7,7 +7,7 @@
   }
 
 body { 
-background-image:url(http://memento-app.com/images/letter_background.png");
+background-image:url(http://memento-app.com/images/"letter_background.png");
 color: #222;	/* Foreground color used for text */ 
 font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
 font-size: 14px; 
