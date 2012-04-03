@@ -11,11 +11,12 @@
 <h3>  
 <form action="/tag/newuser/<%= @tag.token%>" enctype="multipart/form-data" method="post">
 <ul>
-<li>Email: <input type="email" name="email" value=<%= @tag.user.email%>></li>
-<li>Choose a Password: <input type="password" name="password" /></li>
-<input type="submit" value="Submit" />
-</form>
+	<li>Email: <input type="email" name="email" value=<%= @tag.user.email%>></li>
+	<li>Choose a Password: <input type="password" name="password" /></li>
+	<li><input type="submit" value="Submit" /></li>
 </ul>
+
+</form>
 </h3>
 </div>
 </body>
