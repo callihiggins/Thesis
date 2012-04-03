@@ -85,6 +85,7 @@ top: 20px;
 text-align: center;
   background: rgba(255,255,255,.4);
     border: 2px dotted #000;
+  width: 65%;
   margin-left:auto;
 margin-right:auto;
   font: 18px "Archer Book", Helvetica;
@@ -96,7 +97,7 @@ margin-right:auto;
     text-align: left:
     color: black;
     list-style: none;
-   /* padding:5px 5px 5px 5px;*/
+   padding:5px 5px 5px 5px;
     margin-bottom: 10px;
 }
 
@@ -114,7 +115,7 @@ margin-right:auto;
     border: 2px solid #fffff;
     display: block;
     font: normal 20px "Archer Book", Helvetica;
-    padding: 10px;
+  /*  padding: 10px;*/
 }
 
 
