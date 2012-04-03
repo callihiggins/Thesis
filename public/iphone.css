@@ -85,7 +85,7 @@ top: 20px;
     color: white;
     border: 1px dotted #fff;
     list-style-type: none;
-    padding: 10px 10px 10px 10px;
+    padding: 5px;
     margin-bottom: 10px;
 }
 
@@ -131,7 +131,7 @@ text-decoration: none;
 }
 
 #content, #sidebar {
-padding: 10px;
+padding: 5px;
 }
 
 
