@@ -83,8 +83,8 @@ top: 20px;
 
 #header ul { 
 text-align: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));
-  opacity: .8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFF), to(#99999));
+  opacity: .3;
   border: 2px dotted #000;
   width: 75%;
   margin-left:auto;
