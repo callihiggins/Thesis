@@ -84,6 +84,7 @@ top: 20px;
 #header ul { 
 text-align: center;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));
+  opacity: .8;
   border: 2px dotted #000;
   width: 75%;
   margin-left:auto;
@@ -103,6 +104,7 @@ margin-right:auto;
 }
 
 #header ul li input[type="text"],
+#header ul li input[type="password"],
 #header ul li input[type="email"],
 #header ul li textarea,
 #header input[type='submit'] {
