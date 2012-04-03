@@ -21,7 +21,6 @@ color: #ffffff;
 display: block; 
 font-size: 26px; 
 font-weight: bold; 
-padding: 10px 0; 
 text-align: center; 
 text-decoration: none;
 }
@@ -53,6 +52,8 @@ font-size: 16px;
 font-weight: bold; 
 text-align: center; 
 text-decoration: none;
+margin-left:5px;
+margin-right: 5px;
 }
 
 container {
@@ -82,7 +83,7 @@ top: 20px;
 
 #content ul li {
     color: white;
-    border: 1px solid #000;
+    border: 1px dotted #fff;
     list-style-type: none;
     padding: 10px 10px 10px 10px;
     margin-bottom: 10px;
