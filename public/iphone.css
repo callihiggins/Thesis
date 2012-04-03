@@ -85,6 +85,7 @@ top: 20px;
 #content ul li {
     text-align: left:
     color: white;
+    list-style: none;
     padding:5px 5px 5px 5px;
     margin-bottom: 10px;
 }
