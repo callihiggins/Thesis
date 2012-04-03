@@ -6,6 +6,64 @@
 
   }
 
+body { 
+background-image:url(http://memento-app.com/images/letter_background.png");
+color: #222;	/* Foreground color used for text */ 
+font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
+font-size: 14px; 
+margin: 0;	/* Amount of negative space around the outside of the body */ padding: 0;	/* Amount of negative space around the inside of the body */
+}
+
+
+#header h1  {
+background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 5px dotted #ccffff; 
+color: #ffffff; 
+display: block; 
+font-size: 26px; 
+font-weight: bold; 
+padding: 10px 0; 
+text-align: center; 
+text-decoration: none;
+}
+
+#header h4  {
+color: #222; 
+display: block; 
+font-size: 16px; 
+font-weight: bold; 
+text-align: center; 
+text-decoration: none;
+}
+
+#content h2  {
+color: #222; 
+display: block; 
+font-size: 20px; 
+font-weight: bold; 
+text-align: center; 
+text-decoration: none;
+margin-bottom: 5px
+}
+
+#content h3  {
+ color: #222; 
+display: block; 
+font-size: 18px; 
+font-weight: bold; 
+text-align: center; 
+text-decoration: none;
+}
+
+#content h4  {
+border-bottom: 1px dotted #666; 
+color: #222; 
+display: block; 
+font-size: 16px; 
+font-weight: bold; 
+text-align: center; 
+text-decoration: none;
+}
+
 container {
 border-style: none;
 position: absolute;
@@ -23,12 +81,77 @@ top: 20px;
 
 }
 
-body{
-font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
-
-font-size: 18px;;
-
- background-color: #FFFFFF;
-
+#header ul { 
+text-align: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));
+  opacity: .8;
+  border: 2px dotted #000;
+  width: 75%;
+  margin-left:auto;
+margin-right:auto;
+  font: 18px "Archer Book", Helvetica;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  -webkit-border-radius: 8px;
 }
+
+#header ul li {
+    text-align: left:
+    color: white;
+    list-style: none;
+    padding:5px 5px 5px 5px;
+    margin-bottom: 10px;
+}
+
+#header ul li input[type="text"],
+#header ul li input[type="password"],
+#header ul li input[type="email"],
+#header ul li textarea,
+#header input[type='submit'] {
+    -webkit-border-radius: 4px;
+    text-align: center;
+    margin-left: auto;   
+    margin-right: auto;   
+    width: 8em;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .8)), to(rgba(255,255,255,.5)));
+    border: 2px solid #fffff;
+    display: block;
+    font: normal 20px "Archer Book", Helvetica;
+    padding: 10px;
+}
+
+
+#header ul li select {
+    color: black;
+    background: #fff;
+    border: 0;
+    font:22px "Archer Book", Helvetica;
+    padding: 5px;
+    display: inline;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    width: 100%;
+    -webkit-appearance: textarea;
+}
+
+
+
+
+
+#header ul li a {
+background-color: #FFFFFF; 
+border: 1px solid #999999; 
+color: #222222; 
+display: block;
+font-size: 17px; 
+font-weight: bold; 
+margin-bottom: -1px; 
+padding: 12px 10px; 
+text-decoration: none;
+}
+
+#content, #sidebar {
+padding: 10px;
+}
+
 
