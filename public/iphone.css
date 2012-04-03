@@ -111,7 +111,7 @@ margin-right:auto;
     margin-left: auto;   
     margin-right: auto;   
     width: 8em;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .8)), to(rgba(255,255,255,.5)));
+    background: rgba(255,255,255,.6);
     border: 2px solid #fffff;
     display: block;
     font: normal 20px "Archer Book", Helvetica;
