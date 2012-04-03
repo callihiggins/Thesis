@@ -82,12 +82,13 @@ top: 20px;
 }
 
 #header ul { 
+text-align: center;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));
   border: 2px dotted #000;
-  width: 80%;
+  width: 60%;
   font: 18px "Archer Book", Helvetica;
   color: white;
-  padding: 5px 5px 5px 5pxx;
+  padding: 5px 5px 5px 5px;
   -webkit-border-radius: 8px;
 }
 
