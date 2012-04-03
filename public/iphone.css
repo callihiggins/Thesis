@@ -97,7 +97,7 @@ top: 20px;
     text-align: left:
     color: black;
     list-style-type: none;
- /*  padding:5px 5px 5px 5px;*/
+   padding:5px 5px 5px 5px;
     margin-bottom: 10px;
 }
 
@@ -124,7 +124,7 @@ top: 20px;
     background: #fff;
     border: 0;
     font:22px "Archer Book", Helvetica;
-    padding: 5px;
+  /*  padding: 5px;*/
     display: inline;
     margin-bottom: 5px;
     width: 100%;
