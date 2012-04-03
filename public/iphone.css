@@ -85,7 +85,6 @@ top: 20px;
     color: white;
     border: 1px solid #000;
     list-style-type: none;
-    padding: 10px 10px 10px 10px;
     margin-bottom: 10px;
 }
 
@@ -109,9 +108,9 @@ top: 20px;
     margin-right: auto;   
     width: 8em;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .2)), to(rgba(255,255,255,.5)));
-    border: 2px solid #aaa;
+    border: 2px solid #fffff;
     display: block;
-    font: normal 20px "Archer", Helvetica;
+    font: normal 20px "Archer Book", Helvetica;
     padding: 10px;
 }
 
