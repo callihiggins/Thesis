@@ -104,6 +104,19 @@ top: 20px;
 #header ul li input[type="password"],
 #header ul li input[type="email"],
 #header ul li textarea,
+#header ul li select {
+text-align: left;
+    color: black;
+    background: #fff;
+    border: 0;
+    font:22px "Archer Book", Helvetica;
+  /*  padding: 5px;*/
+    display: inline;
+    margin-bottom: 5px;
+    width: 100%;
+    -webkit-appearance: textarea;
+}
+
 #header input[type='submit'] {
     -webkit-border-radius: 4px;
     text-align: center;
@@ -117,19 +130,6 @@ top: 20px;
   /*  padding: 10px;*/
 }
 
-
-#header ul li select {
-text-align: left;
-    color: black;
-    background: #fff;
-    border: 0;
-    font:22px "Archer Book", Helvetica;
-  /*  padding: 5px;*/
-    display: inline;
-    margin-bottom: 5px;
-    width: 100%;
-    -webkit-appearance: textarea;
-}
 
 
 
