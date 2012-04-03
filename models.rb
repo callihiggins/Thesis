@@ -187,7 +187,7 @@ class Tagging
     owner = self.capsule.user.email
 	EmailSender.send(:address => self.user.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
   		
-  		Before you can start to use memento, you need to make an account. Please visit the link below to set up an account so you can receive " + owner + "'s memento
+  		Before you can start to receive mementos, you need to make an account. Please visit the link below to set up an account so you can receive a copy of " + owner + "'s memento
   		
   		http://memento-app.com/tag/new_user/#{self.token}
   		  		

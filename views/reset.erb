@@ -1,10 +1,18 @@
-<container>
 
-<h1>Enter new password</h1>
 
+<html>
+<head>
+<title>memento</title>
+</head>
+<body>
+<div id="header">
+	<h1>Enter a new password</h1>
 <form action="/users/reset_confirm/<%= @user.user_token%>" enctype="multipart/form-data" method="post">
-New Password: <input type="password" name="password" /><br>
-<input type="submit" value="Submit" />
+<ul>
+	<li>Password: <input type="password" name="password" placeholder="Enter new password"/></li>
+	<li><input type="submit" value="Submit" /></li>
+</ul>
 </form>
-
-</container>
+</div>
+</body>
+</html>
