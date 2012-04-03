@@ -5,19 +5,17 @@
 <body>
 <div id="header">
 	<h1>Welcome to memento</h1>
+
+<h4>Please create an account so you can receive mementos you've been tagged in</h4>
 </div>
 <div id="content">
-<h4>Please create an account so you can receive mementos you've been tagged in</h4>
-<h3>  
 <form action="/tag/newuser/<%= @tag.token%>" enctype="multipart/form-data" method="post">
 <ul>
 	<li>Email: <input type="email" name="email" value=<%= @tag.user.email%>></li>
 	<li>Password: <input type="password" name="password" placeholder="Create a password"/></li>
 	<li><input type="submit" value="Submit" /></li>
 </ul>
-
 </form>
-</h3>
 </div>
 </body>
 </html>

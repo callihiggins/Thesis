@@ -26,6 +26,16 @@ text-align: center;
 text-decoration: none;
 }
 
+#header h4  {
+border-bottom: 1px dotted #666; 
+color: #222; 
+display: block; 
+font-size: 16px; 
+font-weight: bold; 
+text-align: center; 
+text-decoration: none;
+}
+
 #content h2  {
 border-bottom: 1px dotted #666; 
 color: #222; 
