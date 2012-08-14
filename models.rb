@@ -86,7 +86,7 @@ class Capsule
   					due_capsule.taggings.each do |tag|
 #   					puts "sending to #{user.email}"
   						# tell the capsule to send
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your capsule!", :body => "http://throwback-app.com/capsules/" + image_path)
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
   						tag.sent = true
   						tag.save
