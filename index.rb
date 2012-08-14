@@ -195,8 +195,7 @@ puts params[:caption]
 
    ##image = Magick::Image.from_blob(params[:file][:tempfile].read).first
    image.auto_orient!
-   image = image.polaroid { self.gravity = Magick::CenterGravity }
-   image[:caption] = params[:caption]
+
 # generate a random time
 t = Time.now
 currentyear = t.year
