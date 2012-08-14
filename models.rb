@@ -30,21 +30,21 @@ class User
   end
   
   def send_confirmation!  
-  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "Thanks for signing up for memento! 
+  	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "Thanks for signing up for Throwback! 
   	
 Before you can start snapping pictures, we need need you to confirm that this is the right email address to send your photos back to you. Can you do so by clicking the link below?
   	
-http://memento-app.com/users/#{self.user_token}")
+http://throwback-app.com/users/#{self.user_token}")
   end
   
   def send_reset!  
-  	EmailSender.send(:address => self.email, :subject => "Reset password from memento", :body => "Looks like you need a new password! Follow the link below to make a new one.
+  	EmailSender.send(:address => self.email, :subject => "Reset password from Throwback", :body => "Looks like you need a new password! Follow the link below to make a new one.
   	
-http://memento-app.com/users/reset/#{self.user_token}")
+http://throwback-app.com/users/reset/#{self.user_token}")
   end
   
   def send_welcome_email! 
-  	EmailSender.send(:address => self.email, :subject => "Welcome to memento", :body => "Thanks for joining memento!") 
+  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body => "Thanks for joining Throwback!") 
   	
   	  end
   
@@ -86,7 +86,7 @@ class Capsule
   					due_capsule.taggings.each do |tag|
 #   					puts "sending to #{user.email}"
   						# tell the capsule to send
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/" + image_path)
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your capsule!", :body => "http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
   						tag.sent = true
   						tag.save
@@ -158,11 +158,11 @@ class Capsule
   end
   
   def send!  
-  	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#{self.image_token}")
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://throwback-app.com/capsules/#{self.image_token}")
   end
   
    def send_to_tagged_user!  
-  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://memento-app.com/capsules/#{self.image_token}")
+  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://throwback-app.com/capsules/#{self.image_token}")
   end
   
   
@@ -185,22 +185,22 @@ class Tagging
   
   def send_new_user_tag_request!
     owner = self.capsule.user.email
-	EmailSender.send(:address => self.user.email, :subject => "Join memento today!", :body => "You've been tagged in a memento from " + owner + ".
+	EmailSender.send(:address => self.user.email, :subject => "Join Throback today!", :body => "You've been tagged in a Throwback from " + owner + ".
+
+Before you can start to receive Throwbacks, you need to make an account. Please visit the link below to set up an account so you can receive a copy of " + owner + "'s Throwback
   		
-  		Before you can start to receive mementos, you need to make an account. Please visit the link below to set up an account so you can receive a copy of " + owner + "'s memento
-  		
-  		http://memento-app.com/tag/new_user/#{self.token}
+http://throwback-app.com/tag/new_user/#{self.token}
   		  		
   		")
   end
   
    def send_tag_request!  
     owner = self.capsule.user.email
-  	EmailSender.send(:address => self.user.email, :subject => "Request for tag", :body => "You've been tagged in a memento from " + owner + ".
+  	EmailSender.send(:address => self.user.email, :subject => "Request for tag", :body => "You've been tagged in a Throwback from " + owner + ".
   		
-  		Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
+Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
   		
-  		http://memento-app.com/tag/#{self.token}
+http://throwback-app.com/tag/#{self.token}
   		  		
   		")
   end

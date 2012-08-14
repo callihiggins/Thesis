@@ -10,12 +10,12 @@ set :views, File.dirname(__FILE__) + '/views'
 get '/' do
 
 "
-<title>memento</title>
+<title>throwback</title>
 <style>
 body {
 background-color:333333;
 background-position:center; 
-background-image:url('http://memento.heroku.com/images/letter.png');
+background-image:url('http://throwback.heroku.com/images/letter.png');
 background-repeat:
 no-repeat;
 background-attachment:
