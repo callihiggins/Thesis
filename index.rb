@@ -195,6 +195,7 @@ puts params[:caption]
 
    ##image = Magick::Image.from_blob(params[:file][:tempfile].read).first
    image.auto_orient!
+   image.polaroid
 # generate a random time
 t = Time.now
 currentyear = t.year
