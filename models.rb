@@ -66,7 +66,7 @@ class Capsule
   property :path,       String 
   property :created_at, DateTime
   property :sent,		Boolean, :default => false	
-  property :viewed,		Boolean, :Default => false	
+  property :viewed,		Boolean, :default => false	
   belongs_to :user
   has n, :taggings
   has n, :tagged_users, 'User', :through => :taggings, :via => :user  
