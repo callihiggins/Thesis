@@ -17,7 +17,7 @@ class User
   property :user_token,	String
   property :password, 	String
   property :confirmed, 	Boolean, :default => false
-    
+   
   has n, :capsules
   has n, :taggings
   has n, :tagged_capsules, 'Capsule', :through => :taggings, :via => :capsule
@@ -32,7 +32,7 @@ class User
   def send_confirmation!  
   	EmailSender.send(:address => self.email, :subject => "Confirm your email", :body => "Thanks for signing up for Throwback! 
   	
-Before you can start snapping pictures, we need need you to confirm that this is the right email address to send your photos back to you. Can you do so by clicking the link below?
+Before you can start sending throwbacks, we need need you to confirm that this is the right email address to send your photos back to you. Can you do so by clicking the link below?
   	
 http://throwback-app.com/users/#{self.user_token}")
   end
@@ -66,8 +66,7 @@ class Capsule
   property :path,       String 
   property :created_at, DateTime
   property :sent,		Boolean, :default => false	
-  property :sent,		Boolean, :default => false	
-	
+  property :viewed,		Boolean, :Default => false	
   belongs_to :user
   has n, :taggings
   has n, :tagged_users, 'User', :through => :taggings, :via => :user  
@@ -86,7 +85,9 @@ class Capsule
   					due_capsule.taggings.each do |tag|
 #   					puts "sending to #{user.email}"
   						# tell the capsule to send
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "http://throwback-app.com/capsules/" + image_path)
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from" + tag.capsule.user.email + ". Click the link below to view your photo.
+  						
+  http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
   						tag.sent = true
   						tag.save
@@ -158,11 +159,13 @@ class Capsule
   end
   
   def send!  
-  	EmailSender.send(:address => self.user.email, :subject => "Here's your capsule!", :body => "http://throwback-app.com/capsules/#{self.image_token}")
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on" + self.formatted_created_at + ". Click the link below to view your photo.
+  	
+http://throwback-app.com/capsules/#{self.image_token}")
   end
   
    def send_to_tagged_user!  
-  	EmailSender.send(:address => self.email, :subject => "Here's your capsule!", :body => "http://throwback-app.com/capsules/#{self.image_token}")
+  	EmailSender.send(:address => self.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from http://throwback-app.com/capsules/#{self.image_token}")
   end
   
   

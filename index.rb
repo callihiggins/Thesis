@@ -41,6 +41,7 @@ end
 get "/capsules/:id" do
 # show the image plus some info about it
 @capsule = Capsule.get params[:id]
+@capsule.viewed = true
 erb :capsule
 end
 
