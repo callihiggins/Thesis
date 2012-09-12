@@ -159,7 +159,7 @@ class Capsule
   end
   
   def send!  
-  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on" + self.formatted_created_at + ". Click the link below to view your photo.
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on " + self.formatted_created_at + ". Click the link below to view your photo.
   	
 http://throwback-app.com/capsules/#{self.image_token}")
   end
@@ -188,7 +188,7 @@ class Tagging
   
   def send_new_user_tag_request!
     owner = self.capsule.user.email
-	EmailSender.send(:address => self.user.email, :subject => "Join Throback today!", :body => "You've been tagged in a Throwback from " + owner + ".
+	EmailSender.send(:address => self.user.email, :subject => "Join Throwback today!", :body => "You've been tagged in a Throwback from " + owner + ".
 
 Before you can start to receive Throwbacks, you need to make an account. Please visit the link below to set up an account so you can receive a copy of " + owner + "'s Throwback
   		
