@@ -159,7 +159,7 @@ class Capsule
   end
   
   def send!  
-  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on " + self.formatted_created_at + "." + <br><br> <container><img src="<%=self.image_url %>" width="300"/> </container><br><br> + "
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on " + self.formatted_created_at + "." + <container><img src=self.image_url></container><br><br> + "
   	
   	Click the link below to view your photo.
   	
