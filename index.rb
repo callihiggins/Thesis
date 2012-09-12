@@ -35,6 +35,8 @@ end
 get "/capsules/:image_token" do
 # show the image plus some info about it
 @capsule = Capsule.first :image_token => params[:image_token]
+@capsule.viewed = true
+@capsule.save
 erb :capsule
 end
 
