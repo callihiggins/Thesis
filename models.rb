@@ -159,9 +159,13 @@ class Capsule
   end
   
   def send!  
-  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on " + self.formatted_created_at + ". Click the link below to view your photo.
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback taken on " + self.formatted_created_at + "." + <br><br> <container><img src="<%=self.image_url %>" width="300"/> </container><br><br> + "
   	
-http://throwback-app.com/capsules/#{self.image_token}")
+  	Click the link below to view your photo.
+  	
+http://throwback-app.com/capsules/#{self.image_token}"
+
+)
   end
   
    def send_to_tagged_user!  
