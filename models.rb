@@ -85,7 +85,7 @@ class Capsule
   					due_capsule.taggings.each do |tag|
 #   					puts "sending to #{user.email}"
   						# tell the capsule to send
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from" + due_capsule.user.email + ". Click the link below to view your photo.
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from. Click the link below to view your photo.
   						
   http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
@@ -95,6 +95,7 @@ class Capsule
   			end
   	end
   	
+  	#due_capsule
 
  
   def self.send_due_capsules!
