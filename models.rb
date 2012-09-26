@@ -84,7 +84,7 @@ class Capsule
   	  				owner = due_capsule.user
   	  				  	#go through each one and send it to the user
   					due_capsule.taggings.each do |tag|
-  					#user = tag.user
+  					user = self.user
 #   					puts "sending to #{user.email}"
   						# tell the capsule to send
   						EmailSender.send(:address => user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from " + owner + ". Click the link below to view your photo.
