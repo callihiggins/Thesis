@@ -74,12 +74,11 @@ class Capsule
  	def self.send_due_capsules_to_tagged_users!
   	# get all due_capsules, even if they've been sent to their owners
   		due_capsules = self.due_capsules_for_tagged_users
-#   		puts "due_capsules #{due_capsules.length}"
   	# for each due_capsule
   	  		due_capsules.each do |due_capsule| 
   	# get the image path
   	
-#   					puts "users: #{due_capsule.tagged_users.length} for [#{due_capsule.id}]"
+#   					
   	  				image_path = due_capsule.image_token
   	  				owner = due_capsule.user
   	  				  	#go through each one and send it to the user
