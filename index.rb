@@ -101,7 +101,7 @@ puts password
 new_password = Digest::MD5.hexdigest(password)
 u = User.first :email => email
 	if u.nil? 
-		u = User.new(:email => email, :password => new_password)
+		u = User.new(:email => email, :password => new_password, :confirmed=>true)
 		u.user_token = u.generate_user_token
 		if u.save 
 			u.send_confirmation!
