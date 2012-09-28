@@ -84,7 +84,7 @@ top: 20px;
   width: 70%;
   margin-left:auto;
   margin-right:auto;
-  font: 18px "Archer Book", Helvetica;
+  font: 18px "Thirsty Script Medium", Helvetica;
   color: black;
   -webkit-border-radius: 8px;
 }
@@ -106,7 +106,7 @@ text-align: left;
     color: black;
     background: #fff;
     border: 0;
-    font:22px "Archer Book", Helvetica;
+    font:22px Helvetica;
     padding: 5px;
     display: inline;
     margin-bottom: 5px;
@@ -121,10 +121,11 @@ text-align: left;
     margin-left: auto;   
     margin-right: auto;   
     width: 8em;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .8)), to(rgba(255,255,255,.5)));
+    background: #003366;
     border: 2px solid #fffff;
+    color: #FFF;
     display: block;
-    font: normal 20px "Archer Book", Helvetica;
+    font: normal 20px "Thirsty Script Medium", Helvetica;
   /*  padding: 10px;*/
 }
 
@@ -135,8 +136,8 @@ text-align: left;
 
 #header ul li a {
 background-color: #FFFFFF; 
-border: 1px solid #999999; 
-color: #222222; 
+border: 1px solid #003366; 
+color: #003366; 
 display: block;
 font-size: 17px; 
 font-weight: bold; 
