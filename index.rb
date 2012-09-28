@@ -10,21 +10,108 @@ set :views, File.dirname(__FILE__) + '/views'
 get '/' do
 
 "
-<title>throwback</title>
-<style>
-body {
-background-color:333333;
-background-position:center; 
-background-image:url('http://throwback.heroku.com/images/letter.png');
-background-repeat:
-no-repeat;
-background-attachment:
-fixed
-}
-</style>
-<body>
 
-</body>"
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1000" />
+		<title>ThrowBack</title>	
+		<style type="text/css">
+			body{
+				margin:0;
+				padding:0;
+				background-image: url('images/bg.png'); no-repeat:
+				font-family: Helvetica, Arial;
+			}
+			#wrapper{
+				width:865px;
+				height:620px;
+				
+				margin:auto;
+				padding-left:10px;
+				padding-right:10px;
+				margin-top:60px;
+				position: relative;
+				
+			 	font-size: 1.1em;
+				
+			}
+			#left{
+				float: left;
+				width:294px;
+				height:620px;
+				
+			}
+			#right{
+				width:512px;
+				height:599px;
+				float: right;	
+				background:url('images/screenshots.png') no-repeat right top;
+			}
+			p{
+				margin-top:30;
+			 	line-height:1.8em;
+			 	margin-bottom:30px;
+			}
+			a{
+				text-decoration: none;
+				color:white;
+			}
+			#bottom-left{
+				font-size: .7em;
+				position: absolute;
+				bottom:50px;
+				left:15px;
+				
+			}
+			#bottom-right{
+				clear:both;
+				font-size: .7em;
+				position: absolute;
+				bottom:50px;
+				right:10px;
+			}
+			#copy{
+				padding-left:2px;
+			}
+			#contact_me{
+				float:left; 
+				height:24px; 
+				width:130px; 
+				padding-top:10px; 
+				font-size:.9em;
+			}
+			img{
+				border:none;
+			}
+			
+		</style>
+	</head>
+	<body> 
+		<div id="wrapper">
+			<div id="left">
+				<img src="images/logo.jpg" alt=""/>
+			
+			<div id='copy'>
+			<p><b>Send your past to your future present</b></p>
+			<p>Throwback is an iPhone photography application that captures a photograph but does not save it to your phone. Instead the photo is thrown into the future and emailed back to you and those you share it with at a random time, anywhere from 1 month to 5 years from the date the photo was taken. </p>
+			<p>In an era where our photographs are overexposed on countless sharing platforms, Throwback provides a unique opportunity to forget your memories so they can be remembered again.</p>
+			</div>
+				<div style="margin-top:13px;">
+					<a id="contact_me" href="mailto:callihiggins@gmail.com">Contact </a>
+				</div>
+		</div>
+				<div id="right">
+				
+				
+				</div>
+				
+				
+	
+	</div>
+	</body>
+</html>
 end
 
 get "/capsules/new" do
