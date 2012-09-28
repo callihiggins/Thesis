@@ -7,7 +7,7 @@
 
 body { 
 background: #FFF;
-color: #003366;;	/* Foreground color used for text */ 
+color: #003366;	/* Foreground color used for text */ 
 font-family: "Thirsty Script Medium", Helvetica, Verdana, Arial, sans-serif;
 font-size: 14px; 
 margin: 0;	/* Amount of negative space around the outside of the body */ padding: 0;	/* Amount of negative space around the inside of the body */
@@ -15,7 +15,7 @@ margin: 0;	/* Amount of negative space around the outside of the body */ padding
 
 
 #header h1  {
-background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 5px dotted #ccffff; 
+background-color: #003366;
 color: #ffffff; 
 display: block; 
 font-size: 26px; 
