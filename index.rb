@@ -40,6 +40,7 @@ token_tag = params[:token]
 @tag = Tagging.first(:token=>token_tag)
 @tag.confirmed = true
 @tag.save
+@user = @tag.capsule.user
 erb :tag
 end
 
