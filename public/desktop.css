@@ -73,8 +73,9 @@ top: 200px;
 
 #logocontainer {
 position: fixed;
-width: 200px;
-left: 30px;
+width: 268px;
+text-align: center;
+left: 50%
 top: 20px;
 }
 
