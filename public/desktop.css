@@ -72,7 +72,7 @@ top: 200px;
 }
 
 #logocontainer {
-position: fixed;
+position: absolute;
 width: 100%;
 text-align: center;
 top: 20px;
