@@ -1,22 +1,20 @@
 @font-face {
-
-  font-family: "Archer Book";
-
-  src: url("http://memento-app.com/images/Archer/Archer-Book-Pro.otf") format("opentype");
-
-  }
+                    font-family: "Thirsty Script Medium", Helvetica, Arial, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    src: url("http://throwback-app.com/images/ThirstyScript/ThirstyScriptMedium.otf") format("opentype");
+                }
 
 body { 
-background-image:url("http://memento-app.com/images/letter_background.png");
-color: #222;	/* Foreground color used for text */ 
-font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
+background: #FFF;
+color: #003366;	/* Foreground color used for text */ 
+font-family: "Thirsty Script Medium", Helvetica, Verdana, Arial, sans-serif;
 font-size: 14px; 
 margin: 0;	/* Amount of negative space around the outside of the body */ padding: 0;	/* Amount of negative space around the inside of the body */
 }
 
-
 #header h1  {
-background-image: -webkit-gradient(linear, left top, left bottom, from(#669999), to(#336666));border-bottom: 5px dotted #ccffff; 
+background-color: #003366;
 color: #ffffff; 
 display: block; 
 font-size: 26px; 
@@ -27,7 +25,8 @@ text-decoration: none;
 }
 
 #header h4  {
-color: #222; 
+background-color: #003366;
+color: #ffffff; 
 display: block; 
 font-size: 16px; 
 font-weight: bold; 
@@ -36,7 +35,7 @@ text-decoration: none;
 }
 
 #content h2  {
-color: #222; 
+color: #003366; 
 display: block; 
 font-size: 20px; 
 font-weight: bold; 
@@ -46,7 +45,7 @@ margin-bottom: 5px
 }
 
 #content h3  {
- color: #222; 
+ color: #003366; 
 display: block; 
 font-size: 18px; 
 font-weight: bold; 
@@ -55,8 +54,8 @@ text-decoration: none;
 }
 
 #content h4  {
-border-bottom: 1px dotted #666; 
-color: #222; 
+border-bottom: 1px  #003366; 
+color: #003366; 
 display: block; 
 font-size: 16px; 
 font-weight: bold; 
@@ -81,12 +80,12 @@ top: 20px;
 
 #header ul { 
   background: rgba(255,255,255,.4);
-  border: 2px dotted #000;
+  border: 2px #003366;
   width: 70%;
   margin-left:auto;
   margin-right:auto;
-  font: 18px "Archer Book", Helvetica;
-  color: black;
+  font: 18px "Thirsty Script Medium", Helvetica;
+  color: 003366;
   -webkit-border-radius: 8px;
 }
 
@@ -104,10 +103,10 @@ top: 20px;
 #header ul li textarea,
 #header ul li select {
 text-align: left;
-    color: black;
+    color: 003366;
     background: #fff;
     border: 0;
-    font:22px "Archer Book", Helvetica;
+    font:22px "Thristy Script Medium", Helvetica;
     padding: 5px;
     display: inline;
     margin-bottom: 5px;
@@ -122,10 +121,10 @@ text-align: left;
     margin-left: -20px;
     margin-right: auto;   
     width: 8em;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255, .8)), to(rgba(255,255,255,.5)));
+    background: #003366;
     border: 2px solid #fffff;
     display: block;
-    font: normal 20px "Archer Book", Helvetica;
+    font: normal 20px "Thristy Script Medium", Helvetica;
   /*  padding: 10px;*/
 }
 
@@ -136,8 +135,8 @@ text-align: left;
 
 #header ul li a {
 background-color: #FFFFFF; 
-border: 1px solid #999999; 
-color: #222222; 
+border: 1px solid #003366; 
+color: #003366; 
 display: block;
 font-size: 17px; 
 font-weight: bold; 
