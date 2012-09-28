@@ -1,15 +1,14 @@
 @font-face {
-
-  font-family: "Archer Book";
-
-  src: url("http://memento-app.com/images/Archer/Archer-Book-Pro.otf") format("opentype");
-
-  }
+                    font-family: "Thirsty Script Medium", Helvetica, Arial, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    src: url("http://throwback-app.com/images/ThirstyScript/ThirstyScriptMedium.otf") format("opentype");
+                }
 
 body { 
-background-image:url("http://memento-app.com/images/letter_background.png");
-color: #222;	/* Foreground color used for text */ 
-font-family: "Archer Book", Helvetica, Verdana, Arial, sans-serif;
+background: #FFF;
+color: #003366;;	/* Foreground color used for text */ 
+font-family: "Thirsty Script Medium", Helvetica, Verdana, Arial, sans-serif;
 font-size: 14px; 
 margin: 0;	/* Amount of negative space around the outside of the body */ padding: 0;	/* Amount of negative space around the inside of the body */
 }
