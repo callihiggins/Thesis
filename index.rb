@@ -58,7 +58,7 @@ puts email
 new_password = Digest::MD5.hexdigest(password)
 u = User.first(:email => email)
 puts u
-u.update(:password => new_password, :confirmed => true, :user_token => u.generate_user_token)
+u.update(:password => new_password, :user_token => u.generate_user_token)
 u.save
 token_tag = params[:token]
 @tag = Tagging.first(:token=>token_tag)
@@ -97,7 +97,6 @@ end
 post '/users/new' do
 email = params[:email]
 password = params[:password]
-puts password
 new_password = Digest::MD5.hexdigest(password)
 u = User.first :email => email
 	if u.nil? 
@@ -110,11 +109,9 @@ u = User.first :email => email
 		 	end.join(",")	
 		my_error_string
 		end
-	elsif u.confirmed == true
-		"You already have an account"
-	else 
+		else 
 		u.send_confirmation!
-		"Please check your email for a confirmation link"
+		"You already have an account"
 	end
 end
 
