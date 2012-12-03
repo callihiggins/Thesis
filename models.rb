@@ -84,7 +84,7 @@ class Capsule
   					due_capsule.taggings.each do |tag|
   						# tell the capsule to send
   						
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from " + owner +". Click the link below to view your photo.
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from #{owner}. Click the link below to view your photo.
   						
   http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
@@ -93,6 +93,8 @@ class Capsule
   					end
   			end
   	end
+  	
+  	
   	
 
  
@@ -215,3 +217,5 @@ http://throwback-app.com/tag/#{self.token}
 
   
  end
+ 
+ DataMapper.finalize
