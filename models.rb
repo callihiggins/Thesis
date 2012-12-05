@@ -9,6 +9,10 @@ require 'digest/md5'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
     
+    
+class MissingS3Url < Exception
+end
+    
 class User
   include DataMapper::Resource
 
@@ -84,7 +88,7 @@ class Capsule
   					due_capsule.taggings.each do |tag|
   						# tell the capsule to send
   						
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from #{owner}. Click the link below to view your photo.
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from #{owner.email}. Click the link below to view your photo.
   						
   http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
@@ -121,7 +125,7 @@ class Capsule
   
   def self.due_capsules
   	# get all the capsules whose dueDate is less than the current DateTime
-	Capsule.all(:dueDate.lt=> Time.now, :sent => false)
+	Capsule.all(:dueDate.lt=> Time.now, :sent => false )
   	# and whose sent flag is not true
   end
   
@@ -155,7 +159,13 @@ class Capsule
   def image_url
   	 AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
   	 bucket = AWS::S3::Bucket.find 'hindsight-itp'
+  	 begin
   	 bucket[self.path].url
+  	 rescue NoMethodError
+  	 	## do something, it doesn't exist
+  	 	update_attribute(:fucked, true) # this requires a migration that adds fucked property
+  	 	raise MissingS3Url
+  	 end
   end
   
   def send!  
