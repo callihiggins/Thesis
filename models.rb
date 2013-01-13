@@ -7,10 +7,8 @@ require 'email_sender'
 require 'digest/md5'
 
 
-
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
     
-     DataMapper.finalize
     
 class MissingS3Url < Exception
 end
@@ -231,4 +229,4 @@ http://throwback-app.com/tag/#{self.token}
   
  end
  
-
+ DataMapper.finalize
