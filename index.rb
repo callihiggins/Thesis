@@ -250,7 +250,7 @@ puts dueDate
     AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
     
     AWS::S3::S3Object.store(c.path, image.to_blob, "hindsight-itp", :access => :public_read)
-
+	
 
   rescue Exception => e
   	puts e

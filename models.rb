@@ -6,6 +6,7 @@ require 'aws/s3'
 require 'email_sender'
 require 'digest/md5'
 
+ DataMapper.finalize
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
     
@@ -161,11 +162,12 @@ class Capsule
   	 bucket = AWS::S3::Bucket.find 'hindsight-itp'
   	 begin
   	 bucket[self.path].url
-  	 rescue NoMethodError
+  	###ADDED FUCKED PROPERTY TO NOT SEND BAD THROWBACKS
+  	# rescue NoMethodError
   	 	## do something, it doesn't exist
-  	 	update_attribute(:fucked, true) # this requires a migration that adds fucked property
-  	 	raise MissingS3Url
-  	 end
+  	 #	update_attribute(:fucked, true) # this requires a migration that adds fucked property
+  	 #	raise MissingS3Url
+  	 #end
   end
   
   def send!  
@@ -228,4 +230,4 @@ http://throwback-app.com/tag/#{self.token}
   
  end
  
- DataMapper.finalize
+
