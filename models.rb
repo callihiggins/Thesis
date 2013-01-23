@@ -83,7 +83,7 @@ class Capsule
   	  				  	#go through each one and send it to the user
   					due_capsule.taggings.each do |tag|
   						# tell the capsule to send
-  						EmailSender.send(:address => email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from " + owner +". Click the link below to view your photo.
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from " + owner +". Click the link below to view your photo.
   						
   http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
@@ -189,7 +189,7 @@ class Tagging
   
   def send_new_user_tag_request!
     owner = self.capsule.user.email
-	EmailSender.send(:address => self.user.email, :subject => "Join Throwback today!", :body => "You've been tagged in a Throwback from " + owner + ".
+	EmailSender.send(:address => self.User.email, :subject => "Join Throwback today!", :body => "You've been tagged in a Throwback from " + owner + ".
 
 Before you can start to receive Throwbacks, you need to make an account. Please visit the link below to set up an account so you can receive a copy of " + owner + "'s Throwback
   		
