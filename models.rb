@@ -81,12 +81,17 @@ class Capsule
   	  				image_path = due_capsule.image_token
   	  				owner = due_capsule.user
   	  				  	#go through each one and send it to the user
-  					due_capsule.taggings.each do |tag|
+  					due_capsule.tagged_users.each do |user|
   						# tell the capsule to send
-  						EmailSender.send(:address => tag.User.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from " + owner +". Click the link below to view your photo.
+  						EmailSender.send(:address => user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from " + owner +". Click the link below to view your photo.
   						
   http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
+  						
+  					end
+  					
+  					due_capsule.taggings.each do |tag|
+  						
   						tag.sent = true
   						tag.save
   					end
