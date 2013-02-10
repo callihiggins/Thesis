@@ -7,7 +7,16 @@
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "54a8eee9-6e19-4994-84f9-4ff2275eecfa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
+<style type="text/css">
+p{
+				font-family: Helvetica;
+				font-style: bold;
+				font-size: 18px;
+				margin-top:30;
+			 	line-height:1.8em;
+			 	margin-bottom:10px;
+			}
+</style>
 </head>
 <body>
 <div id="logocontainer">
@@ -20,4 +29,4 @@
 <span class='st_tumblr' ></span>
 <span class='st_facebook'></span>
 <span class='st_fblike' ></span><br><h1><%= @capsule.caption%></h1>
-<p>This photo was taken on: <%= @capsule.formatted_created_at %></p> </container>
+<h2>This photo was taken on: <%= @capsule.formatted_created_at %></h2> </container>
