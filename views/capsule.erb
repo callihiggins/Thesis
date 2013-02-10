@@ -4,16 +4,41 @@
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "54a8eee9-6e19-4994-84f9-4ff2275eecfa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<style>
+
+
+.st_twitter_custom{
+	background: url("http://throwback-app.com/images/icons/twitter-32x32.png") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+}
+
+
+
+.st_flickr_custom{
+	background: url("http://throwback-app.com/images/icons/flickr-32x32.png") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+}
+
+.st_facebook_custom{
+	background: url("http://throwback-app.com/images/icons/facebook-32x32.png") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+}
+
+
+
+
+
+</style>
 </head>
 <body>
 <div id="logocontainer">
 <a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
 </div>
 <container><img src="<%= @capsule.image_url %>" width="300" /><br>
-<span class='st_email' displayText='Email'></span>
-<span class='st_twitter' displayText='Tweet'></span>
-<span class='st_pinterest' displayText='Pinterest'></span>
-<span class='st_facebook' displayText='Facebook'></span>
-<span class='st_fblike' displayText='Facebook Like'></span>
+<span class='st_email'></span>
+<span class='st_twitter_custom'></span>
+<span class='st_flickr_custom'></span>
+<span class='st_facebook_custom'></span>
+<span class='st_fblike'></span>
 <h1><%= @capsule.caption%></h1>
 <h2>This photo was taken on: <%= @capsule.formatted_created_at %></h2> </container>
