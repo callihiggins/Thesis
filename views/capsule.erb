@@ -1,11 +1,19 @@
 <html>
 <head>
 <title>Throwback</title>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "54a8eee9-6e19-4994-84f9-4ff2275eecfa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 </head>
 <body>
 <div id="logocontainer">
 <a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
 </div>
 <container><img src="<%= @capsule.image_url %>" width="300" />
+<span class='st_email_large' displayText='Email'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_fblike_large' displayText='Facebook Like'></span>
 <h1><%= @capsule.caption%></h1>
 <h2>This photo was taken on: <%= @capsule.formatted_created_at %></h2> </container>

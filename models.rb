@@ -133,7 +133,7 @@ class Capsule
      
   
   def formatted_created_at
-  	self.created_at.strftime("%B %d, %Y at %I:%M%p")
+  	self.created_at.	
   end
   
   def string_to_date
