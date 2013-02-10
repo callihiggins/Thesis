@@ -16,6 +16,14 @@ p{
 			 	line-height:1.8em;
 			 	margin-bottom:10px;
 			}
+			h7{
+				font-family: Helvetica;
+				font-style: bold;
+				font-size: 14px;
+				margin-top:10px;
+			 	line-height:1.8em;
+			 	margin-bottom:10px;
+			}
 </style>
 </head>
 <body>
@@ -29,4 +37,4 @@ p{
 <span class='st_tumblr' ></span>
 <span class='st_facebook'></span>
 <span class='st_fblike' ></span><br><p><%= @capsule.caption%></p>
-This photo was taken on: <%= @capsule.formatted_created_at %> </container>
+<h7>This photo was taken on:</h7> <%= @capsule.formatted_created_at %> </container>
