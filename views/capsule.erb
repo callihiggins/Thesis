@@ -9,11 +9,11 @@
 <div id="logocontainer">
 <a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
 </div>
-<container><img src="<%= @capsule.image_url %>" width="300" />
-<span class='st_email_large' displayText='Email'></span>
-<span class='st_twitter_large' displayText='Tweet'></span>
-<span class='st_pinterest_large' displayText='Pinterest'></span>
-<span class='st_facebook_large' displayText='Facebook'></span>
-<span class='st_fblike_large' displayText='Facebook Like'></span>
+<container><img src="<%= @capsule.image_url %>" width="300" /><br>
+<span class='st_email' displayText='Email'></span>
+<span class='st_twitter' displayText='Tweet'></span>
+<span class='st_pinterest' displayText='Pinterest'></span>
+<span class='st_facebook' displayText='Facebook'></span>
+<span class='st_fblike' displayText='Facebook Like'></span>
 <h1><%= @capsule.caption%></h1>
 <h2>This photo was taken on: <%= @capsule.formatted_created_at %></h2> </container>
