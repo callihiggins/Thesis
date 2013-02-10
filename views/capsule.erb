@@ -13,12 +13,6 @@
 }
 
 
-
-.st_flickr_custom{
-	background: url("http://throwback-app.com/images/icons/flickr-32x32.png") no-repeat scroll left top transparent;
-	padding:0px 16px 0 0;
-}
-
 .st_facebook_custom{
 	background: url("http://throwback-app.com/images/icons/facebook-32x32.png") no-repeat scroll left top transparent;
 	padding:0px 16px 0 0;
@@ -35,10 +29,10 @@
 <a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
 </div>
 <container><img src="<%= @capsule.image_url %>" width="300" /><br>
-<span class='st_email'></span>
-<span class='st_twitter_custom'></span>
-<span class='st_flickr_custom'></span>
-<span class='st_facebook_custom'></span>
-<span class='st_fblike'></span>
-<h1><%= @capsule.caption%></h1>
+<span class='st_email' displayText='Email'></span>
+<span class='st_twitter_custom' displayText='Tweet'></span>
+<span class='st_pinterest' displayText='Pinterest'></span>
+<span class='st_tumblr' displayText='Tumblr'></span>
+<span class='st_facebook_custom' displayText='Facebook'></span>
+<span class='st_fblike' displayText='Facebook Like'></span><br><h1><%= @capsule.caption%></h1>
 <h2>This photo was taken on: <%= @capsule.formatted_created_at %></h2> </container>
