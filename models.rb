@@ -213,3 +213,4 @@ http://throwback-app.com/tag/#{self.token}
   
 end
  
+ DataMapper.finalize()
