@@ -35,16 +35,19 @@ p{
 <a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
 </div>
 <container><img src="<%= @capsule.image_url %>" width="300" /><br><br>
+<br><p><%= @capsule.caption%></p>
+<h7>Taken on:</h7> <%= @capsule.formatted_created_at %>
+<br>
 <span class='st_twitter' ></span>
 <span class='st_pinterest' ></span>
 <span class='st_tumblr' ></span>
 <span class='st_facebook'></span>
-<span class='st_fblike' ></span><br><p><%= @capsule.caption%></p>
-<h7>Taken on:</h7> <%= @capsule.formatted_created_at %>
-<br><br>
+<span class='st_fblike' ></span>
+<br>
 <!-- begin htmlcommentbox.com -->
  <div id="comment_box">
-  <div id="HCB_comment_box"></div>
- <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
- <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=16854&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-<!-- end htmlcommentbox.com --> </div></container>
+  <!-- begin htmlcommentbox.com -->
+ <div id="HCB_comment_box"></div>
+ <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/simple/skin.css" />
+ <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=16854&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script></div>
+<!-- end htmlcommentbox.com -->
