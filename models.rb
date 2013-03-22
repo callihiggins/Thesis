@@ -151,10 +151,9 @@ class Capsule
   def image_url
   	 AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
   	 bucket = AWS::S3::Bucket.find 'hindsight-itp'
-  	 puts bucket
-  	 theurl = bucket[self.path].url
-  	 theurl
-  end
+  	 puts self.path
+  	 bucket[self.path].url
+  	   end
   
   def send!  
   	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "Thanks for being an early user of Throwback, the app that lets you send memories to your future self. A Throwback you took on " + self.formatted_created_at + " is ready for you! Click the link below to view your photo.
