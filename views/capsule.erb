@@ -2,7 +2,7 @@
 <head>
 <title>ThrowBack</title>
 <link rel="shortcut icon" href="http://throwback-app.com/favicon.ico" />
-<link rel="image_src" href="<%= @capsule.image_url %>" /> 
+<link rel="image_src" href="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>" width="400" />
 <meta name="description" content="<%= @capsule.caption%>" />
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -32,7 +32,7 @@ p{
 <div id="logocontainer">
 <a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
 </div>
-<container><<img src="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>" width="400" /><br>
+<container><img src="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>" width="400" /><br>
 <br><p><%= @capsule.caption%></p>
 <h7>Taken on:</h7> <%= @capsule.formatted_created_at %>
 <br>
