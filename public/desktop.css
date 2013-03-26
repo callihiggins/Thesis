@@ -64,6 +64,7 @@ text-decoration: none;
 }
 
 container {
+padding: 10px;
 border-style: none;
 position: absolute;
 width: 100%;
