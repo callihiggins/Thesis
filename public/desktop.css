@@ -67,12 +67,12 @@ text-decoration: none;
 padding: 10px;
 border-style: none;
 position: absolute;
-width: 600px;
+width: 100%;
 text-align: center;
 top: 100px;
 }
 
-#container.img{
+#container img{
 width: 600px;
 }
 
