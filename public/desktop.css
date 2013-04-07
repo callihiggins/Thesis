@@ -63,7 +63,7 @@ text-align: center;
 text-decoration: none;
 }
 
-container {
+#container {
 padding: 10px;
 border-style: none;
 position: absolute;
@@ -72,7 +72,7 @@ text-align: center;
 top: 100px;
 }
 
-container .img{
+#container .img{
 width: 600px;
 }
 
