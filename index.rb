@@ -8,7 +8,7 @@ require 'RMagick'
 set :views, File.dirname(__FILE__) + '/views'
 
 get '/' do
-
+:layout => false 
 erb :home
 
 end
@@ -23,6 +23,7 @@ get "/capsules/:image_token" do
 @capsule = Capsule.first :image_token => params[:image_token]
 @capsule.viewed = true
 @capsule.save
+:layout => false 
 erb :capsule
 end
 
