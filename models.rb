@@ -84,7 +84,7 @@ class Capsule
   					due_capsule.taggings.each do |tag|
   						# tell the capsule to send
   						
-  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback! Click the link below to view your photo.
+  						EmailSender.send(:address => tag.user.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from #{owner.email}. Click the link below to view your photo.
   						
   http://throwback-app.com/capsules/" + image_path)
   						# set the tag flag to true
@@ -125,7 +125,7 @@ class Capsule
   def self.due_capsules_for_tagged_users
   	# get all the capsules whose dueDate is less than the current DateTime
 	caps = Capsule.all(:dueDate.lt=> Time.now)   	# and whose sent flag is not true
-	unsent_caps = caps.find_all { |capsule| capsule.taggings.all(:sent => false, :confirmed =>true).size > 0}
+	unsent_caps = caps.find_all { |capsule| capsule.taggings.all(:sent => false).size > 0}
 	unsent_caps
    end
   
