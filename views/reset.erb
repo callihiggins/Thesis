@@ -6,9 +6,9 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center feedback">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center feedback" style="padding: 0px;">
 			<form action="/users/reset_confirm/<%= @user.user_token%>" enctype="multipart/form-data" method="post">
-			<ul style="text-align: center">
+			<ul >
 				<li><input type="password" name="password" placeholder="New password"/></li>
 				<li><input type="submit" value="Submit" /></li>
 			</ul>
