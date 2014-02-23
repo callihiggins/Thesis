@@ -259,6 +259,10 @@ margin: 0 !important;
     margin-top: -71px;
 }
 
+.users .feedback img{
+width: 600px;
+}
+
 #main_logo img{
 width: 80%;
 margin-left: -40%;
