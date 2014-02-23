@@ -4,6 +4,7 @@
 	Enter a new password
 </div>
 </div>
+<div class="container">
 <div class="row">
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center feedback">
 <form action="/users/reset_confirm/<%= @user.user_token%>" enctype="multipart/form-data" method="post">
@@ -12,6 +13,7 @@
 	<li><input type="submit" value="Submit" /></li>
 </ul>
 </form>
+</div>
 </div>
 </div>
 </div>
