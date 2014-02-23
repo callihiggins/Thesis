@@ -1,212 +1,141 @@
+ <!DOCTYPE html>
 <html>
-	<head>
-	
-
-<meta name="title" content="ThrowBack App" />
-<meta property="og:image" content="http://throwback-app.com/images/fb_logo.png" />
-<meta property="og:title" content="ThrowBack" />
-<meta property="og:url" content="http://throwback-app.com" />
-<meta property="og:description" content="Send your past to your future present" />
-<meta name="description" content="Send your past to your future present" />
-<link rel="shortcut icon" href="http://throwback-app.com/favicon.ico" />
-<link rel="image_src" href="http://throwback-app.com/images/logo_fb.png" /> 
-<link rel="stylesheet" type="text/css" href="http://throwback-app.com/iphone.css" media="only screen and (max-width: 480px)" />
-<link rel="stylesheet" type="text/css" href="http://throwback-app.com/desktop.css" media="screen and (min-width: 481px)" />
-<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
-		<title>ThrowBack</title>	
-		<style type="text/css">
-		 @font-face {
-                    font-family: "Thirsty Script Light", Helvetica, Arial, sans-serif;
-                    font-weight: normal;
-                    font-style: normal;
-                    src: url("images/ThirstyScript/ThirstyScriptLight.otf") format("opentype");
-                }
-
-			body{
-				margin:0;
-				padding:0;
-				color: #003366;
-				font-family: "Thirsty Script Light", Helvetica, Arial;
-				background: #FFF;
-
-			}
-			#wrapper{
-				width:865px;
-				height:620px;
+<head>
+<meta charset="UTF-8" />
+		<meta property="og:image" content="http://throwback-app.com/images/fb_logo.png" />
+		<meta property="og:title" content="ThrowBack" />
+		<meta property="og:url" content="http://throwback-app.com" />
+		<meta property="og:description" content="Send your past to your future present" />
+		<meta name="description" content="Send your past to your future present" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<link rel="shortcut icon" href="http://throwback-app.com/favicon.ico" />
+		<link rel="image_src" href="http://throwback-app.com/images/logo_fb.png" /> 
 				
-				margin:auto;
-				padding-left:10px;
-				padding-right:10px;
-				margin-top:60px;
-				position: relative;
-				
-			 	font-size: 1.1em;
-				
-			}
-			#left{
-				float: left;
-				width:294px;
-				height:620px;
-				
-			}
-			#right{
-				width:512px;
-				height:599px;
-				float: right;	
-				background:url('images/screenshots.png') no-repeat right top;
-			}
-			p{
-				font-family: Helvetica;
-				margin-top:30;
-			 	line-height:1.8em;
-			 	margin-bottom:10px;
-			}
-			a{
-				font-family: Helvetica;
-				color: #183159;
-				text-decoration: none;
-			}
-			#bottom-left{
-				font-size: .7em;
-				position: absolute;
-				bottom:50px;
-				left:15px;
-				
-			}
-			#bottom-right{
-				clear:both;
-				font-size: .7em;
-				position: absolute;
-				bottom:50px;
-				right:10px;
-			}
-			#copy{
-				padding-left:2px;
-			}
-			
-			#title{
-			font-family:  "Thirsty Script Light", Helvetica, Arial;
-			margin-right: 10px;
-			margin-top: 20px;
-			font-size: 18px;
-			text-align: center;			
-			}
-			#contact_me{
-			
-				margin-left: 10px;
-				
-							}
-			img{
-				border:none;
-			}
-			#social_container{
-			
-			text-align: left;
-			margin-left: 20px;			
-			}
-			
-			#press{
-			position: absolute;
-			bottom: -166px;
-			margin: 0 auto;
-			width: 100%;
-			font-family: Arial;
-			font-size: 18px;
-			}
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<script type="text/javascript">
+ 			 var _gaq = _gaq || [];
+ 			 _gaq.push(['_setAccount', 'UA-35188718-1']);
+ 			 _gaq.push(['_trackPageview']);
 
-			#press ul{
-			list-style: none;
-			}
-			
-			#press ul li{
-			display: inline;
-			padding-right: 9px;
-			}
-			
-			#press ul li img{
-			vertical-align: middle;
-			}
-
-
- a{
-			text-decoration: none !important;		
-			}
-					
-		</style>
-			<script type="text/javascript">
-
-		
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-35188718-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-
+  			(function() {
+ 			   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  			   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
 </script>	
-	</head>
-	<body> 
-		<div id="wrapper">
-			<div id="left">
-				<img src="images/logo.png" width="268px;" alt=""/>
-			
-			<div id='copy'>
-			<div id='title'>
-			<b>Send your past to your future present</b></div>
-			<p>ThrowBack is an iPhone photography application that captures a photograph but does not save it to your phone. Instead the photo is thrown into the future and emailed back to you and those you share it with at a random time, anywhere from 1 month to 5 years from the date the photo was taken. </p>
-			<p>In an era where our photographs are overexposed on countless sharing platforms, Throwback provides a unique opportunity to forget your memories so they can be remembered again.</p>
-			<div id="social_container">
-			<p><a href="https://itunes.apple.com/us/app/throwback/id551185859?mt=8"><img src="http://throwback-app.com/images/apple_big.png" width="200" style="text-align: center;"/></a></p>
-			<a href="https://twitter.com/ThrowBackApp"><img src="http://throwback-app.com/images/twitter_badge.png" width="50"/></a>
-			<a id="contact_me" href="mailto:support@throwback-app.com?subject=Hello ThrowBack"><img src="http://throwback-app.com/images/contact.png" width="125"/></a>
-			</div>
-			</div>
-			</div>
-			
-			<div id="press">
-						<div style="text-align: center;">
-			<ul>
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://abcnews.go.com/blogs/technology/2013/03/throwback-acts-as-a-photo-time-capsule-app/">
-<img align="none" width="100" height="38" style="width: 100px;height: 38px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://gallery.mailchimp.com/8ce65faaf7/images/abc_news_logo.png">
-</a></li>
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://techcrunch.com/2013/03/20/throwback-is-an-app-that-steals-your-photos-and-sends-them-to-future-you/">
-<img align="none" width="140" height="35" style="width: 140px;height: 35px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://gallery.mailchimp.com/8ce65faaf7/images/tc_techcrunch.png">
-</a></li>
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://www.wired.com/rawfile/2013/03/calli-higgins-throwback/">
-<img align="none" width="130" height="26" style="width: 130px;height: 26px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://gallery.mailchimp.com/8ce65faaf7/images/wired_logo.gif">
-</a></li>
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://www.psfk.com/2013/03/future-photo-sharing-app.html">
-<img align="none" width="30" height="30" style="width: 30px;height: 30px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://gallery.mailchimp.com/8ce65faaf7/images/psfkLogo.png">
-</a></li>
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://laughingsquid.com/throwback-an-ios-app-for-sending-photos-to-your-future-self-friends-and-family">
-<img align="none" width="30" height="30" style="width: 30px;height: 30px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://gallery.mailchimp.com/8ce65faaf7/images/laughing_squid_logo.jpg">
-</a></li>
+</head>
+<body data-spy="scroll" data-target="#nav">
+    <!-- Static navbar -->
+      <div class="navbar navbar-default" id="nav" role="navigation">
+        <div class="container-fluid">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"><img src="img/throwback_nav.png" alt="throwback_nav" width="201" height="50" /></a>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#download_anchor">Download</a></li>
+              <li><a href="#about_anchor">About</a></li>
+              <li class="hidden-xs"> <div class="navbar-header"> <a class="navbar-brand" href="#"><img src="img/throwback_nav.png" alt="throwback_nav" width="201" height="50" /></a></div></li>
+              <li><a href="#press_anchor">Press</a></li>
+              <li><a href="#contact_anchor">Contact</a></li>
+            </ul>
+           </div><!--/.nav-collapse -->
+      </div>
+      </div>
+<section id="image">
+<div id="top">
+	<div id="main_logo">
+		<img src="img/logo_main.png"  alt="logo_main" width="375" height="93" />
+	</div>
+	<div class="row">
+		<div id="text" class="col-xs-12">Send your photos to your future self</div>
+	</div>
+	
+</div>
+</section>
 
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://www.refinery29.com/summer-apps#page-4">
-<img align="none" width="151" height="30" style="width: 151px;height: 30px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://blog.shoedazzle.com/wp-content/uploads/2013/05/refinery29-logo.jpg">
-</a></li>
-
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://thecreatorsproject.vice.com/blog/nostalgia%E2%80%94well-theres-an-app-for-that-too">
-<img align="none" width="60" height="60" style="width: 60px;height: 60px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://cdn.pastemagazine.com/www/articles/creators%20project.jpg?1274275933">
-</a></li>
-
-
-<li><a style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;" target="_blank" href="http://gizmodo.com/5992958/cheapair-french-girls-and-more#.UVdcX3b5ZiA.twitter">
-<img align="none" width="60" height="60" style="width: 60px;height: 60px;border: 0;line-height: 100%;outline: none;text-decoration: none;" src="http://kinja.com/assets/images/logos/touchicons/gizmodo-touch-icon-200x200.png">
-</a></li>
-
-
-</ul>
-<br>
+<section id="main" >
+	<a id="download_anchor"  class="anchor"></a>
+	<div id="download" class="text-center" >
+			<img src="img/download.png" alt="download" width="443" height="75" class="img-responsive" />
+	</div>
+	<a id="about_anchor" class="anchor" ></a>
+<div class="container" id="about" >
+	<div class="row screenshot" >
+		<div class="col-xs-12 col-sm-6 text-center">
+			<img src="img/screenshot1.png" alt="screenshot1" width="245" height="478"/>
+		</div>
+		<div class="col-xs-12 col-sm-6 text-center">
+			<p><span class="bold">Take a photo or choose from your camera roll</span><br><br>(Photos taken with the app will not be saved)
+		</div>
+	</div>
+	<div class="row screenshot">
+		<div class="col-xs-12 col-sm-6 text-center">
+			<p style="margin-top: 80px;"><span class="bold">CHOOSE A RETURN DATE FOR YOU PHOTO</span> BETWEEN ONE MONTH AND FIVE YEARS FROM TODAY<br><br> 
+				<span class="bold">TAG</span> THE PEOPLE WHO YOU SHARE THE MOMENT WITH<br><br>
+				<span class="bold">ADD A MESSAGE</span> TO YOUR FUTURE SELF </p></div>
+		<div class="col-xs-12 col-sm-6 text-center">
+			<img src="img/screenshot2.png" alt="screenshot1" width="245" height="478"/>
+		</div>
+	</div>
+	<div class="row screenshot">
+		<div class="col-xs-12 col-sm-6 text-center">
+			<img src="img/screenshot3.png" alt="screenshot1" width="245" height="478"/>
+		</div>
+		<div class="col-xs-12 col-sm-6 text-center">
+			<p><span class="bold">Wait for the past to catch up with the present</p>
+		</div>
+	</div>
+	<a id="press_anchor" class="anchor" ></a>
+<div id="banner_text">
+Forget your memories so they can be remembered again
+</div>
 </div>
 
-		</div>
-				<div id="right"></div>
-		</div>
-	</body>
+<div id="press">
+	<img src="img/press.png" alt="press" class="img-respnsive" width="1024" height="343" usemap="#pressmap"/>
+</div>	
+	
+	<map name="pressmap">
+	<area shape="rect" alt="" coords="692,47,979,290" href="http://sxsw.com/interactive-2014-Interactive-Awards-Finalists" target="_blank">
+	<area shape="rect" alt="" coords="48,60,230,128" href="http://www.refinery29.com/summer-apps#page-4" target="_blank">
+<area shape="rect" alt="" coords="523,140,680,210" href="http://www.psfk.com/2013/03/future-photo-sharing-app.html#!wVZmh" target="_blank">
+<area shape="rect" alt="" coords="532,216,637,279" href="http://www.mylittleparis.com/throwback-appli-pour-rentree.html" target="_blank">
+<area shape="rect" alt="" coords="475,61,652,128" href="http://abcnews.go.com/blogs/technology/2013/03/throwback-acts-as-a-photo-time-capsule-app/" target="_blank">
+<area shape="rect" alt="" coords="391,203,500,297" href="http://laughingsquid.com/throwback-an-ios-app-for-sending-photos-to-your-future-self-friends-and-family/" target="_blank">
+<area shape="rect" alt="" coords="289,215,367,284" href="http://gizmodo.com/5992958/cheapair-french-girls-and-more#.UVdcX3b5ZiA.twitter" target="_blank">
+<area shape="rect" alt="" coords="266,139,476,204" href="http://www.wired.com/rawfile/2013/03/calli-higgins-throwback/" target="_blank">
+<area shape="rect" alt="" coords="266,60,468,133" href="http://thecreatorsproject.vice.com/blog/nostalgia%E2%80%94well-theres-an-app-for-that-too" target="_blank">
+<area shape="rect" alt="" coords="48,225,267,284" href="http://techcrunch.com/2013/03/20/throwback-is-an-app-that-steals-your-photos-and-sends-them-to-future-you/" target="_blank">
+<area shape="rect" alt="" coords="48,127,229,210" href="http://www.popphoto.com/gear/2013/04/throwback-app-sends-photos-to-your-future-self" target="_blank">
+	</map>
+
+<a id="contact_anchor" class="anchor" ></a>
+<div id="contact"   class="anchor text-center" >
+<img src="img/contact.png"  salt="contact" width="370" height="125" class="img-responsive" usemap="#contact_map"/>
+</div>
+<map name="contact_map">
+<area shape="rect" alt="" coords="107,0,370,75" href="mailto:hi@throwback-app.com" target="_blank">
+<area shape="rect" alt="" coords="0,0,90,69" href="http://www.throwback-app.com" target="_blank">
+</map>
+
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery.rwdImageMaps.min"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+
 </html>
