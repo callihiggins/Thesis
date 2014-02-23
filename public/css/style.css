@@ -30,7 +30,8 @@ top: -70px;
 }
 
 .capsule img{
-width: 600px;
+max-width: 600px;
+    width: 83%;
 }
 
 /*NAV BAR */
