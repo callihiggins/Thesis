@@ -53,6 +53,7 @@ padding-top: 30px;
 
 .users form ul {
 text-align: left;
+  padding: 5px;
 }
 
 .users form ul li{
