@@ -3,6 +3,13 @@ font-family: "Lato", Arial;
  src: url("./fonts/Lato-Reg.ttf");
 }
 
+@font-face {
+                    font-family: "Thirsty Script Medium", Helvetica, Arial, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    src: url("http://throwback-app.com/images/ThirstyScript/ThirstyScriptMedium.otf") format("opentype");
+                }
+
 *, *:before, *:after {
     -moz-box-sizing: border-box;
 }
