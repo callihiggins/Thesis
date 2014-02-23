@@ -246,6 +246,10 @@ height: auto;
 
 @media(max-width:767px){
 
+.feedback{
+background: none;
+}
+
 input{
 margin: 0 !important;
 }
