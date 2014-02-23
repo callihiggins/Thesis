@@ -51,9 +51,15 @@ width: 100%;
 height: 100%;
 }
 
-.users #main, .capsules #main{
+.capsules #main{
 width: 100%;
 height: auto;
+margin-top: -20px;
+}
+
+.users #main{
+width: 100%;
+height: 100%;
 margin-top: -20px;
 }
 
