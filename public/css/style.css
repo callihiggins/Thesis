@@ -51,6 +51,15 @@ margin-top: -20px;
 padding-top: 30px;
 }
 
+.users form ul {
+text-align- left;
+}
+
+.users form ul li{
+list-style: none;
+
+}
+
 .screenshot{
 margin-bottom: 75px;
 }
