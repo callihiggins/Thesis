@@ -4,8 +4,16 @@ font-family: "Lato", Arial;
 }
 
 @font-face {
-                    font-family: "Thirsty Script Medium", Helvetica, Arial, sans-serif;				  							                    					src: url("http://throwback-app.com/images/ThirstyScript/ThirstyScriptMedium.otf") format("opentype");
-                }
+    font-family: 'thirsty_script_mediumregular';
+    src: url('thirstyscriptmedium-webfont.eot');
+    src: url('thirstyscriptmedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thirstyscriptmedium-webfont.woff') format('woff'),
+         url('thirstyscriptmedium-webfont.ttf') format('truetype'),
+         url('thirstyscriptmedium-webfont.svg#thirsty_script_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 *, *:before, *:after {
     -moz-box-sizing: border-box;
@@ -196,7 +204,7 @@ vertical-align:middle;
 
 #banner_text{
 padding-top: 50px;
-font-family: "Thirsty Script Medium", Helvetica, Verdana, Arial, sans-serif;
+font-family: "thirsty_script_mediumregular", Helvetica, Verdana, Arial, sans-serif;
 text-transform: none;
 letter-spacing: 0px;
 font-size: 36px;
