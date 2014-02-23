@@ -1,57 +1,19 @@
-<html>
-<head>
-<title>ThrowBack</title>
-<link rel="stylesheet" type="text/css" href="http://throwback-app.com/iphone.css" media="only screen and (max-width: 480px)" />
-<link rel="stylesheet" type="text/css" href="http://throwback-app.com/desktop.css" media="screen and (min-width: 481px)" />
-<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<link rel="shortcut icon" href="http://throwback-app.com/favicon.ico" />
-<link rel="canonical" href="http://throwback-app.com/capsules/<%= @capsule.image_token %>" />
-<meta property="og:url" content="http://throwback-app.com/capsules/<%= @capsule.image_token %>"/>
-<meta property="og:image" content="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>" />
-<link rel="image_src" href="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>"/>
-<meta name="description" content="<%= @capsule.caption%>" />
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "54a8eee9-6e19-4994-84f9-4ff2275eecfa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<style type="text/css">
-p{
-				font-weight: bold;
-				font-family: Helvetica;
-				font-size: 22px;
-			 	margin-bottom:10px;
-			}
-			h7{
-				font-weight: bold;
-				font-family: Helvetica;
-				font-size: 14px;
-				margin-top:10px;
-			 	line-height:1.8em;
-			 	margin-bottom:10px;
-			}
-			comment_box{
-				width:300px;
-				text-align:left;
-			}
-</style>
-</head>
-<body>
-<div id="logocontainer">
-<a href="http://throwback-app.com"><img src="http://throwback-app.com/images/logo.png"/></a>
-</div><br>
-<div id="container"><img src="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>" /><br>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center feedback"><img src="http://hindsight-itp.s3.amazonaws.com/<%= @capsule.path %>" /><br>
 <br><p><%= @capsule.caption%></p>
 <h7>Taken on:</h7> <%= @capsule.formatted_created_at %>
 <br>
+</div>
+</div>
+
+<div class="row">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center feedback">
 <span class='st_twitter' ></span>
 <span class='st_pinterest' ></span>
 <span class='st_tumblr' ></span>
 <span class='st_facebook'></span>
 <span class='st_fblike' ></span>
-<br></div></body></html>
-<!-- begin htmlcommentbox.com -->
-<!-- <div id="comment_box">
- <div id="HCB_comment_box"></div>
- <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/simple/skin.css" />
- <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=16854&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*--> 
- <!--</script></div> -->
-<!-- end htmlcommentbox.com -->
+</div></div>
+
+</div>
