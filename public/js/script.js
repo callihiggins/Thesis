@@ -21,7 +21,8 @@ $(document).ready(function() {
    // $('#main').scrollspy();
   /*  $('#download_anchor').scrollspy(); */
    
-  
+  $('img[usemap]').rwdImageMaps();
+
     
         var headerTop = $('#nav').offset().top;
         var headerBottom = headerTop; // Sub-menu should appear after this distance from top.
@@ -38,5 +39,4 @@ $(document).ready(function() {
                 }
             }
         });
-         $('img[usemap]').rwdImageMaps();
-    });
+             });
