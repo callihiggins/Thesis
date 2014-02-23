@@ -163,7 +163,8 @@ vertical-align:middle;
 
 #banner_text{
 padding-top: 50px;
-text-transform: uppercase;
+font-family: "Thirsty Script Medium",
+letter-spacing: 1px;
 font-size: 36px;
 color: #183159;
 font-weight: 500;
