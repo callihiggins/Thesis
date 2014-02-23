@@ -29,6 +29,10 @@ position: relative;
 top: -70px; 
 }
 
+.capsule img{
+width: 600px;
+}
+
 /*NAV BAR */
 
 #nav{
@@ -259,9 +263,7 @@ margin: 0 !important;
     margin-top: -71px;
 }
 
-.capsule img{
-width: 600px;
-}
+
 
 #main_logo img{
 width: 80%;
