@@ -256,11 +256,20 @@ height: auto;
 }
 
 
-
+.stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices{
+height: 30px;
+}
 
 
 
 @media(max-width:767px){
+
+.capsule img {
+    margin-left: -15px;
+    margin-top: -43px;
+    max-width: 600px;
+    width: 108%;
+}
 
 .feedback{
 background: none;
