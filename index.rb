@@ -24,7 +24,7 @@ get "/capsules/:image_token" do
 @capsule.viewed = true
 @capsule.save
 
-erb :capsule, :layout => true 
+erb :capsule, :layout => false 
 end
 
 get "/capsules/:id" do
