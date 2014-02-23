@@ -43,16 +43,21 @@ display: none;
 
 .users{
 width: 100%;
+height: auto;
+}
+
+.capsules{
+width: 100%;
 height: 100%;
 }
 
-.users #main{
+.users #main, .capsules #main{
 width: 100%;
 height: auto;
 margin-top: -20px;
 }
 
-.users .container{
+.users .container, .capsules .container{
 padding-top: 30px;
 }
 
