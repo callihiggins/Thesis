@@ -215,12 +215,12 @@ margin-left: -40%;
 
 .navbar .navbar-nav{
 display: block;
-margin-top: 20px;
+margin-top: 0px;
 }
 .navbar-default .navbar-brand img{
 height: auto;
-    margin: -10px auto 0 -15%;
-    width: 30%;
+    margin: -10px auto 0 -25%;
+    width: 50%;
 }
 
 .nav > li{
