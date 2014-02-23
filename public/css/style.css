@@ -257,7 +257,7 @@ height: auto;
 
 
 .stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices{
-height: 30px;
+height: 30px !important;
 }
 
 
