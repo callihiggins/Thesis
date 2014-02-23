@@ -83,6 +83,11 @@ box-shadow: none;
 font-weight: 600;
 }
 
+.feedback{
+background: rgba(255,255,255, .9);
+text-transform: uppercase;
+padding: 50px; 
+}
 
 
 #bg_img{
