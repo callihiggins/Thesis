@@ -58,12 +58,11 @@ margin: -10px 10px 0px -110px;
 
 .nav > li {
     float: left;
-    padding: 2px;
     width: auto;
     margin-left: auto ;
     margin-right: auto ;
     display:inline-block;
-    padding: 10px;
+    padding: 6px;
 }
 
 .nav > li:nth-child(2){
