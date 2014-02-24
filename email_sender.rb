@@ -1,4 +1,5 @@
 require 'pony'
+require 'erb'
 
 class EmailSender
   def self.send(params)
@@ -6,7 +7,7 @@ class EmailSender
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
             :body => params[:body], 
-            :html_body => params[:html_body],
+            :html_body => erb(:hello_email),
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
