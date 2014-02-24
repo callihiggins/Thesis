@@ -49,7 +49,235 @@ http://throwback-app.com/users/reset/#{self.user_token}")
   	  end
   	  
   	   def send_hello_email! 
-  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :html_body => "Thanks for joining Throwback!") 
+  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :html_body => '<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    	<center>
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+            	<tr>
+                	<td align="center" valign="top">
+                        <!-- // Begin Template Preheader \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%" id="templatePreheader">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="600">
+                                    	<tr>
+                                        	<td valign="top" class="preheaderContent" style="padding-right:20px;" mc:edit="preheader_content">
+                                                Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+                                            </td>
+                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+											<td valign="top" width="200" class="preheaderContent" mc:edit="preheader_link">
+                                                Is this email not displaying correctly?<br><a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
+                                            </td>
+											<!-- *|END:IF|* -->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // End Template Preheader \\ -->
+                    	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+                        	<tr>
+                            	<td align="center" valign="top" style="padding-top:60px;">
+                                    <!-- // Begin Template Header \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                                    	<tr>
+                                        	<td colspan="3" class="headerContent" style="padding-bottom:40px;" mc:edit="header_content">
+                                            	<h1>Keep track of your mailing list V.I.P.s on the go.</h1>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="top">
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td align="center" height="450" valign="top" width="25">
+                                                            <img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/android_vert_left.png" height="450" width="25" style="display:block !important;">
+                                                        </td>
+                                                        <td align="center" height="460" valign="top" width="200">
+                                                        	<table border="0" cellpadding="0" cellspacing="0">
+																<tr>
+                                                                	<td align="center" height="50" valign="top" width="200">
+                                                                    	<img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/android_vert_top.png" height="50" width="200" style="display:block !important;">
+                                                                    </td>
+                                                                </tr>
+																<tr>
+                                                                	<td align="center" height="300" valign="top" width="200">
+			                                                            <img src="http://www.throwback-app.com/images/android_screenshot.jpg" height="300" width="200" style="display:block !important; max-height:300px; max-width:200px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image">
+                                                                    </td>
+                                                                </tr>
+																<tr>
+                                                                	<td align="center" height="100" valign="top" width="200">
+			                                                            <img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/android_vert_bottom.png" height="100" width="200" style="display:block !important;">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td align="center" height="450" valign="top" width="25">
+                                                            <img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/android_vert_right.png" height="450" width="25" style="display:block !important;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td width="40">
+                                            	<br>
+                                            </td>
+                                            <td valign="top" width="325">
+                                            	<table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td valign="top" width="72" style="padding-right:10px;">
+                                                            <img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/icon_goldenmonkeys.png" style="max-width:72px;" id="appIcon" mc:label="icon_image" mc:edit="icon_image">
+                                                        </td>
+                                                        <td valign="bottom" class="bodyContent" mc:edit="app_detail">
+                                                            <h2>Golden Monkeys</h2>
+                                                            <h4>By MailChimp</h4>
+                                                        </td>
+                                                    </tr>
+                                                	<tr>
+                                                        <td colspan="2" valign="top" style="padding-top:20px;" class="bodyContent" mc:edit="upper_body">
+                                                            Every mailing list has some VIPs. <a href="http://mailchimp.com/features/golden-monkeys/" target="_blank">Golden Monkeys</a> helps you keep track of your most important subscribers so you can see how they respond to your campaigns. Golden Monkeys is available for your Android-based phone in the <a href="https://market.android.com/details?id=com.mailchimp.goldenmonkeys" target="_blank">Android Market</a>.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                    	<td align="left" colspan="2" valign="top" style="padding-top:20px;">
+                                                        	<table border="0" cellpadding="0" cellspacing="0">
+                                                            	<tr mc:hideable>
+                                                                	<td valign="top" style="padding-bottom:20px;">
+                                                                        <table border="0" cellpadding="15" cellspacing="0" id="appButton">
+                                                                            <tr>
+                                                                                <td align="center" valign="middle" id="appButtonContent" style="padding-right:30px; padding-left:30px;" mc:edit="app_button">
+                                                                                    <a href="https://market.android.com/details?id=com.mailchimp.goldenmonkeys" target="_blank">Get Golden Monkeys</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>                                                        
+                                                                    </td>
+                                                                </tr>
+                                                                <tr mc:hideable>
+                                                                    <td align="left" valign="middle" mc:edit="app_store_link">
+                                                                        <a href="https://market.android.com/details?id=com.mailchimp.goldenmonkeys" target="_blank"><img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/android_market_logo.png" width="117"></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Header \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top" style="padding-top:40px">
+                                    <!-- // Begin Template Body \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                                    	<tr mc:repeatable>
+                                        	<td valign="top" style="padding-top:40px">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top" width="280" class="leftColumnContent" mc:edit="left_column_content">
+                                                            <h3>Real-time Alerts</h3>
+                                                            Don't bother with digging through your reports to find out if special people on your list have seen your email. Golden Monkeys sends you push notifications when they open and click.
+                                                            <br>
+                                                            <br>
+	                                                        <h3>Subscriber Profiles</h3>
+															See the activity and member ratings of your most important subscribers, and search for subscribers based on important criteria, like geolocation, engagement and purchase activity.
+                                                        </td>
+                                                        <td width="40">
+                                                            <br>
+                                                        </td>
+                                                        <td valign="top" width="280" class="rightColumnContent" mc:edit="right_column_content">
+                                                            <br>
+                                                            <br>
+                                                            <h4>More Features</h4>
+                                                            &bull; Receive push notifications about subscriber activity.
+                                                            <br>
+                                                            &bull; See where your subscribers are located.
+                                                            <br>
+                                                            &bull; Browse member ratings and recent activity.
+                                                            <br>
+                                                            &bull; Email subscriber activity to your coworkers.
+                                                            <br>
+                                                            &bull; Enable passcode protection in case your phone is lost or stolen.
+                                                            <br>
+                                                            &bull; Search for subscribers by location, engagement and more.
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr mc:repeatable>
+                                        	<td valign="top">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                	<tr>
+                                                    	<td colspan="3" valign="top" style="padding-top:40px; padding-bottom:20px;" class="bodyContent" mc:edit="screenshot_title">
+                                                        	<h3>Android Screenshots</h3>
+                                                        </td>
+                                                    </tr>
+                                                	<tr>
+                                                    	<td valign="top" width="280">
+                                                        	<img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/280gmscreen1.jpg" style="max-width:280px;" mc:label="image" mc:edit="left_screenshot"> 
+                                                        </td>
+                                                        <td width="40">
+                                                        	<br>
+                                                        </td>
+                                                        <td valign="top" width="280">
+                                                        	<img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/280gmscreen2.jpg" style="max-width:280px;" mc:label="image" mc:edit="right_screenshot"> 
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Body \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top" style="padding-top:40px;">
+                                    <!-- // Begin Template Footer \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter">
+                                    	<tr>
+                                        	<td valign="top" style="padding-top:40px;">
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" class="footerContent" style="padding-bottom:20px;" mc:edit="social">
+                                                            <a href="*|TWITTER:PROFILEURL|*">follow on Twitter</a> | <a href="*|FACEBOOK:PROFILEURL|*">friend on Facebook</a> | <a href="*|FORWARD|*">forward to a friend</a>&nbsp;
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" class="footerContent" style="padding-right:20px;" mc:edit="footer">
+                                                            <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+                                                            <br>
+                                                            *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
+                                                            <br>
+                                                            <br>
+                                                            <strong>Our mailing address is:</strong>
+                                                            <br>
+                                                            *|HTML:LIST_ADDRESS_HTML|**|END:IF|* 
+                                                        </td>
+                                                        <td valign="top" width="200" id="monkeyRewards" class="footerContent" mc:edit="monkeyrewards">
+                                                            *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" class="footerContent" style="padding-top:20px;" mc:edit="utility">
+                                                            <a href="*|UNSUB|*">unsubscribe from this list</a> | <a href="*|UPDATE_PROFILE|*">update subscription preferences</a>&nbsp;
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Footer \\ -->
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+') 
   	
   	  end
   	  
