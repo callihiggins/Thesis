@@ -7,7 +7,7 @@ class EmailSender
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
             :body => params[:body], 
-            :html_body => erb :hello_email,
+            :html_body => erb (:hello_email),
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
