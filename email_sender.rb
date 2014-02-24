@@ -2,13 +2,17 @@ require 'pony'
 require 'sinatra' # 'sinatra/base'
 require 'erb'
 
+
+
 class EmailSender
+body = ERB.new(File.read(hello_email.erb)).result
+
   def self.send(params)
       Pony.mail :to => params[:address],
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
             :body => params[:body], 
-            :html_body => erb(:hello_email),
+            :html_body => body,
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
