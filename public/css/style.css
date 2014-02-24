@@ -5,7 +5,7 @@ font-family: "Lato", Arial;
 
 @font-face {
     font-family: "Thirsty Script Medium";
-    src: url('./fonts/thirstyscriptmedium-webfont.eot');
+    src: local("Thirsty Script Medium"), url('./fonts/thirstyscriptmedium-webfont.eot');
     src: url('./fonts/thirstyscriptmedium-webfont.eot?#iefix') format('embedded-opentype'),
          url('./fonts/thirstyscriptmedium-webfont.woff') format('woff'),
          url('./fonts/thirstyscriptmedium-webfont.ttf') format('truetype'),
