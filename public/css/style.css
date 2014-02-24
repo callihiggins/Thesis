@@ -1,6 +1,12 @@
 @font-face {
 font-family: "Lato", Arial;
- src: url("./fonts/Lato-Reg.ttf");
+    src: url('.fonts/lato-reg-webfont.eot');
+    src: url('.fonts/lato-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('.fonts/lato-reg-webfont.woff') format('woff'),
+         url('.fonts/lato-reg-webfont.ttf') format('truetype'),
+         url('.fonts/lato-reg-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
