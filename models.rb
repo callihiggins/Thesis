@@ -5,6 +5,7 @@ require 'dm-validations'
 require 'aws/s3'
 require 'email_sender'
 require 'digest/md5'
+require 'erb'
 
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
@@ -50,7 +51,7 @@ http://throwback-app.com/users/reset/#{self.user_token}")
   	  end
   	  
   	   def send_hello_email! 
-  	   body = ERB.new(File.read('hello_email.erb')).result(binding)
+  	   body = erb(:hello_email);
   	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body => body) 
   	
   	  end
