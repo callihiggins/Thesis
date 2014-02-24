@@ -49,7 +49,7 @@ http://throwback-app.com/users/reset/#{self.user_token}")
   	  end
   	  
   	   def send_hello_email! 
-  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :html_body => '<b> Hello World</b>') 
+  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :html_body => (erb:hello_email)) 
   	
   	  end
   	  
