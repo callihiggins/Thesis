@@ -5,9 +5,7 @@ class EmailSender
      Pony.mail :to => params[:address],
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
-            :port => '587',
             :body => params[:body], 
-            :headers => { 'Content-Type' => 'text/html' },
             :html_body => params[:html_body],
             :via => :smtp,
             :via_options => { 
