@@ -49,7 +49,7 @@ http://throwback-app.com/users/reset/#{self.user_token}")
   	  end
   	  
   	   def send_hello_email! 
-  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :html_body => <html>
+  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :html_body => "<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
@@ -614,7 +614,7 @@ http://throwback-app.com/users/reset/#{self.user_token}")
             </table>
         </center>
     </body>
-</html>) 
+</html>") 
   	
   	  end
   	  
