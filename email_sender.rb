@@ -1,5 +1,5 @@
 require 'pony'
-require 'erb'
+require 'sinatra'
 
 class EmailSender
   def self.send(params)
