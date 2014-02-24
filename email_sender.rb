@@ -5,8 +5,8 @@ require 'erb'
 
 
 class EmailSender
-body = ERB.new(File.read('./views/hello_email.erb')).result(binding)
-
+body = ERB.new(File.read('./views/hello_email.erb'))
+body.result(binding)
   def self.send(params)
       Pony.mail :to => params[:address],
             :from => 'Throwback@throwback-app.com',
