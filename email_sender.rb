@@ -5,7 +5,10 @@ class EmailSender
      Pony.mail :to => params[:address],
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
+            :port => '587',
             :body => params[:body], 
+            :headers => { 'Content-Type' => 'text/html' },
+            :html_body => params[:htmlbody],
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
