@@ -4,7 +4,7 @@ font-family: "Lato", Arial;
 }
 
 @font-face {
-    font-family: 'thirsty_script_mediumregular';
+    font-family: "Thirsty Script Medium";
     src: url('./fonts/thirstyscriptmedium-webfont.eot');
     src: url('./fonts/thirstyscriptmedium-webfont.eot?#iefix') format('embedded-opentype'),
          url('./fonts/thirstyscriptmedium-webfont.woff') format('woff'),
@@ -204,7 +204,7 @@ vertical-align:middle;
 
 #banner_text{
 padding-top: 50px;
-font-family: 'thirsty_script_mediumregular';
+font-family: "Thirsty Script Medium";
 text-transform: none;
 letter-spacing: 0px;
 font-size: 36px;
