@@ -1,5 +1,6 @@
 require 'pony'
 require 'sinatra'
+require 'erb'
 
 class EmailSender
   def self.send(params)
@@ -7,7 +8,7 @@ class EmailSender
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
             :body => params[:body], 
-            :html_body => erb (:hello_email),
+            :html_body => Sinatra::Templates.erb :hello_email,
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
