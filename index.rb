@@ -154,6 +154,12 @@ erb :user
 end
 
 
+get "/test_email" domain
+
+EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body=>erb(:body)) 
+
+end
+
 post '/capsules' do
   
   #def iphone_upload
