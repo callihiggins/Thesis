@@ -11,7 +11,7 @@ class EmailSender
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
             :headers => { 'Content-Type' => 'text/html' },
-            :body => body, 
+            :body => params[:body], 
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
