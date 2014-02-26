@@ -156,7 +156,7 @@ end
 
 get "/test_email" do
 
-EmailSender.send(:address => "calli@nyu.edu", :subject => "Welcome to Throwback", :body=>erb(:body)) 
+EmailSender.send(:address => "calli@nyu.edu", :subject => "Welcome to Throwback", :body=>erb(:hello_email)) 
 erb :home, :layout => false
 end
 
