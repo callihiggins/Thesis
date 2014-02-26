@@ -7,6 +7,10 @@ require 'email_sender'
 require 'digest/md5'
 require 'sinatra' # 'sinatra/base'
 require 'erb'
+require 'rubygems'
+require "base64"
+
+
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:///Users/Calli/Documents/ITP/Spring_11/Thesis/code/hindsight.db')
     
