@@ -156,7 +156,7 @@ end
 
 get "/test_email" domain
 
-EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body=>erb(:body)) 
+EmailSender.send(:address => "calli@nyu.edu", :subject => "Welcome to Throwback", :body=>erb(:body)) 
 
 end
 
