@@ -18,6 +18,7 @@ set :views, File.dirname(__FILE__) + '/views'
     
 class User
   include DataMapper::Resource
+  include ERB::Util
 
   property :id,         Serial   
   property :email,		String
@@ -59,7 +60,7 @@ http://throwback-app.com/users/reset/#{self.user_token}")
   	   def send_hello_email! 
   	      
   	   
-  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body=>erb(:body)) 
+  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body=>erb(:hello_email)) 
   	
   	  end
   	  
