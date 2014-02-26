@@ -7,9 +7,7 @@ require 'erb'
 class EmailSender
 
   def self.send(params)
-     body = ERB.new(File.read('./views/hello_email.erb'))
-     body.result(binding)
-      Pony.mail :to => params[:address],
+        Pony.mail :to => params[:address],
             :from => 'Throwback@throwback-app.com',
             :subject => params[:subject],
             :headers => { 'Content-Type' => 'text/html' },

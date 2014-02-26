@@ -52,7 +52,11 @@ http://throwback-app.com/users/reset/#{self.user_token}")
   	  
   	   def send_hello_email! 
   	   
-  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback") 
+  	      body = ERB.new(File.read('./views/hello_email.erb'))
+   	      body.result(binding)
+
+  	   
+  	EmailSender.send(:address => self.email, :subject => "Welcome to Throwback", :body=>body) 
   	
   	  end
   	  
