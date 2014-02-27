@@ -8,7 +8,7 @@ class EmailSender
 
   def self.send(params)
         Pony.mail :to => params[:address],
-            :from => 'ThrowBack',
+            :from => 'ThrowBack@throwback-app.com',
             :subject => params[:subject],
             :headers => { 'Content-Type' => 'text/html' },
             :body => params[:body], 

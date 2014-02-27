@@ -156,8 +156,7 @@ end
 
 get "/hello_email" do
 
-
-erb :home, :layout => true
+erb :hello_email, :layout => true
 end
 
 post '/capsules' do
