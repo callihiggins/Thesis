@@ -12,7 +12,7 @@ class EmailSender
             :subject => params[:subject],
             :headers => { 'Content-Type' => 'text/html' },
             :body => params[:body], 
-            :reply-to => "hi@throwback-app.com"
+            :reply-to => "hi@throwback-app.com",
             :via => :smtp,
             :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
