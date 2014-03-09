@@ -45,7 +45,12 @@ Before you can start sending throwbacks, we need need you to confirm that this i
 http://throwback-app.com/users/#{self.user_token}")
   end
   
-  def send_reset!  
+  def send_reset! 
+  	if self.user_token.nil?
+  		self.user_token = self.generate_user_token
+  		self.save!
+  	end
+   
   	EmailSender.send(:address => self.email, :subject => "Reset password from Throwback", :body => "Looks like you need a new password! Follow the link below to make a new one.
   	
 http://throwback-app.com/users/reset/#{self.user_token}")
