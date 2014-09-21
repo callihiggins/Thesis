@@ -174,7 +174,7 @@ class Capsule
   end
   
   def image_url
-  	 AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
+  	 AWS::S3::Base.establish_connection!(:access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'])
   	 bucket = AWS::S3::Bucket.find 'hindsight-itp'
   	 bucket[self.path].url
   	   end
