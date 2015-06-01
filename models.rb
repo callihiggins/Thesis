@@ -174,15 +174,15 @@ class Capsule
   end
   
   def image_url
-  	 AWS::S3::Base.establish_connection!(:access_key_id => "AKIAI7S3OIOUYPQPFDAA", :secret_access_key => "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")
+  	 AWS::S3::Base.establish_connection!(:access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'])
   	 bucket = AWS::S3::Bucket.find 'hindsight-itp'
   	 bucket[self.path].url
   	   end
   
   def send!  
-  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "Thanks for being an early user of Throwback, the app that lets you send memories to your future self. A Throwback you took on " + self.formatted_created_at + " is ready for you! Click the link below to view your photo.
+  	EmailSender.send(:address => self.user.email, :subject => "Here's your Throwback!", :body => "A Throwback you took on " + self.formatted_created_at + " is ready for you! Click the link below to view your photo.
   	
-http://throwback-app.com/capsules/#{self.image_token}
+http://www.throwback-app.com/capsules/#{self.image_token}
 
 Love,
 Team Throwback"
@@ -191,7 +191,7 @@ Team Throwback"
   end
   
    def send_to_tagged_user!  
-  	EmailSender.send(:address => self.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from http://throwback-app.com/capsules/#{self.image_token}")
+  	EmailSender.send(:address => self.email, :subject => "Here's your Throwback!", :body => "You've received a Throwback from http://www.throwback-app.com/capsules/#{self.image_token}")
   end
   
   
@@ -218,7 +218,7 @@ class Tagging
 
 Before you can start to receive Throwbacks, you need to make an account. Please visit the link below to set up an account so you can receive a copy of " + owner + "'s Throwback
   		
-http://throwback-app.com/tag/new_user/#{self.token}
+http://www.throwback-app.com/tag/new_user/#{self.token}
   		  		
   		")
   end
@@ -229,7 +229,7 @@ http://throwback-app.com/tag/new_user/#{self.token}
   		
 Let us know if you want a copy of your capsule sent to you in the future by clicking the link below:
   		
-http://throwback-app.com/tag/#{self.token}
+http://www.throwback-app.com/tag/#{self.token}
   		  		
   		")
   end
