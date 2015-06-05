@@ -1,5 +1,5 @@
-require 'email_sender'
-require 'models'
+require './email_sender'
+require './models'
 
 desc "This task is called by the Heroku cron add-on"
 task :cron do
