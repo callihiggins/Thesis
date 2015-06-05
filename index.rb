@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require './aws/s3'
+require 'aws/s3'
 require './models'
 require "base64"
 require 'RMagick'
