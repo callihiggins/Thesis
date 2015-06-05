@@ -39,11 +39,12 @@ GEM
     rack (1.6.1)
     rack-protection (1.5.3)
       rack
-    rmagick (2.15.1)
+    rmagick (2.15.2)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sqlite3 (1.3.10)
     tilt (2.0.1)
     xml-simple (1.1.5)
 
@@ -64,6 +65,7 @@ DEPENDENCIES
   puma
   rmagick
   sinatra
+  sqlite3
 
 BUNDLED WITH
    1.10.2
