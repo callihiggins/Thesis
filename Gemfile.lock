@@ -58,6 +58,7 @@ DEPENDENCIES
   dm-sqlite-adapter
   dm-validations
   do_postgres
+  do_sqlite3
   pg
   pony
   puma
