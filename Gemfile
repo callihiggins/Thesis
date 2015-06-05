@@ -16,4 +16,5 @@ gem 'rmagick', :require => "RMagick"
 group :production do 
   gem 'dm-postgres-adapter'
   gem 'do_postgres'
+  gem 'do_sqlite3'
 end
