@@ -29,6 +29,8 @@ GEM
     pg (0.18.2)
     pony (1.11)
       mail (>= 2.0)
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     rack (1.6.1)
     rack-protection (1.5.3)
       rack
@@ -52,6 +54,7 @@ DEPENDENCIES
   do_postgres
   pg
   pony
+  puma
   rmagick
   sinatra
 

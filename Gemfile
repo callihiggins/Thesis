@@ -7,6 +7,7 @@ gem 'dm-migrations'
 gem 'dm-validations'
 gem 'pony'
 gem 'pg'
+gem 'puma'
 gem 'aws-s3', :require => "aws/s3"
 gem 'rmagick', :require => "RMagick"
 

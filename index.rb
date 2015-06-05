@@ -5,6 +5,10 @@ require 'models'
 require "base64"
 require 'RMagick'
 
+configure {
+  set :server, :puma
+}
+
 set :views, File.dirname(__FILE__) + '/views'
 
 get '/' do
