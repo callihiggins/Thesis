@@ -6,3 +6,5 @@ task :cron do
   Capsule.send_due_capsules_to_tagged_users!
   Capsule.send_due_capsules!
   end
+
+task :default => :cron
