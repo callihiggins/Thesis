@@ -5,6 +5,7 @@ gem "sinatra"
 gem "dm-core"
 gem 'dm-migrations'
 gem 'dm-validations'
+gem 'dm-sqlite-adapter'
 gem 'pony'
 gem 'pg'
 gem 'puma'
