@@ -21,8 +21,12 @@ class EmailSender
                 :password   => ENV['SENDGRID_PASSWORD'],
                 :authorization => :plain,
                 :domain => ENV['SENDGRID_DOMAIN']
-              } 
-  end
+              }
+        rescue Exception => e
+		  	puts e
+		  	puts params[:body]
+		  	500
+	  	end
 end
 
  
