@@ -10,6 +10,7 @@ gem 'pg'
 gem 'puma'
 gem 'aws-s3', :require => "aws/s3"
 gem 'rmagick', :require => "RMagick"
+gem 'dm-postgres-adapter'
 
 group :development, :test do
   gem 'dm-sqlite-adapter'
